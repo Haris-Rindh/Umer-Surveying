@@ -112,55 +112,50 @@ document.addEventListener("DOMContentLoaded", () => {
     adjustImagesForSmallScreens();
 
     // EmailJS Integration for Contact Form
-    document.addEventListener("DOMContentLoaded", function () {
-        emailjs.init("Sacyc-iZZjqaHwzks"); // Your Public Key
-    
-        const contactForm = document.getElementById("contactForm");
-    
-        if (contactForm) {
-            contactForm.addEventListener("submit", function (e) {
-                e.preventDefault();
-    
-                const name = document.getElementById("name").value.trim();
-                const email = document.getElementById("email").value.trim();
-                const mobile = document.getElementById("mobile").value.trim();
-                const subject = document.getElementById("subject").value.trim();
-                const message = document.getElementById("message").value.trim();
-    
-                if (!name || !email || !mobile || !subject || !message) {
-                    alert("Please fill out all fields.");
-                    return;
-                }
-    
-                if (!/^\d+$/.test(mobile)) {
-                    alert("Please enter a valid mobile number.");
-                    return;
-                }
-    
-                const submitButton = contactForm.querySelector("button[type='submit']");
-                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                submitButton.disabled = true;
-    
-                emailjs.send("service_po44xl8", "template_btttl8e", {
-                    user_name: name,
-                    user_email: email,
-                    user_mobile: mobile,
-                    user_subject: subject,
-                    user_message: message,
-                }, "Sacyc-iZZjqaHwzks")
-                    .then(() => {
-                        alert("Message sent successfully!");
-                        contactForm.reset();
-                    })
-                    .catch((error) => {
-                        console.error("EmailJS Error:", error);
-                        alert("Failed to send the message. Please try again.");
-                    })
-                    .finally(() => {
-                        submitButton.innerHTML = 'Send Message';
-                        submitButton.disabled = false;
-                    });
-            });
-        }
-    });
-    
+    const contactForm = document.getElementById("contactForm");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const mobile = document.getElementById("mobile").value.trim();
+            const subject = document.getElementById("subject").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (!name || !email || !mobile || !subject || !message) {
+                alert("Please fill out all fields.");
+                return;
+            }
+
+            if (!/^\d+$/.test(mobile)) {
+                alert("Please enter a valid mobile number.");
+                return;
+            }
+
+            const submitButton = contactForm.querySelector("button[type='submit']");
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitButton.disabled = true;
+
+            emailjs.send("service_po44xl8", "template_btttl8e", {
+                user_name: name,
+                user_email: email,
+                user_mobile: mobile,
+                user_subject: subject,
+                user_message: message,
+            }, "Sacyc-iZZjqaHwzks")
+                .then(() => {
+                    alert("Message sent successfully!");
+                    contactForm.reset();
+                })
+                .catch(() => {
+                    alert("Failed to send the message. Please try again.");
+                })
+                .finally(() => {
+                    submitButton.innerHTML = 'Send Message';
+                    submitButton.disabled = false;
+                });
+        });
+    }
+});

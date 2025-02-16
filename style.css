@@ -241,8 +241,13 @@ nav a:hover {
 }
 
 .service-item-front {
-    justify-content: flex-start;
     background: linear-gradient(135deg, #94ad97, #f9f9f9); /* Light gradient for front */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Ensures even spacing */
+    height: 100%;
+    padding: 15px;
 }
 
 .service-item-front img {
@@ -299,7 +304,8 @@ nav a:hover {
 .tapbtn {
     font-size: 24px;
     color: #002B5B;
-    padding-top: 20%;
+    margin-top: auto; /* Pushes the button to the bottom */
+    padding-bottom: 10px; /* Adds spacing */
     pointer-events: none;  /* Make it non-clickable */
 }
 
@@ -406,20 +412,42 @@ nav a:hover {
     padding: 50px 20px;
     background-color: #f4f4f4;
 }
+
+.honor-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative; 
+}
+
 .honor-content {
-    max-width: 800px;
-    margin: auto;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: relative;
 }
+
+.honor-container::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 96%; /* Adjust height as needed */
+    background-color: #4b434391; /* Change color if needed */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .honor-img {
     width: 200px;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
+
 
 #contact {
     background-color: #836b6b00;
@@ -572,6 +600,12 @@ footer {
     .honors-text {
         font-size: 1.1em;
     }
+    .honor-container {
+        flex-direction: column;
+    }
+    .honor-container::before {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -699,6 +733,13 @@ footer {
         width: 180px;
     }
 
+    .honor-container {
+        flex-direction: column;
+    }
+    .honor-container::before {
+        display: none;
+    }
+
     #contact {
         margin-left: 18px;
         margin-right: 18px;
@@ -744,7 +785,7 @@ footer {
 
 
     .service-item {
-        height: 250px;
+        height: 280px;
         
     }
 
@@ -754,7 +795,8 @@ footer {
     }
 
     .service-item-front h3 {
-        font-size: 1em; 
+        font-size: 1.2em; 
+        padding-top: 5%;
     }
 
     .service-item-back p {
@@ -801,6 +843,12 @@ footer {
     }
     .honors-img {
         width: 150px;
+    }
+    .honor-container {
+        flex-direction: column;
+    }
+    .honor-container::before {
+        display: none;
     }
 }
 
