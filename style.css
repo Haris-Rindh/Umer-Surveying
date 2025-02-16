@@ -73,7 +73,7 @@ nav.mobile {
     position: absolute;
     top: 60px;
     right: 10px;
-    background-color: #463a3a71;
+    background-color: #999999f3;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -108,7 +108,7 @@ nav a:hover {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background-color: #463a3a71;
+    background-color: #251c1c;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -294,6 +294,13 @@ nav a:hover {
 .service-item-back .cta-button:hover {
     background-color: #e09e00; /* Darker yellow on hover */
     transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.tapbtn {
+    font-size: 24px;
+    color: #002B5B;
+    padding-top: 20%;
+    pointer-events: none;  /* Make it non-clickable */
 }
 
 /*Courses Section*/
@@ -614,7 +621,7 @@ footer {
 
     .service-item {
         width: 90%; /* Adjust width for smaller screens */
-        height: auto; /* Allow flexible height on small screens */
+        height: 1000px; /* Allow flexible height on small screens */
     }
 
     .services-grid {
@@ -636,6 +643,7 @@ footer {
 
     .service-item-front h3 {
         font-size: 1.3em; /* Smaller heading size */
+        padding-top: 20%;
     }
 
     .service-item-back p {
@@ -678,7 +686,10 @@ footer {
 
     .honor-content {
         flex-direction: row;
-        text-align: left;
+        text-align: center;
+        align-items: center;
+        display: inline;
+        font-size: 0.8rem;
     }
     .honors-text {
         font-size: 1em;
@@ -686,6 +697,11 @@ footer {
     }
     .honors-img {
         width: 180px;
+    }
+
+    #contact {
+        margin-left: 18px;
+        margin-right: 18px;
     }
 }
 
@@ -770,6 +786,13 @@ footer {
     .btn-cta {
         padding: 0.6rem 1.2rem; /* Smaller button padding */
         font-size: 0.9rem; /* Smaller button text */
+    }
+
+    .honor-content {
+        display: inline;
+        text-align: center;
+        align-items: center;
+        font-size: 0.7rem;
     }
 
     .honors-text {
