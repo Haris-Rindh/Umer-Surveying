@@ -1,161 +1,133 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Back and Next Buttons for Carousel
-    const servicesContainer = document.querySelector(".services-container");
-    const backBtn = document.getElementById("backBtn");
-    const nextBtn = document.getElementById("nextBtn");
+// Show More/Less for Blog Content
+const toggleBlogButtons = document.querySelectorAll(".toggle-blog");
 
-    if (servicesContainer && backBtn && nextBtn) {
-        backBtn.addEventListener("click", () => {
-            servicesContainer.scrollBy({ left: -300, behavior: "smooth" });
-        });
+toggleBlogButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const blogContent = button.previousElementSibling;
+        if (blogContent.style.display === "none" || blogContent.style.display === "") {
+            blogContent.style.display = "block";
+            button.textContent = "Show Less";
+        } else {
+            blogContent.style.display = "none";
+            button.textContent = "Show More";
+        }
+    });
+});
 
-        nextBtn.addEventListener("click", () => {
-            servicesContainer.scrollBy({ left: 300, behavior: "smooth" });
-        });
-    }
+// Ensure Images Fit Well on Small Screens
+const adjustImagesForSmallScreens = () => {
+    const images = document.querySelectorAll("img");
+    const isSmallScreen = window.innerWidth <= 768;
 
-    // Scroll Animations
-    const animateOnScroll = () => {
-        const elements = document.querySelectorAll(".animate-on-scroll");
-        const windowBottom = window.innerHeight + window.scrollY;
+    images.forEach(image => {
+        if (isSmallScreen) {
+            image.style.maxWidth = "100%";
+            image.style.height = "auto";
+            image.style.margin = "0 auto";
+        } else {
+            image.style.removeProperty("max-width");
+            image.style.removeProperty("height");
+            image.style.removeProperty("margin");
+        }
+    });
+};
 
-        elements.forEach((element) => {
-            if (windowBottom > element.getBoundingClientRect().top + window.scrollY) {
-                element.style.opacity = 1;
-                element.style.transform = "translateY(0)";
-            }
-        });
-    };
+window.addEventListener("resize", adjustImagesForSmallScreens);
+adjustImagesForSmallScreens();
 
-    window.addEventListener("scroll", animateOnScroll);
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const hamburger = document.querySelector('.hamburger');
-        const mobileNav = document.querySelector('nav.mobile');
-    
-        hamburger.addEventListener('click', function () {
-          this.classList.toggle('active');
-          mobileNav.classList.toggle('active');
-        });
-      });
-
-    // Back-to-Top Button
-    const backToTopBtn = document.getElementById("backToTop");
-
-    if (backToTopBtn) {
-        window.addEventListener("scroll", () => {
-            backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
-        });
-
-        backToTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-    }
-
-    // Mobile Navigation Toggle
-    const hamburger = document.createElement("div");
-    hamburger.classList.add("hamburger");
-    hamburger.innerHTML = `
+const hamburger = document.createElement("div");
+        hamburger.classList.add("hamburger");
+        hamburger.innerHTML = `
         <span></span>
         <span></span>
         <span></span>
     `;
 
-    const header = document.querySelector(".main-header");
-    const nav = document.querySelector("nav");
+        const header = document.querySelector(".main-header");
+        const nav = document.querySelector("nav");
 
-    if (header && nav) {
-        header.insertBefore(hamburger, nav);
+        if (header && nav) {
+            header.insertBefore(hamburger, nav);
 
-        hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
-            nav.classList.toggle("mobile");
-            nav.classList.toggle("active");
-        });
-    }
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                nav.classList.toggle("mobile");
+                nav.classList.toggle("active");
+            });
+        }
 
-    // Show More/Less for Blog Content
-    const toggleBlogButtons = document.querySelectorAll(".toggle-blog");
+        // Back to top button
+        const backToTop = document.getElementById("backToTop");
 
-    toggleBlogButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            const blogContent = button.previousElementSibling;
-            if (blogContent.style.display === "none" || blogContent.style.display === "") {
-                blogContent.style.display = "block";
-                button.textContent = "Show Less";
+        window.addEventListener("scroll", function () {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add("active");
             } else {
-                blogContent.style.display = "none";
-                button.textContent = "Show More";
+                backToTop.classList.remove("active");
             }
         });
-    });
 
-    // Ensure Images Fit Well on Small Screens
-    const adjustImagesForSmallScreens = () => {
-        const images = document.querySelectorAll("img");
-        const isSmallScreen = window.innerWidth <= 768;
-
-        images.forEach(image => {
-            if (isSmallScreen) {
-                image.style.maxWidth = "100%";
-                image.style.height = "auto";
-                image.style.margin = "0 auto";
-            } else {
-                image.style.removeProperty("max-width");
-                image.style.removeProperty("height");
-                image.style.removeProperty("margin");
-            }
+        backToTop.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+            });
         });
-    };
 
-    window.addEventListener("resize", adjustImagesForSmallScreens);
-    adjustImagesForSmallScreens();
-
-    // EmailJS Integration for Contact Form
-    const contactForm = document.getElementById("contactForm");
-
-    if (contactForm) {
-        contactForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const mobile = document.getElementById("mobile").value.trim();
-            const subject = document.getElementById("subject").value.trim();
-            const message = document.getElementById("message").value.trim();
-
-            if (!name || !email || !mobile || !subject || !message) {
-                alert("Please fill out all fields.");
-                return;
-            }
-
-            if (!/^\d+$/.test(mobile)) {
-                alert("Please enter a valid mobile number.");
-                return;
-            }
-
-            const submitButton = contactForm.querySelector("button[type='submit']");
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            submitButton.disabled = true;
-
-            emailjs.send("service_po44xl8", "template_btttl8e", {
-                user_name: name,
-                user_email: email,
-                user_mobile: mobile,
-                user_subject: subject,
-                user_message: message,
-            }, "Sacyc-iZZjqaHwzks")
-                .then(() => {
-                    alert("Message sent successfully!");
-                    contactForm.reset();
-                })
-                .catch(() => {
-                    alert("Failed to send the message. Please try again.");
-                })
-                .finally(() => {
-                    submitButton.innerHTML = 'Send Message';
-                    submitButton.disabled = false;
-                });
-        });
+        // Header scroll effect
+window.addEventListener("scroll", function () {
+    const header = document.querySelector("header");
+    if (!header) return;
+    
+    if (window.pageYOffset > 50) {
+        header.style.padding = "0.5rem 1rem"; // Keep some padding to prevent content jump
+        header.style.boxShadow = "0 2px 15px rgba(0, 0, 0, 0.2)";
+    } else {
+        header.style.padding = "0.8rem 1rem"; // Match your original padding
+        header.style.boxShadow = "";
     }
 });
+
+        const contactForm = document.getElementById("contactForm");
+
+        if (contactForm) {
+            contactForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const phone = document.getElementById("phone").value.trim();
+                const subject = document.getElementById("subject").value.trim();
+                const message = document.getElementById("message").value.trim();
+
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const mobilePattern = /^[0-9]{10,15}$/;
+
+                if (!name || !email || !phone || !subject || !message) {
+                    alert("All fields are required.");
+                    return;
+                }
+
+                if (!emailPattern.test(email)) {
+                    alert("Please enter a valid email address.");
+                    return;
+                }
+
+                if (!mobilePattern.test(phone)) {
+                    alert(
+                        "Please enter a valid phone number (only digits, 10-15 characters)."
+                    );
+                    return;
+                }
+
+                const whatsappNumber = "923075859035";
+
+                const whatsappMessage = `Hello! I want to contact you.\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n*Subject:* ${subject}\n*Message:* ${message}`;
+
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+
+                const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+                window.open(whatsappURL, "_blank");
+            });
+        }
