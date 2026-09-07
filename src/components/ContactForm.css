@@ -1,0 +1,166 @@
+/* ContactForm Styles — Labels Left, Inputs Right */
+
+.contact-form-wrapper {
+  background-color: var(--paper);
+  border: 1px solid var(--rule-color);
+  padding: 24px;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--rule-color);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.form-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--blueprint);
+  letter-spacing: 0.05em;
+}
+
+.form-legend-note {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(19, 30, 41, 0.5);
+  letter-spacing: 0.03em;
+}
+
+/* Grid Layout: Labels Left, Inputs Right */
+.cadastral-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-field-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.field-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+  padding-top: 10px;
+  text-align: left;
+}
+
+.req-mark {
+  color: var(--flag-orange);
+}
+
+.field-input-box {
+  width: 100%;
+}
+
+.technical-input {
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--ink);
+  background-color: #FFFFFF;
+  border: 1px solid var(--blueprint);
+  padding: 10px 14px;
+  line-height: 1.5;
+  transition: border-color 0.15s ease, outline 0.15s ease;
+}
+
+.technical-input:focus {
+  border-color: var(--flag-orange);
+  outline: 2px solid var(--flag-orange);
+  outline-offset: 1px;
+}
+
+.technical-input::placeholder {
+  color: rgba(19, 30, 41, 0.4);
+  font-size: 13px;
+}
+
+.technical-select {
+  cursor: pointer;
+}
+
+.technical-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* Submit Row */
+.form-submit-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--rule-color);
+}
+
+.submit-action-box {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.submit-confidential-note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--blueprint);
+  letter-spacing: 0.04em;
+}
+
+/* Success Banner */
+.form-success-banner {
+  background-color: rgba(74, 107, 90, 0.08);
+  border: 1px solid var(--contour);
+  padding: 24px;
+}
+
+.success-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--contour);
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.success-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.success-text {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .form-field-row,
+  .form-submit-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .submit-label-spacer {
+    display: none;
+  }
+  .field-label {
+    padding-top: 0;
+  }
+}

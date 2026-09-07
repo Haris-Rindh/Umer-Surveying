@@ -1,0 +1,165 @@
+/* Header Styling — Technical Drafting Title Block */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--paper);
+  background-image: 
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  max-width: 1300px;
+  margin: 0;
+}
+
+.title-block {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.header-logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: contrast(1.1);
+}
+
+.title-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+.brand-tm {
+  font-size: 11px;
+  vertical-align: super;
+  font-family: var(--font-mono);
+}
+
+.brand-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--blueprint);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  padding: 6px 10px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s ease;
+  text-transform: uppercase;
+}
+
+.nav-link:hover {
+  color: var(--flag-orange);
+  border-bottom-color: var(--flag-orange);
+}
+
+.nav-link.active {
+  color: var(--blueprint);
+  border-bottom-color: var(--blueprint);
+}
+
+.nav-link-cta {
+  background-color: transparent;
+  border: 1px solid var(--blueprint);
+  color: var(--blueprint);
+  padding: 6px 14px;
+}
+
+.nav-link-cta:hover {
+  background-color: var(--blueprint);
+  color: var(--paper);
+  border-color: var(--blueprint);
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 28px;
+  background: transparent;
+  border: 1px solid var(--ink);
+  padding: 4px;
+  cursor: pointer;
+}
+
+.toggle-bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--ink);
+  display: block;
+}
+
+/* Mobile Nav Drawer */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--paper);
+  border-top: 1px solid var(--rule-color);
+  padding: 16px 24px;
+  gap: 12px;
+}
+
+.mobile-nav-link {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--ink);
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--rule-color);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.mobile-nav-link.cta {
+  color: var(--flag-orange);
+  font-weight: 600;
+}
+
+@media (max-width: 880px) {
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
+  .brand-sub {
+    display: none;
+  }
+}

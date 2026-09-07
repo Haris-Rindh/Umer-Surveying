@@ -1,0 +1,222 @@
+/* ==========================================================================
+   DESIGN TOKENS & SYSTEM BASE — UMER SURVEYING™
+   Blueprint / Field Plat Design Language
+   ========================================================================== */
+
+:root {
+  /* Color */
+  --paper: #E7E4D9;        /* base background — linen drafting paper */
+  --ink: #131E29;          /* primary text — blue-black ink */
+  --blueprint: #1C3F60;    /* structural accent — Prussian blue */
+  --flag-orange: #C4592B;  /* action color — survey flagging tape */
+  --contour: #4A6B5A;      /* map linework — muted elevation green */
+  --brass: #A8823C;        /* founder seals / benchmark motif only */
+
+  /* Type */
+  --font-display: 'IBM Plex Sans Condensed', sans-serif; /* headlines */
+  --font-mono: 'IBM Plex Mono', monospace;                /* coordinates, dates, data */
+  --font-body: 'IBM Plex Sans', sans-serif;               /* body copy */
+
+  /* Layout */
+  --spine-offset: 64px;         /* left drafting margin, desktop */
+  --spine-offset-mobile: 24px;  /* left margin, mobile */
+  --rule-color: rgba(19, 30, 41, 0.15); /* hairline dividers between sections */
+  --radius: 0;                  /* no rounded corners anywhere */
+  --max-line: 72ch;             /* body text max line length */
+
+  /* Grid paper pattern (hairline drafting lines) */
+  --grid-line: rgba(28, 63, 96, 0.04);
+}
+
+/* CSS Reset & Drafting Grid Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: var(--radius) !important;
+  box-shadow: none !important;
+}
+
+html {
+  font-size: 16px;
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--paper);
+  background-image: 
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+  color: var(--ink);
+  position: relative;
+}
+
+/* Drafting Spine: vertical rule at --spine-offset from left */
+.drafting-layout {
+  position: relative;
+  min-height: 100vh;
+  padding-left: var(--spine-offset);
+  border-left: 1px solid var(--rule-color);
+  margin-left: 0;
+}
+
+@media (max-width: 800px) {
+  .drafting-layout {
+    padding-left: var(--spine-offset-mobile);
+  }
+}
+
+/* Typography System */
+h1, .h1-display {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  h1, .h1-display {
+    font-size: 32px;
+  }
+}
+
+h2, .h2-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+  text-align: left;
+}
+
+h3, .h3-subtitle {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--ink);
+  text-align: left;
+}
+
+p, .body-copy {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--ink);
+  max-width: var(--max-line);
+  text-align: left;
+}
+
+.data-mono, .plat-notation {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.plat-code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--blueprint);
+}
+
+/* Interactive Elements & Focus States */
+a {
+  color: var(--blueprint);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--flag-orange);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--flag-orange);
+  outline-offset: 2px;
+}
+
+/* Buttons (Strictly technical: no rounded corners, no gradients, no trailing arrows) */
+.btn-survey {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background-color: var(--flag-orange);
+  color: #FFFFFF;
+  border: 1px solid var(--flag-orange);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-survey:hover {
+  background-color: #A3451E;
+  color: #FFFFFF;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+.btn-outline:hover {
+  background-color: var(--ink);
+  color: var(--paper);
+}
+
+/* Dividers & Hairlines */
+.hairline-rule {
+  width: 100%;
+  height: 1px;
+  background-color: var(--rule-color);
+  border: none;
+  margin: 0;
+}
+
+/* Accessible hidden text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

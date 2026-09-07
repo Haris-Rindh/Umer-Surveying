@@ -1,0 +1,22 @@
+{
+  "name": "umer-surveying",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Umer Surveying™ — Land Surveying and GIS Consultancy, Multan, Pakistan",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "rename-images": "node scripts/rename-images.js"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.3"
+  }
+}

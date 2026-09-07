@@ -1,0 +1,133 @@
+/* LegendRow Component Styles — Survey Map Legend Styling */
+
+.legend-row {
+  width: 100%;
+  background-color: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.legend-row:hover {
+  background-color: rgba(28, 63, 96, 0.03);
+}
+
+.legend-main {
+  display: grid;
+  grid-template-columns: 48px 240px 1fr 180px;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 12px;
+}
+
+/* Symbol Box */
+.legend-symbol-box {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--blueprint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--paper);
+}
+
+.legend-glyph {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  color: var(--blueprint);
+  line-height: 1;
+}
+
+/* Info & Code */
+.legend-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.legend-code-line {
+  margin-bottom: 2px;
+}
+
+.legend-code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--blueprint);
+  letter-spacing: 0.04em;
+}
+
+.legend-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+/* Description & Scope */
+.legend-description-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.legend-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.legend-scope {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: rgba(19, 30, 41, 0.6);
+  letter-spacing: 0.02em;
+}
+
+/* Action Link */
+.legend-action {
+  text-align: right;
+}
+
+.legend-link {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--blueprint);
+  letter-spacing: 0.03em;
+  padding: 6px 12px;
+  border: 1px solid var(--blueprint);
+  display: inline-block;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+}
+
+.legend-link:hover {
+  background-color: var(--blueprint);
+  color: var(--paper);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .legend-main {
+    grid-template-columns: 40px 200px 1fr auto;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .legend-main {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px 8px;
+  }
+
+  .legend-symbol-box {
+    width: 32px;
+    height: 32px;
+  }
+
+  .legend-action {
+    text-align: left;
+    margin-top: 4px;
+  }
+}

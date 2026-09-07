@@ -1,0 +1,139 @@
+/* Founder Seal Component Styles */
+
+.founder-seal-card {
+  border: 1px solid var(--rule-color);
+  background-color: var(--paper);
+  padding: 20px;
+  position: relative;
+  transition: border-color 0.15s ease;
+}
+
+.founder-seal-card:hover {
+  border-color: var(--brass);
+}
+
+.seal-outer-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.seal-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--rule-color);
+  padding-bottom: 8px;
+}
+
+.seal-stamp-id {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--brass);
+  letter-spacing: 0.08em;
+}
+
+.seal-established {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(19, 30, 41, 0.5);
+  letter-spacing: 0.05em;
+}
+
+.seal-body {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Round Benchmark Stamp */
+.seal-portrait-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seal-round-stamp {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border: 2px solid var(--brass);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--paper);
+}
+
+.seal-circular-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.seal-portrait-image {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(15%) contrast(1.05);
+}
+
+/* Content */
+.seal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.seal-name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.15;
+  margin-bottom: 4px;
+}
+
+.seal-title-line {
+  margin-bottom: 6px;
+}
+
+.seal-title {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--blueprint);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.seal-credentials {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--brass);
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--rule-color);
+}
+
+.seal-bio {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .seal-body {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: left;
+  }
+}
