@@ -1,4 +1,4 @@
-/* LegendRow Component Styles — Survey Map Legend Styling */
+/* LegendRow Component Styles — Survey Services Directory */
 
 .legend-row {
   width: 100%;
@@ -12,10 +12,10 @@
 
 .legend-main {
   display: grid;
-  grid-template-columns: 48px 240px 1fr 180px;
+  grid-template-columns: 44px 220px 1fr auto;
   align-items: center;
   gap: 24px;
-  padding: 18px 12px;
+  padding: 20px 12px;
 }
 
 /* Symbol Box */
@@ -36,68 +36,49 @@
   line-height: 1;
 }
 
-/* Info & Code */
+/* Info */
 .legend-info {
   display: flex;
   flex-direction: column;
 }
 
-.legend-code-line {
-  margin-bottom: 2px;
-}
-
-.legend-code {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--blueprint);
-  letter-spacing: 0.04em;
-}
-
 .legend-title {
   font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 19px;
+  font-weight: 600;
   color: var(--ink);
   line-height: 1.2;
 }
 
-/* Description & Scope */
+/* Description */
 .legend-description-block {
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
 
 .legend-desc {
   font-family: var(--font-body);
   font-size: 15px;
   color: var(--ink);
-  line-height: 1.45;
+  line-height: 1.5;
   margin: 0;
-}
-
-.legend-scope {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: rgba(19, 30, 41, 0.6);
-  letter-spacing: 0.02em;
 }
 
 /* Action Link */
 .legend-action {
   text-align: right;
+  white-space: nowrap;
 }
 
 .legend-link {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 500;
   color: var(--blueprint);
   letter-spacing: 0.03em;
-  padding: 6px 12px;
+  padding: 8px 14px;
   border: 1px solid var(--blueprint);
   display: inline-block;
-  text-transform: uppercase;
   transition: all 0.15s ease;
 }
 
@@ -109,7 +90,7 @@
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .legend-main {
-    grid-template-columns: 40px 200px 1fr auto;
+    grid-template-columns: 40px 180px 1fr auto;
     gap: 16px;
   }
 }

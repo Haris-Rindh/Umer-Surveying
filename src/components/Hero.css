@@ -2,9 +2,8 @@
 
 .hero-section {
   position: relative;
-  padding: 60px 40px 70px 0;
+  padding: 96px 40px 96px 0;
   overflow: hidden;
-  border-bottom: 1px solid var(--rule-color);
   background-color: transparent;
 }
 
@@ -64,7 +63,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
   padding: 10px 0;
 }
 
@@ -114,7 +113,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 10px;
+  margin-top: 12px;
   font-family: var(--font-mono);
   font-size: 14px;
   font-weight: 500;
@@ -129,44 +128,11 @@
   color: var(--flag-orange);
 }
 
-.benchmark-sub {
-  margin-top: 4px;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--blueprint);
-  letter-spacing: 0.06em;
-  text-align: center;
-}
-
 /* Left-Aligned Headline & Content (Hangs off spine) */
 .hero-content {
   position: relative;
   z-index: 3;
   max-width: 900px;
-}
-
-.plat-record-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
-}
-
-.plat-badge {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--blueprint);
-  border-left: 3px solid var(--flag-orange);
-  padding-left: 8px;
-  letter-spacing: 0.04em;
-}
-
-.plat-date {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  color: rgba(19, 30, 41, 0.65);
 }
 
 .hero-h1 {
@@ -176,7 +142,7 @@
   line-height: 1.15;
   color: var(--ink);
   letter-spacing: -0.01em;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   max-width: 850px;
 }
 
@@ -185,7 +151,7 @@
   font-size: 18px;
   line-height: 1.6;
   color: var(--ink);
-  margin-bottom: 32px;
+  margin-bottom: 36px;
   max-width: var(--max-line);
 }
 
@@ -201,17 +167,10 @@
   font-size: 14px;
 }
 
-.hero-specs-note {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--blueprint);
-  letter-spacing: 0.04em;
-}
-
 /* Responsive Overrides */
 @media (max-width: 800px) {
   .hero-section {
-    padding: 40px 16px 50px 0;
+    padding: 60px 16px 60px 0;
   }
   .hero-h1 {
     font-size: 32px;
@@ -220,7 +179,7 @@
     font-size: 16px;
   }
   .hero-benchmark-center {
-    margin-bottom: 28px;
+    margin-bottom: 32px;
   }
   .hero-action-line {
     flex-direction: column;

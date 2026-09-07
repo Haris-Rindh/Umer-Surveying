@@ -38,45 +38,45 @@ export default function Footer() {
               </svg>
             </div>
             <div className="bm-text-data">
-              <span className="bm-label">GEODETIC BENCHMARK MARK // MULTAN</span>
+              <span className="bm-label">Geodetic Benchmark • Multan</span>
               <span className="bm-coords">30.2447° N, 71.4923° E</span>
               <span className="bm-datum">DATUM: WGS 84 • ELEVATION 124.0m</span>
             </div>
           </div>
         </div>
 
-        {/* Col 2: Direct Links (Multi-page consistent anchors per Section 7 item 2) */}
+        {/* Col 2: Direct Links */}
         <div className="footer-col col-links">
           <h3 className="footer-col-heading">System Index</h3>
           <ul className="footer-links-list">
             <li>
               <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                01 // Home Overview
+                Home
               </Link>
             </li>
             <li>
               <Link to="/#services" onClick={() => scrollToAnchor('services')}>
-                02 // Survey Services
+                Services
               </Link>
             </li>
             <li>
               <Link to="/portfolio">
-                03 // Portfolio Plats
+                Portfolio
               </Link>
             </li>
             <li>
               <Link to="/#about" onClick={() => scrollToAnchor('about')}>
-                04 // About Consultancy
+                About
               </Link>
             </li>
             <li>
               <Link to="/blog">
-                05 // Field Notes &amp; Dispatches
+                Field Notes
               </Link>
             </li>
             <li>
               <Link to="/#contact" onClick={() => scrollToAnchor('contact')}>
-                06 // Requisition &amp; Contact
+                Contact
               </Link>
             </li>
           </ul>

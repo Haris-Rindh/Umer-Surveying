@@ -3,7 +3,7 @@
 .founder-seal-card {
   border: 1px solid var(--rule-color);
   background-color: var(--paper);
-  padding: 20px;
+  padding: 24px;
   position: relative;
   transition: border-color 0.15s ease;
 }
@@ -15,36 +15,12 @@
 .seal-outer-frame {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-}
-
-.seal-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--rule-color);
-  padding-bottom: 8px;
-}
-
-.seal-stamp-id {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--brass);
-  letter-spacing: 0.08em;
-}
-
-.seal-established {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: rgba(19, 30, 41, 0.5);
-  letter-spacing: 0.05em;
 }
 
 .seal-body {
   display: grid;
   grid-template-columns: 140px 1fr;
-  gap: 20px;
+  gap: 24px;
   align-items: flex-start;
 }
 

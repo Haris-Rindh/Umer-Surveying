@@ -102,42 +102,42 @@ export default function Header() {
             className="mobile-nav-link"
             onClick={() => handleNavClick(null)}
           >
-            01 // Home
+            Home
           </Link>
           <Link 
             to="/#services" 
             className="mobile-nav-link"
             onClick={() => handleNavClick('services')}
           >
-            02 // Services
+            Services
           </Link>
           <Link 
             to="/portfolio" 
             className="mobile-nav-link"
             onClick={() => setMobileOpen(false)}
           >
-            03 // Portfolio
+            Portfolio
           </Link>
           <Link 
             to="/#about" 
             className="mobile-nav-link"
             onClick={() => handleNavClick('about')}
           >
-            04 // About
+            About
           </Link>
           <Link 
             to="/blog" 
             className="mobile-nav-link"
             onClick={() => setMobileOpen(false)}
           >
-            05 // Field Notes
+            Field Notes
           </Link>
           <Link 
             to="/#contact" 
             className="mobile-nav-link cta"
             onClick={() => handleNavClick('contact')}
           >
-            06 // Contact &amp; Plats
+            Contact
           </Link>
         </nav>
       )}

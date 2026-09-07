@@ -1,5 +1,4 @@
 import React from 'react';
-import ContourDivider from '../components/ContourDivider';
 import { postsData } from '../data/posts';
 import { useDocumentTitle } from '../utils/seo';
 import './Blog.css';
@@ -11,11 +10,6 @@ export default function Blog() {
     <div className="blog-page-flow">
       {/* Field Notes Header Docket */}
       <section className="blog-intro-docket" aria-label="Field Notes Header Docket">
-        <div className="docket-header-bar">
-          <span className="docket-registry-tag">FIELD DISPATCHES // TECHNICAL MEMORANDA</span>
-          <span className="docket-record-count">PUBLISHED LOGS: 02 ENTRIES</span>
-        </div>
-
         <h1 className="blog-h1">
           Field Notes &amp; Technical Dispatches
         </h1>
@@ -25,19 +19,16 @@ export default function Blog() {
         </p>
 
         <div className="blog-disclaimer-strip">
-          <span className="disclaimer-badge">PRACTICE STANDARDS //</span>
+          <span className="disclaimer-badge">PRACTICE STANDARDS:</span>
           <span className="disclaimer-text">
             Observations derived from active field surveys across Southern Punjab, Survey of Pakistan benchmarks, and municipal infrastructure assessments.
           </span>
         </div>
       </section>
 
-      {/* Elevation Line Divider */}
-      <ContourDivider elevation="125.10m" label="DISPATCH 01 LOG" />
-
-      {/* Field Notes List — Full Text Visible (No JS truncated Show More) */}
+      {/* Field Notes List — Full Text Visible */}
       <div className="dispatches-container">
-        {postsData.map((post, postIdx) => (
+        {postsData.map((post) => (
           <article 
             key={post.id} 
             className="dispatch-entry" 
@@ -90,14 +81,9 @@ export default function Blog() {
             {/* Dispatch Footer Seal */}
             <div className="dispatch-seal-footer">
               <span className="seal-notation">
-                VERIFIED FIELD DISPATCH // UMER SURVEYING™ CADASTRAL ARCHIVE • MULTAN
+                VERIFIED FIELD DISPATCH • UMER SURVEYING™ CADASTRAL ARCHIVE • MULTAN
               </span>
             </div>
-
-            {/* Hairline Divider Between Dispatches */}
-            {postIdx < postsData.length - 1 && (
-              <ContourDivider elevation={`125.${(postIdx + 6) * 10}m`} label="DISPATCH BREAK" />
-            )}
           </article>
         ))}
       </div>

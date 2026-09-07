@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Hero.css';
 
 export default function Hero() {
@@ -12,7 +11,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="hero-section" aria-label="Field Plat & Geodetic Hero">
+    <section className="hero-section" aria-label="Precision Land Surveying & GIS Analysis">
       {/* Background Animated Contour Lines Illustration */}
       <div className="hero-contour-canvas" aria-hidden="true">
         <svg 
@@ -37,7 +36,7 @@ export default function Hero() {
         </svg>
       </div>
 
-      {/* Centered Coordinate Crosshair & Benchmark Stamp */}
+      {/* Centered Coordinate Crosshair & Benchmark Mark (Earned Technical Detail) */}
       <div className="hero-benchmark-center">
         <div className="crosshair-reticle">
           <div className="crosshair-h"></div>
@@ -50,18 +49,10 @@ export default function Hero() {
           <span className="coord-sep">•</span>
           <span className="coord-val">71.4923° E</span>
         </div>
-        <div className="benchmark-sub">
-          DATUM: WGS 84 / SURVEY OF PAKISTAN BENCHMARK // MULTAN 60200
-        </div>
       </div>
 
       {/* Left-Aligned Headline, Intro & Single CTA */}
       <div className="hero-content">
-        <div className="plat-record-header">
-          <span className="plat-badge">FIELD PLAT DISPATCH // RECONNAISSANCE</span>
-          <span className="plat-date">EST. 2022 • MULTAN, PUNJAB</span>
-        </div>
-
         <h1 className="hero-h1">
           Precision Land Surveying &amp; GIS Analysis
         </h1>
@@ -72,11 +63,8 @@ export default function Hero() {
 
         <div className="hero-action-line">
           <a href="#contact" className="btn-survey hero-cta" onClick={scrollToContact}>
-            Request Survey Consultation
+            Request a survey consultation
           </a>
-          <span className="hero-specs-note">
-            COMMISSIONING: INFRASTRUCTURE • CADASTRAL • AGRICULTURE • VALUATION
-          </span>
         </div>
       </div>
     </section>

@@ -10,7 +10,7 @@ export default function PlatRecord({ project }) {
       <div className="record-header-docket">
         <div className="docket-top-line">
           <span className="record-number-badge">{project.recordNumber}</span>
-          <span className="record-status-stamp">VERIFIED SURVEY RECORD // EXECUTED</span>
+          <span className="record-status-stamp">VERIFIED SURVEY RECORD</span>
         </div>
 
         <h3 className="record-title">{project.title}</h3>
@@ -66,7 +66,6 @@ export default function PlatRecord({ project }) {
               className="primary-drawing-img" 
             />
             <div className="drawing-caption-bar">
-              <span className="caption-tag">SURVEY SHEET //</span>
               <span className="caption-text">{project.images[activeImageIndex].caption}</span>
             </div>
           </div>

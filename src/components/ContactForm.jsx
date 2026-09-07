@@ -57,27 +57,15 @@ export default function ContactForm() {
 
   return (
     <div className="contact-form-wrapper">
-      <div className="form-header">
-        <span className="form-badge">FORM 01-SR // FORMAL SURVEY COMMISSION INTAKE</span>
-        <span className="form-legend-note">ALL SPECIFICATIONS TREATED UNDER CONFIDENTIAL CLIENT PRIVILEGE</span>
-      </div>
-
       {submitted ? (
         <div className="form-success-banner" role="status" aria-live="polite">
-          <div className="success-badge">TRANSMISSION CONFIRMED // LOGGED</div>
           <h3 className="success-title">Consultation Requisition Received</h3>
           <p className="success-text">
-            Your survey inquiry for <strong>{formData.serviceRequired}</strong> has been logged to our active survey dispatch desk. Our chief surveyor will review your parcel specifications and contact you directly at <strong>{formData.phone || formData.email}</strong> within 24 hours.
+            Your survey inquiry for <strong>{formData.serviceRequired}</strong> has been received. Our chief surveyor will review your parcel specifications and contact you directly at <strong>{formData.phone || formData.email}</strong> within 24 hours.
           </p>
           <div className="success-action">
-            <a 
-              href={`mailto:farooqista_n@icloud.com?subject=${encodeURIComponent(`Survey Requisition: ${formData.serviceRequired} - ${formData.fullName}`)}&body=${encodeURIComponent(`Client: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.serviceRequired}\nParcel Location: ${formData.parcelLocation}\nScope: ${formData.projectScope}`)}`}
-              className="btn-survey"
-            >
-              Dispatch Copy to Email
-            </a>
-            <button type="button" className="btn-survey btn-outline" onClick={handleReset}>
-              Submit Another Field Requisition
+            <button type="button" className="btn-survey" onClick={handleReset}>
+              Request a survey consultation
             </button>
           </div>
         </div>
@@ -205,7 +193,7 @@ export default function ContactForm() {
             </div>
           </div>
 
-          {/* Submit Row */}
+          {/* Submit Row: exactly one action */}
           <div className="form-submit-row">
             <div className="submit-label-spacer"></div>
             <div className="submit-action-box">
@@ -214,11 +202,8 @@ export default function ContactForm() {
                 className="btn-survey" 
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Logging Requisition..." : "Transmit Survey Requisition"}
+                {isSubmitting ? "Logging Requisition..." : "Request a survey consultation"}
               </button>
-              <span className="submit-confidential-note">
-                DIRECT TO CHIEF SURVEYOR DESK • 24/7 ROSTER
-              </span>
             </div>
           </div>
         </form>

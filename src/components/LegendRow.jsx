@@ -15,34 +15,30 @@ export default function LegendRow({ service, onSelect }) {
   return (
     <article className="legend-row" aria-label={`Survey Service: ${service.label}`}>
       <div className="legend-main">
-        {/* Technical Surveying Symbol */}
+        {/* Technical Surveying Symbol / Icon */}
         <div className="legend-symbol-box" aria-hidden="true">
           <span className="legend-glyph">{service.symbol}</span>
         </div>
 
-        {/* Identification & Title */}
+        {/* Service Name */}
         <div className="legend-info">
-          <div className="legend-code-line">
-            <span className="legend-code">{service.code}</span>
-          </div>
           <h3 className="legend-title">{service.label}</h3>
         </div>
 
-        {/* Technical Description (Section 5 Voice) */}
+        {/* One-Sentence Description */}
         <div className="legend-description-block">
           <p className="legend-desc">{service.description}</p>
-          <span className="legend-scope">{service.scope}</span>
         </div>
 
-        {/* Service Action Link (directs to /#contact, no trailing arrow) */}
+        {/* Single Action */}
         <div className="legend-action">
           <a 
             href="#contact" 
             className="legend-link"
             onClick={handleClick}
-            aria-label={`Inquire about ${service.label}`}
+            aria-label={`Ask about ${service.label}`}
           >
-            Inquire Specification
+            Ask about this service.
           </a>
         </div>
       </div>

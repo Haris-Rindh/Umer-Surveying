@@ -7,7 +7,6 @@ export const foundersData = [
   {
     name: "Muhammad Umer Farooq",
     title: "Strategic Manager & Founder",
-    sealCode: "SEAL-01/UF",
     credentials: "Specialist in GIS-Integrated Surveys, BIM Workflows, & Cadastral Mapping",
     bio: "Muhammad Umer Farooq founded Umer Surveying in 2022. He directs the firm's strategic operations, integrating modern total station and GNSS field data with advanced GIS platforms and BIM architectural models for public and private clients.",
     image: "/images/farooq.svg",
@@ -16,7 +15,6 @@ export const foundersData = [
   {
     name: "Nazar Muhammad",
     title: "Managing Director & Chief Surveyor",
-    sealCode: "SEAL-02/NM",
     credentials: "35 Years of Fieldwork Experience in Topographic & Cadastral Land Surveying",
     bio: "Nazar Muhammad oversees all technical field operations and boundary verification. With 35 years of active field experience across Southern Punjab and nationwide infrastructure projects, he guarantees survey precision and adherence to Pakistan revenue benchmarks.",
     image: "/images/mr-nazar.svg",

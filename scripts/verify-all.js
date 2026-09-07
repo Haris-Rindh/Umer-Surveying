@@ -107,6 +107,38 @@ check('SEO config has unique home title', seoJs.includes('home:'));
 check('SEO config has unique portfolio title', seoJs.includes('portfolio:'));
 check('SEO config has unique blog title', seoJs.includes('blog:'));
 
+// 8. Check Removed Reference Codes (SVC-xx, SEAL-xx, Hero datum)
+const servicesJs = fs.readFileSync(path.join(rootDir, 'src/data/services.js'), 'utf-8');
+check('src/data/services.js does not contain SVC- codes', !servicesJs.includes('SVC-'));
+
+const foundersJs = fs.readFileSync(path.join(rootDir, 'src/data/founders.js'), 'utf-8');
+check('src/data/founders.js does not contain SEAL- tags', !foundersJs.includes('SEAL-'));
+
+const heroJsx = fs.readFileSync(path.join(rootDir, 'src/components/Hero.jsx'), 'utf-8');
+check('Hero.jsx does not contain datum string', !heroJsx.includes('DATUM: WGS 84 / SURVEY OF PAKISTAN BENCHMARK'));
+check('Hero.jsx retains coordinate mark 30.2447° N and 71.4923° E', heroJsx.includes('30.2447° N') && heroJsx.includes('71.4923° E'));
+
+// 9. Check Removed Eyebrow Labels (// style)
+const homeJsx = fs.readFileSync(path.join(rootDir, 'src/pages/Home.jsx'), 'utf-8');
+check('Home.jsx does not contain LEGEND REGISTER eyebrow', !homeJsx.includes('LEGEND REGISTER'));
+check('Home.jsx does not contain FIELD ACADEMY eyebrow', !homeJsx.includes('FIELD ACADEMY'));
+check('Home.jsx does not contain CADASTRAL RECONNAISSANCE eyebrow', !homeJsx.includes('CADASTRAL RECONNAISSANCE'));
+check('Home.jsx does not contain PRINCIPALS REGISTER eyebrow', !homeJsx.includes('PRINCIPALS REGISTER'));
+check('Hero.jsx does not contain FIELD PLAT DISPATCH eyebrow', !heroJsx.includes('FIELD PLAT DISPATCH'));
+
+// 10. Check Service Row action button
+const legendRowJsx = fs.readFileSync(path.join(rootDir, 'src/components/LegendRow.jsx'), 'utf-8');
+check('LegendRow.jsx contains "Ask about this service."', legendRowJsx.includes('Ask about this service.'));
+check('LegendRow.jsx does not contain SPECIFICATION button', !legendRowJsx.includes('SPECIFICATION') && !legendRowJsx.includes('THQUIRE'));
+
+// 11. Check Unified Primary CTA
+check('Hero.jsx uses unified primary CTA "Request a survey consultation"', heroJsx.includes('Request a survey consultation'));
+check('Home.jsx uses unified primary CTA "Request a survey consultation"', homeJsx.includes('Request a survey consultation'));
+
+// 12. Check index.html has no merge conflict markers and single contact section
+check('index.html has no git conflict markers', !indexHtml.includes('<<<<<<<') && !indexHtml.includes('=======') && !indexHtml.includes('>>>>>>>'));
+check('index.html has only one body element', (indexHtml.match(/<body/g) || []).length === 1);
+
 console.log(`\nPASSED CHECKS: ${passes.length}`);
 if (errors.length > 0) {
   console.error(`FAILED CHECKS (${errors.length}):`);

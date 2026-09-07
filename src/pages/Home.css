@@ -6,8 +6,8 @@
 }
 
 .page-section {
-  padding: 60px 40px 60px 0;
-  border-bottom: 1px solid var(--rule-color);
+  padding: 104px 40px 104px 0;
+  border-bottom: none;
 }
 
 /* Services Legend Table */
@@ -15,37 +15,37 @@
   display: flex;
   flex-direction: column;
   border-top: 1px solid var(--rule-color);
-  margin-top: 24px;
+  margin-top: 32px;
 }
 
 /* Course Docket */
 .course-docket-box {
   border: 1px solid var(--blueprint);
   background-color: var(--paper);
-  padding: 24px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-top: 24px;
+  gap: 24px;
+  margin-top: 32px;
 }
 
 .course-spec-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
   border-bottom: 1px dashed var(--rule-color);
-  padding-bottom: 16px;
+  padding-bottom: 20px;
 }
 
 .course-spec-item {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .spec-label {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 11px;
   font-weight: 600;
   color: var(--blueprint);
   letter-spacing: 0.05em;
@@ -72,94 +72,90 @@
   color: var(--ink);
   max-width: 700px;
   margin: 0;
+  line-height: 1.6;
 }
 
 /* About Section */
 .about-content-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
+  gap: 48px;
   align-items: center;
-  margin-top: 24px;
+  margin-top: 32px;
 }
 
 .about-narrative-block {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .about-p {
   font-family: var(--font-body);
-  font-size: 15.5px;
-  line-height: 1.65;
+  font-size: 16px;
+  line-height: 1.7;
   color: var(--ink);
   margin: 0;
-}
-
-.about-p.lead {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--blueprint);
-  border-left: 3px solid var(--flag-orange);
-  padding-left: 14px;
 }
 
 .about-specs-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 20px;
   border-top: 1px solid var(--rule-color);
-  padding-top: 20px;
-  margin-top: 8px;
+  padding-top: 24px;
+  margin-top: 12px;
 }
 
 .spec-badge {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 6px;
 }
 
 .spec-num {
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 600;
   color: var(--blueprint);
   line-height: 1;
 }
 
-.spec-name {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: rgba(19, 30, 41, 0.65);
-  letter-spacing: 0.04em;
+.spec-badge .spec-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(19, 30, 41, 0.75);
+  letter-spacing: normal;
+  text-transform: none;
+  line-height: 1.35;
 }
 
 /* About Diagram Frame */
 .plat-diagram-box {
   border: 1px solid var(--blueprint);
   background-color: var(--paper);
-  padding: 8px;
+  padding: 12px;
 }
 
 .diagram-header,
 .diagram-footer {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-family: var(--font-body);
+  font-size: 12px;
   color: var(--blueprint);
-  padding: 4px 6px;
+  padding: 6px 8px;
   display: flex;
   justify-content: space-between;
 }
 
 .diagram-header {
   border-bottom: 1px solid var(--rule-color);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .diagram-footer {
   border-top: 1px solid var(--rule-color);
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .about-technical-image {
@@ -173,13 +169,17 @@
 .founders-seal-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-  margin-top: 24px;
+  gap: 32px;
+  margin-top: 32px;
 }
 
 @media (max-width: 900px) {
+  .page-section {
+    padding: 64px 20px 64px 0;
+  }
   .about-content-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
   .course-spec-grid {
     grid-template-columns: 1fr;
