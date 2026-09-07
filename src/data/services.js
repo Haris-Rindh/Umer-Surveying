@@ -1,7 +1,6 @@
 /**
  * Umer Surveying™ — 10 Verified Services
  * Rewritten in technical, active voice per Section 5 guidelines.
- * No marketing filler ("unlock", "seamless", "elevate", "cutting-edge").
  */
 
 export const servicesData = [
