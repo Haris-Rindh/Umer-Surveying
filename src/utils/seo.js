@@ -60,15 +60,5 @@ export function useDocumentTitle(pageKey) {
 
     let ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc) ogDesc.setAttribute('content', seo.description);
-
-    // Scroll to top on route change unless hash is present
-    if (!window.location.hash) {
-      window.scrollTo(0, 0);
-    } else {
-      const element = document.querySelector(window.location.hash);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
   }, [pageKey]);
 }

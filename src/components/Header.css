@@ -15,8 +15,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
-  max-width: 1300px;
+  padding: 16px 36px 16px var(--spine-offset);
+  width: 100%;
   margin: 0;
 }
 
@@ -153,6 +153,9 @@
 }
 
 @media (max-width: 880px) {
+  .header-inner {
+    padding: 14px 16px 14px var(--spine-offset-mobile);
+  }
   .desktop-nav {
     display: none;
   }

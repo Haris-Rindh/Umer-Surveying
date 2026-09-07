@@ -23,12 +23,24 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Form handling: Prepare payload for backend or mailto dispatch
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      console.log('Survey Consultation Request Payload:', formData);
-    }, 400);
+    const endpoint = import.meta.env.VITE_CONTACT_ENDPOINT;
+    if (endpoint) {
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+        .finally(() => {
+          setIsSubmitting(false);
+          setSubmitted(true);
+        });
+    } else {
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setSubmitted(true);
+        console.log('Survey Consultation Request Payload:', formData);
+      }, 400);
+    }
   };
 
   const handleReset = () => {
@@ -58,6 +70,12 @@ export default function ContactForm() {
             Your survey inquiry for <strong>{formData.serviceRequired}</strong> has been logged to our active survey dispatch desk. Our chief surveyor will review your parcel specifications and contact you directly at <strong>{formData.phone || formData.email}</strong> within 24 hours.
           </p>
           <div className="success-action">
+            <a 
+              href={`mailto:farooqista_n@icloud.com?subject=${encodeURIComponent(`Survey Requisition: ${formData.serviceRequired} - ${formData.fullName}`)}&body=${encodeURIComponent(`Client: ${formData.fullName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nService: ${formData.serviceRequired}\nParcel Location: ${formData.parcelLocation}\nScope: ${formData.projectScope}`)}`}
+              className="btn-survey"
+            >
+              Dispatch Copy to Email
+            </a>
             <button type="button" className="btn-survey btn-outline" onClick={handleReset}>
               Submit Another Field Requisition
             </button>

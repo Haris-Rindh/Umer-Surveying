@@ -8,15 +8,13 @@ export default function Header() {
 
   const handleNavClick = (anchorId) => {
     setMobileOpen(false);
-    if (location.pathname === '/') {
-      if (anchorId) {
-        const el = document.getElementById(anchorId);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
-        }
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (anchorId) {
+      const el = document.getElementById(anchorId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
       }
+    } else if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 

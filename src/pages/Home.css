@@ -1,0 +1,190 @@
+/* Home Page Styles */
+
+.home-page-flow {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-section {
+  padding: 60px 40px 60px 0;
+  border-bottom: 1px solid var(--rule-color);
+}
+
+/* Services Legend Table */
+.services-legend-table {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--rule-color);
+  margin-top: 24px;
+}
+
+/* Course Docket */
+.course-docket-box {
+  border: 1px solid var(--blueprint);
+  background-color: var(--paper);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.course-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  border-bottom: 1px dashed var(--rule-color);
+  padding-bottom: 16px;
+}
+
+.course-spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.spec-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--blueprint);
+  letter-spacing: 0.05em;
+}
+
+.spec-value {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.course-action-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.course-summary-copy {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink);
+  max-width: 700px;
+  margin: 0;
+}
+
+/* About Section */
+.about-content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.about-narrative-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-p {
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0;
+}
+
+.about-p.lead {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--blueprint);
+  border-left: 3px solid var(--flag-orange);
+  padding-left: 14px;
+}
+
+.about-specs-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  border-top: 1px solid var(--rule-color);
+  padding-top: 20px;
+  margin-top: 8px;
+}
+
+.spec-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.spec-num {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--blueprint);
+  line-height: 1;
+}
+
+.spec-name {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(19, 30, 41, 0.65);
+  letter-spacing: 0.04em;
+}
+
+/* About Diagram Frame */
+.plat-diagram-box {
+  border: 1px solid var(--blueprint);
+  background-color: var(--paper);
+  padding: 8px;
+}
+
+.diagram-header,
+.diagram-footer {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--blueprint);
+  padding: 4px 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.diagram-header {
+  border-bottom: 1px solid var(--rule-color);
+  margin-bottom: 8px;
+}
+
+.diagram-footer {
+  border-top: 1px solid var(--rule-color);
+  margin-top: 8px;
+}
+
+.about-technical-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Founders Grid */
+.founders-seal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+  .about-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .course-spec-grid {
+    grid-template-columns: 1fr;
+  }
+  .founders-seal-grid {
+    grid-template-columns: 1fr;
+  }
+}

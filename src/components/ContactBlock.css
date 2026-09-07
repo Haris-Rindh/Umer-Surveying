@@ -1,0 +1,177 @@
+/* ContactBlock Styles */
+
+.contact-section {
+  padding: 60px 40px 80px 0;
+  border-bottom: 1px solid var(--rule-color);
+}
+
+.section-title-line {
+  margin-bottom: 40px;
+}
+
+.section-record-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--blueprint);
+  letter-spacing: 0.05em;
+  border-left: 3px solid var(--flag-orange);
+  padding-left: 8px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.section-h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.section-lead {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--ink);
+  max-width: var(--max-line);
+}
+
+/* 2-Column Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 36px;
+  align-items: flex-start;
+}
+
+/* Left Column: Legal Plat Description Block */
+.plat-description-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.plat-description-box {
+  background-color: var(--paper);
+  border: 1px solid var(--blueprint);
+  padding: 24px;
+}
+
+.plat-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--blueprint);
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+.box-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--blueprint);
+  letter-spacing: 0.06em;
+}
+
+.box-code {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(19, 30, 41, 0.6);
+}
+
+.legal-plat-text {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.6;
+  border-bottom: 1px dashed var(--rule-color);
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+}
+
+.plat-firm-line {
+  font-weight: 600;
+  color: var(--blueprint);
+  margin-bottom: 6px;
+}
+
+.plat-address-line {
+  margin-bottom: 12px;
+}
+
+.plat-coordinates-line {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: rgba(19, 30, 41, 0.85);
+  background-color: rgba(28, 63, 96, 0.04);
+  padding: 8px 12px;
+  border-left: 2px solid var(--blueprint);
+}
+
+/* Plain Links List (Section 4 Guidance) */
+.plain-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.link-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.link-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(19, 30, 41, 0.6);
+  letter-spacing: 0.05em;
+}
+
+.plain-survey-link {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--blueprint);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.plain-survey-link:hover {
+  color: var(--flag-orange);
+}
+
+.hours-val {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* Map Embed */
+.map-embed-wrapper {
+  background-color: var(--paper);
+  border: 1px solid var(--rule-color);
+  padding: 8px;
+}
+
+.map-caption {
+  padding: 4px 8px 8px 4px;
+}
+
+.map-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--blueprint);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 990px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,213 @@
+/* PlatRecord Styles — Field Plat & Docket Aesthetics */
+
+.plat-record-entry {
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.record-header-docket {
+  border: 1px solid var(--blueprint);
+  background-color: var(--paper);
+  padding: 24px;
+}
+
+.docket-top-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--blueprint);
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.record-number-badge {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--flag-orange);
+  letter-spacing: 0.06em;
+}
+
+.record-status-stamp {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--blueprint);
+  letter-spacing: 0.05em;
+}
+
+.record-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+/* Metadata Grid in Monospace */
+.record-metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 24px;
+  border-top: 1px dashed var(--rule-color);
+  padding-top: 14px;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.meta-item.full-width {
+  grid-column: 1 / -1;
+  border-top: 1px dashed var(--rule-color);
+  padding-top: 8px;
+}
+
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(19, 30, 41, 0.6);
+  letter-spacing: 0.05em;
+}
+
+.meta-val {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--blueprint);
+  font-weight: 500;
+}
+
+/* Content Grid: Narrative & Drawing */
+.record-content-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 36px;
+  align-items: flex-start;
+}
+
+.narrative-summary-lead {
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  padding-left: 16px;
+  border-left: 3px solid var(--flag-orange);
+}
+
+.narrative-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.narrative-paragraph {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* Images & Drawings */
+.record-images-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.primary-drawing-frame {
+  border: 1px solid var(--blueprint);
+  background-color: #FFFFFF;
+  padding: 6px;
+}
+
+.primary-drawing-img {
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+  background-color: #F8F7F2;
+  display: block;
+}
+
+.drawing-caption-bar {
+  padding: 8px 6px 2px 6px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.caption-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--flag-orange);
+}
+
+.caption-text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--blueprint);
+}
+
+/* Thumbnail Strip */
+.drawing-thumb-strip {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.thumb-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  background-color: var(--paper);
+  border: 1px solid var(--rule-color);
+  cursor: pointer;
+  width: 80px;
+}
+
+.thumb-button:hover {
+  border-color: var(--blueprint);
+}
+
+.thumb-button.active {
+  border: 1.5px solid var(--flag-orange);
+  background-color: rgba(196, 89, 43, 0.05);
+}
+
+.thumb-img {
+  width: 70px;
+  height: 48px;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb-index {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 900px) {
+  .record-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .record-metadata-grid {
+    grid-template-columns: 1fr;
+  }
+  .primary-drawing-img {
+    height: 240px;
+  }
+}

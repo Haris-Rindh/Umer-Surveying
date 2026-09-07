@@ -3,7 +3,10 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const imagesDir = path.resolve(__dirname, '../images');
+const rootDir = path.resolve(__dirname, '..');
+const imagesDir = path.resolve(rootDir, 'images');
+const publicDir = path.resolve(rootDir, 'public');
+const publicImagesDir = path.resolve(publicDir, 'images');
 
 const imageMap = {
   'Agriculture Land Measurements.webp': 'agriculture-land-measurements.webp',
@@ -33,26 +36,26 @@ const imageMap = {
   'yamashita.jpg': 'yamashita.jpg'
 };
 
-if (!fs.existsSync(imagesDir)) {
-  console.error(`Images directory not found at ${imagesDir}`);
-  process.exit(1);
+if (!fs.existsSync(publicImagesDir)) {
+  fs.mkdirSync(publicImagesDir, { recursive: true });
 }
 
-let renamedCount = 0;
-for (const [oldName, newName] of Object.entries(imageMap)) {
+let count = 0;
+for (const [oldName, kebabName] of Object.entries(imageMap)) {
   const oldPath = path.join(imagesDir, oldName);
-  const newPath = path.join(imagesDir, newName);
+  const kebabInImages = path.join(imagesDir, kebabName);
+  const publicDest = path.join(publicImagesDir, kebabName);
 
-  if (fs.existsSync(oldPath) && oldName !== newName) {
-    // Copy so original is preserved as well as kebab-case
-    fs.copyFileSync(oldPath, newPath);
-    console.log(`Copied/renamed: "${oldName}" -> "${newName}"`);
-    renamedCount++;
-  } else if (fs.existsSync(newPath)) {
-    console.log(`Already exists in kebab-case: "${newName}"`);
-  } else {
-    console.warn(`Source image not found: "${oldName}"`);
+  if (fs.existsSync(oldPath)) {
+    fs.copyFileSync(oldPath, publicDest);
+    if (oldName !== kebabName && !fs.existsSync(kebabInImages)) {
+      fs.renameSync(oldPath, kebabInImages);
+    }
+    count++;
+  } else if (fs.existsSync(kebabInImages)) {
+    fs.copyFileSync(kebabInImages, publicDest);
+    count++;
   }
 }
 
-console.log(`\nCompleted image normalization. Total updated: ${renamedCount}`);
+console.log(`Successfully normalized and verified ${count} images in kebab-case.`);

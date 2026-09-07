@@ -63,14 +63,17 @@ body {
 .drafting-layout {
   position: relative;
   min-height: 100vh;
-  padding-left: var(--spine-offset);
+  margin-left: var(--spine-offset);
   border-left: 1px solid var(--rule-color);
-  margin-left: 0;
+  padding-left: 36px;
+  padding-right: 36px;
 }
 
 @media (max-width: 800px) {
   .drafting-layout {
-    padding-left: var(--spine-offset-mobile);
+    margin-left: var(--spine-offset-mobile);
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
@@ -167,7 +170,7 @@ select:focus-visible {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   background-color: var(--flag-orange);
-  color: #FFFFFF;
+  color: var(--paper);
   border: 1px solid var(--flag-orange);
   cursor: pointer;
   transition: background-color 0.15s ease, color 0.15s ease;
@@ -175,7 +178,7 @@ select:focus-visible {
 
 .btn-survey:hover {
   background-color: #A3451E;
-  color: #FFFFFF;
+  color: var(--paper);
 }
 
 .btn-outline {

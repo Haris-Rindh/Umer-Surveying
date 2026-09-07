@@ -6,9 +6,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/verify-all.js",
     "preview": "vite preview",
-    "rename-images": "node scripts/rename-images.js"
+    "rename-images": "node scripts/rename-images.js",
+    "test": "node scripts/verify-all.js"
   },
   "dependencies": {
     "react": "^18.3.1",
