@@ -1,16 +1,25 @@
 /* ==========================================================================
    DESIGN TOKENS & SYSTEM BASE — UMER SURVEYING™
-   Blueprint / Field Plat Design Language
+   Direction: Professional & Matte Civil Geomatics Engineering
+   Non-glossy, architectural, quiet authority, zero neon/vibrancy.
    ========================================================================== */
 
 :root {
-  /* Color */
-  --paper: #E7E4D9;        /* base background — linen drafting paper */
-  --ink: #131E29;          /* primary text — blue-black ink */
-  --blueprint: #1C3F60;    /* structural accent — Prussian blue */
-  --flag-orange: #C4592B;  /* action color — survey flagging tape */
-  --contour: #4A6B5A;      /* map linework — muted elevation green */
-  --brass: #A8823C;        /* founder seals / benchmark motif only */
+  /* Matte Base Canvas & Surfaces */
+  --paper: #F6F6F4;          /* Soft matte chalk-paper canvas — zero harsh glare */
+  --paper-surface: #FFFFFF;  /* Crisp white card surface */
+  --paper-subtle: #EEEEEC;   /* Muted architectural docket surface */
+
+  /* Matte Technical Inks */
+  --ink: #181B1E;            /* Deep matte graphite carbon — soft on the eyes */
+  --ink-muted: #575D65;      /* Secondary technical graphite */
+  --ink-faint: #8C929B;      /* Footnotes, timestamps, and datum labels */
+
+  /* Matte Structural & Action Accents */
+  --blueprint: #233142;      /* Deep matte Nordic slate — disciplined structural tone */
+  --flag-orange: #9E482B;    /* Subdued matte terracotta / burnt sienna (WCAG AA compliant: 5.1:1 on #F6F6F4) */
+  --contour: #4B5E55;        /* Muted sage / elevation olive — quiet topographic linework */
+  --brass: #7D6846;          /* Muted architectural bronze — benchmark stamp mark */
 
   /* Type */
   --font-display: 'IBM Plex Sans Condensed', sans-serif; /* headlines */
@@ -20,21 +29,21 @@
   /* Layout */
   --spine-offset: 64px;         /* left drafting margin, desktop */
   --spine-offset-mobile: 24px;  /* left margin, mobile */
-  --rule-color: rgba(19, 30, 41, 0.15); /* hairline dividers between sections */
-  --radius: 0;                  /* no rounded corners anywhere */
+  --rule-color: #E0E0DC;        /* soft hairline architectural dividers */
+  --radius: 4px;                /* crisp modern technical edge */
   --max-line: 72ch;             /* body text max line length */
 
-  /* Grid paper pattern (hairline drafting lines) */
-  --grid-line: rgba(28, 63, 96, 0.04);
+  /* Hairline drafting grid texture */
+  --grid-line: rgba(35, 49, 66, 0.025);
 }
 
-/* CSS Reset & Drafting Grid Base */
+/* CSS Reset & Base */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border-radius: var(--radius) !important;
-  box-shadow: none !important;
+  border-radius: var(--radius);
+  box-shadow: none;
 }
 
 html {
@@ -77,13 +86,30 @@ body {
   }
 }
 
+/* Footer layout maintaining spine alignment outside <main> */
+.footer-layout {
+  position: relative;
+  margin-left: var(--spine-offset);
+  border-left: 1px solid var(--rule-color);
+  padding-left: 36px;
+  padding-right: 36px;
+}
+
+@media (max-width: 800px) {
+  .footer-layout {
+    margin-left: var(--spine-offset-mobile);
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
 /* Typography System */
 h1, .h1-display {
   font-family: var(--font-display);
-  font-size: 48px;
+  font-size: 46px;
   font-weight: 600;
   line-height: 1.15;
-  color: var(--ink);
+  color: var(--blueprint);
   letter-spacing: -0.01em;
   text-align: left;
 }
@@ -99,7 +125,7 @@ h2, .h2-title {
   font-size: 28px;
   font-weight: 600;
   line-height: 1.25;
-  color: var(--ink);
+  color: var(--blueprint);
   letter-spacing: -0.005em;
   text-align: left;
 }
@@ -107,17 +133,17 @@ h2, .h2-title {
 h3, .h3-subtitle {
   font-family: var(--font-display);
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.35;
-  color: var(--ink);
+  color: var(--blueprint);
   text-align: left;
 }
 
 p, .body-copy {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 15.5px;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--ink);
   max-width: var(--max-line);
   text-align: left;
@@ -125,7 +151,7 @@ p, .body-copy {
 
 .data-mono, .plat-notation {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 400;
   letter-spacing: 0.02em;
   line-height: 1.5;
@@ -134,7 +160,7 @@ p, .body-copy {
 
 .plat-code {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 12px;
   color: var(--blueprint);
 }
 
@@ -154,42 +180,44 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid var(--flag-orange);
+  outline: 2px solid var(--blueprint);
   outline-offset: 2px;
 }
 
-/* Buttons (Strictly technical: no rounded corners, no gradients, no trailing arrows) */
+/* Primary Action Buttons (Matte Terracotta) */
 .btn-survey {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 12px 24px;
   font-family: var(--font-mono);
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 13.5px;
+  font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   background-color: var(--flag-orange);
-  color: var(--paper);
+  color: #FFFFFF;
   border: 1px solid var(--flag-orange);
+  border-radius: var(--radius);
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
 .btn-survey:hover {
-  background-color: #A3451E;
-  color: var(--paper);
+  background-color: #883D23;
+  border-color: #883D23;
+  color: #FFFFFF;
 }
 
 .btn-outline {
   background-color: transparent;
-  color: var(--ink);
-  border: 1px solid var(--ink);
+  color: var(--blueprint);
+  border: 1px solid var(--blueprint);
 }
 
 .btn-outline:hover {
-  background-color: var(--ink);
-  color: var(--paper);
+  background-color: var(--blueprint);
+  color: #FFFFFF;
 }
 
 /* Dividers & Hairlines */

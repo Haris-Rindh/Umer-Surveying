@@ -13,6 +13,7 @@ export default function ContactForm() {
 
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,6 +23,7 @@ export default function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
 
     const endpoint = import.meta.env.VITE_CONTACT_ENDPOINT;
     if (endpoint) {
@@ -30,9 +32,20 @@ export default function ContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Server returned HTTP ${response.status}`);
+          }
+          setSubmitted(true);
+        })
+        .catch(error => {
+          console.error('Contact Form Transmission Error:', error);
+          setErrorMessage(
+            'We were unable to transmit your consultation requisition automatically due to a network or server issue. Please contact our chief surveyor directly via Telephone or WhatsApp at +92 300 6358728 or +92 300 7300308.'
+          );
+        })
         .finally(() => {
           setIsSubmitting(false);
-          setSubmitted(true);
         });
     } else {
       setTimeout(() => {
@@ -53,6 +66,7 @@ export default function ContactForm() {
       projectScope: ''
     });
     setSubmitted(false);
+    setErrorMessage(null);
   };
 
   return (
@@ -71,6 +85,22 @@ export default function ContactForm() {
         </div>
       ) : (
         <form className="cadastral-form" onSubmit={handleSubmit} noValidate={false}>
+          {/* Form Error Fallback Banner */}
+          {errorMessage && (
+            <div className="form-error-banner" role="alert" aria-live="assertive">
+              <h4 className="error-title">Transmission Notice</h4>
+              <p className="error-text">{errorMessage}</p>
+              <div className="error-direct-links">
+                <a href="tel:+923006358728" className="btn-survey">
+                  Call: +92 300 6358728
+                </a>
+                <a href="https://wa.me/923006358728" target="_blank" rel="noopener noreferrer" className="btn-outline">
+                  WhatsApp Direct
+                </a>
+              </div>
+            </div>
+          )}
+
           {/* Row 1: Name */}
           <div className="form-field-row">
             <label htmlFor="fullName" className="field-label">

@@ -6,33 +6,21 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const imageMap = {
-  'Agriculture Land Measurements.webp': 'agriculture-land-measurements.webp',
-  'Commercial Measurements.jpg': 'commercial-measurements.jpg',
-  'Contouring 1.webp': 'contouring-1.webp',
-  'Cost Estimation.webp': 'cost-estimation.webp',
-  'Farooq.svg': 'farooq.svg',
-  'GIS.png': 'gis.png',
-  'KMLKMZ Formatting.webp': 'kmlkmz-formatting.webp',
-  'Land Dispute Resolution.webp': 'land-dispute-resolution.webp',
-  'Mr.Nazar.svg': 'mr-nazar.svg',
-  'Property Valuation.webp': 'property-valuation.webp',
-  'Quantity Estimation.webp': 'quantity-estimation.webp',
-  'Real Estate Consultancy.webp': 'real-estate-consultancy.webp',
-  'Residential Land measurements.webp': 'residential-land-measurements.webp',
-  'Survey.jpg': 'survey.jpg',
-  'Surveyor course.webp': 'surveyor-course.webp',
-  'Topographic Map of JICA.jpg': 'topographic-map-of-jica.jpg',
-  'Topographic Surveying.webp': 'topographic-surveying.webp',
-  'UMER SURVEYING.png': 'umer-surveying.png',
-  'Umer Surveying Survey.jpg': 'umer-surveying-survey.jpg',
-  'Urban Planning Survey.jpg': 'urban-planning-survey.jpg',
-  'about2.png': 'about2.png',
-  'herosection.jpg': 'herosection.jpg',
-  'jica.jpg': 'jica.jpg',
-  'topography-202278.webp': 'topography-202278.webp',
-  'yamashita.jpg': 'yamashita.jpg'
-};
+// Active, pruned and optimized image set (12 images)
+const activeImages = [
+  'commercial-measurements.jpg',
+  'farooq.png',
+  'gis.png',
+  'jica.jpg',
+  'mr-nazar.png',
+  'survey.jpg',
+  'topographic-map-of-jica.jpg',
+  'topography-202278.webp',
+  'umer-surveying.png',
+  'umer-surveying-survey.jpg',
+  'urban-planning-survey.jpg',
+  'yamashita.jpg'
+];
 
 function setupStaticAssets() {
   const imagesDir = path.resolve(__dirname, 'images');
@@ -49,44 +37,20 @@ function setupStaticAssets() {
   // Favicon
   const faviconSrc = path.resolve(__dirname, 'custom_favicon.svg');
   const faviconDest = path.resolve(publicDir, 'custom_favicon.svg');
-  if (fs.existsSync(faviconSrc) && !fs.existsSync(faviconDest)) {
+  if (fs.existsSync(faviconSrc)) {
     fs.copyFileSync(faviconSrc, faviconDest);
   }
 
-  // Process all mapped images
+  // Sync active images between images/ and public/images/
   if (fs.existsSync(imagesDir)) {
-    for (const [oldName, kebabName] of Object.entries(imageMap)) {
-      const oldPath = path.join(imagesDir, oldName);
-      const kebabInImages = path.join(imagesDir, kebabName);
-      const publicDest = path.join(publicImagesDir, kebabName);
+    for (const imgName of activeImages) {
+      const srcInImages = path.join(imagesDir, imgName);
+      const destInPublic = path.join(publicImagesDir, imgName);
 
-      // 1. Ensure public/images has the kebab-case version
-      if (fs.existsSync(oldPath)) {
-        fs.copyFileSync(oldPath, publicDest);
-        // Rename original in images/ if different
-        if (oldName !== kebabName) {
-          try {
-            if (fs.existsSync(kebabInImages)) {
-              fs.unlinkSync(oldPath);
-            } else {
-              fs.renameSync(oldPath, kebabInImages);
-            }
-          } catch (e) {
-            // Fallback: keep both if file is locked
-          }
-        }
-      } else if (fs.existsSync(kebabInImages)) {
-        fs.copyFileSync(kebabInImages, publicDest);
-      }
-    }
-
-    // Also ensure images/ directory has all files synced in lowercase kebab-case
-    const publicFiles = fs.readdirSync(publicImagesDir);
-    for (const file of publicFiles) {
-      const src = path.join(publicImagesDir, file);
-      const dest = path.join(imagesDir, file);
-      if (!fs.existsSync(dest)) {
-        fs.copyFileSync(src, dest);
+      if (fs.existsSync(srcInImages) && !fs.existsSync(destInPublic)) {
+        fs.copyFileSync(srcInImages, destInPublic);
+      } else if (fs.existsSync(destInPublic) && !fs.existsSync(srcInImages)) {
+        fs.copyFileSync(destInPublic, srcInImages);
       }
     }
   }

@@ -1,8 +1,10 @@
-/* ContactForm Styles — Labels Left, Inputs Right */
+/* ContactForm Styles — Modern Precision Geospatial */
 
 .contact-form-wrapper {
-  background-color: var(--paper);
+  background-color: var(--paper-subtle);
   border: 1px solid var(--rule-color);
+  border-top: 3px solid var(--blueprint);
+  border-radius: var(--radius);
   padding: 24px;
 }
 
@@ -20,15 +22,15 @@
 .form-badge {
   font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--blueprint);
   letter-spacing: 0.05em;
 }
 
 .form-legend-note {
   font-family: var(--font-mono);
-  font-size: 10px;
-  color: rgba(19, 30, 41, 0.5);
+  font-size: 11px;
+  color: var(--ink-muted);
   letter-spacing: 0.03em;
 }
 
@@ -70,20 +72,21 @@
   font-size: 14px;
   color: var(--ink);
   background-color: #FFFFFF;
-  border: 1px solid var(--blueprint);
+  border: 1px solid #CBD5E1;
+  border-radius: var(--radius);
   padding: 10px 14px;
   line-height: 1.5;
-  transition: border-color 0.15s ease, outline 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .technical-input:focus {
-  border-color: var(--flag-orange);
-  outline: 2px solid var(--flag-orange);
+  border-color: var(--blueprint);
+  outline: 2px solid var(--blueprint);
   outline-offset: 1px;
 }
 
 .technical-input::placeholder {
-  color: rgba(19, 30, 41, 0.4);
+  color: #94A3B8;
   font-size: 13px;
 }
 
@@ -117,14 +120,57 @@
 .submit-confidential-note {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: var(--blueprint);
+  color: var(--ink-muted);
   letter-spacing: 0.04em;
+}
+
+/* Error Banner */
+.form-error-banner {
+  background-color: #FEF2F2;
+  border: 1px solid #F87171;
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.error-badge {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: #DC2626;
+  letter-spacing: 0.05em;
+}
+
+.error-message-text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #991B1B;
+  line-height: 1.5;
+}
+
+.error-actions-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.error-fallback-link {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--blueprint);
+  text-decoration: underline;
 }
 
 /* Success Banner */
 .form-success-banner {
-  background-color: rgba(74, 107, 90, 0.08);
-  border: 1px solid var(--contour);
+  background-color: #F0FDF4;
+  border: 1px solid #86EFAC;
+  border-radius: var(--radius);
   padding: 24px;
 }
 
@@ -132,7 +178,7 @@
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 600;
-  color: var(--contour);
+  color: #16A34A;
   letter-spacing: 0.06em;
   margin-bottom: 8px;
 }
@@ -140,15 +186,58 @@
 .success-title {
   font-family: var(--font-display);
   font-size: 24px;
-  color: var(--ink);
-  margin-bottom: 12px;
+  font-weight: 600;
+  color: #166534;
+  margin-bottom: 8px;
 }
 
-.success-text {
+.success-lead {
   font-family: var(--font-body);
   font-size: 15px;
-  line-height: 1.6;
+  color: #14532D;
   margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.submitted-summary {
+  background-color: #FFFFFF;
+  border: 1px solid #DCFCE7;
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  border-bottom: 1px dashed #E2E8F0;
+  padding-bottom: 4px;
+}
+
+.summary-row.full {
+  flex-direction: column;
+  gap: 4px;
+}
+
+.s-label {
+  font-family: var(--font-mono);
+  color: #475569;
+  font-weight: 500;
+}
+
+.s-val {
+  font-family: var(--font-mono);
+  color: #0F172A;
+}
+
+.success-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {
@@ -157,9 +246,7 @@
     grid-template-columns: 1fr;
     gap: 8px;
   }
-  .submit-label-spacer {
-    display: none;
-  }
+  
   .field-label {
     padding-top: 0;
   }

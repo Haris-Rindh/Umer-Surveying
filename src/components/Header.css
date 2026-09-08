@@ -152,7 +152,7 @@
   font-weight: 600;
 }
 
-@media (max-width: 880px) {
+@media (max-width: 800px) {
   .header-inner {
     padding: 14px 16px 14px var(--spine-offset-mobile);
   }

@@ -1,13 +1,13 @@
-/* Hero Component Styles — Field Plat & Blueprint Aesthetics */
+/* Hero Component Styles — Professional & Matte Geomatics */
 
 .hero-section {
   position: relative;
-  padding: 96px 40px 96px 0;
+  padding: 80px 40px 60px 0;
   overflow: hidden;
   background-color: transparent;
 }
 
-/* Background Animated Contour Lines Canvas */
+/* Background Animated Contour Lines Canvas (Matte Sage) */
 .hero-contour-canvas {
   position: absolute;
   top: 0;
@@ -16,7 +16,7 @@
   height: 100%;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.85;
+  opacity: 0.7;
 }
 
 .contour-svg {
@@ -27,19 +27,19 @@
 .contour-line {
   fill: none;
   stroke: var(--contour);
-  stroke-width: 1.25;
-  stroke-opacity: 0.45;
+  stroke-width: 1.2;
+  stroke-opacity: 0.35;
   stroke-dasharray: 2000;
   stroke-dashoffset: 2000;
   animation: drawContour 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 .contour-line.c1 { animation-delay: 0.0s; }
-.contour-line.c2 { animation-delay: 0.03s; stroke-opacity: 0.55; stroke-width: 1.5; }
-.contour-line.c3 { animation-delay: 0.06s; stroke-opacity: 0.65; stroke-width: 2; } /* Index contour */
-.contour-line.c4 { animation-delay: 0.09s; stroke-opacity: 0.5; stroke-width: 1.25; }
-.contour-line.c5 { animation-delay: 0.12s; stroke-opacity: 0.4; }
-.contour-line.c6 { animation-delay: 0.15s; stroke-opacity: 0.3; }
+.contour-line.c2 { animation-delay: 0.03s; stroke-opacity: 0.45; stroke-width: 1.35; }
+.contour-line.c3 { animation-delay: 0.06s; stroke-opacity: 0.55; stroke-width: 1.8; } /* Index contour */
+.contour-line.c4 { animation-delay: 0.09s; stroke-opacity: 0.4; stroke-width: 1.2; }
+.contour-line.c5 { animation-delay: 0.12s; stroke-opacity: 0.3; }
+.contour-line.c6 { animation-delay: 0.15s; stroke-opacity: 0.25; }
 
 @keyframes drawContour {
   to {
@@ -51,11 +51,11 @@
   font-family: var(--font-mono);
   font-size: 11px;
   fill: var(--contour);
-  opacity: 0.6;
+  opacity: 0.5;
   letter-spacing: 0.05em;
 }
 
-/* Centered Coordinate Crosshair Mark (The ONLY centered element per spec) */
+/* Centered Coordinate Crosshair Mark */
 .hero-benchmark-center {
   position: relative;
   z-index: 2;
@@ -63,14 +63,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 48px;
-  padding: 10px 0;
+  margin-bottom: 36px;
+  padding: 8px 0;
 }
 
 .crosshair-reticle {
   position: relative;
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -78,34 +78,36 @@
 
 .crosshair-h {
   position: absolute;
-  width: 64px;
+  width: 56px;
   height: 1px;
   background-color: var(--flag-orange);
-  opacity: 0.75;
+  opacity: 0.7;
 }
 
 .crosshair-v {
   position: absolute;
   width: 1px;
-  height: 64px;
+  height: 56px;
   background-color: var(--flag-orange);
-  opacity: 0.75;
+  opacity: 0.7;
 }
 
 .reticle-ring {
   position: absolute;
   border: 1px solid var(--blueprint);
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .reticle-ring.inner {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50% !important;
 }
 
 .reticle-ring.outer {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important;
   border-style: dashed;
 }
 
@@ -113,85 +115,230 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 12px;
+  margin-top: 10px;
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 500;
   color: var(--ink);
   letter-spacing: 0.08em;
-  background-color: var(--paper);
-  padding: 2px 8px;
+  background-color: var(--paper-surface);
+  padding: 3px 10px;
   border: 1px solid var(--rule-color);
+  border-radius: var(--radius);
 }
 
 .coord-sep {
   color: var(--flag-orange);
 }
 
-/* Left-Aligned Headline & Content (Hangs off spine) */
-.hero-content {
+/* Split Hero Grid */
+.hero-grid {
   position: relative;
   z-index: 3;
-  max-width: 900px;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--flag-orange);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .hero-h1 {
   font-family: var(--font-display);
-  font-size: 48px;
+  font-size: 46px;
   font-weight: 600;
   line-height: 1.15;
-  color: var(--ink);
+  color: var(--blueprint);
   letter-spacing: -0.01em;
-  margin-bottom: 24px;
-  max-width: 850px;
+  margin: 0;
 }
 
 .hero-intro {
   font-family: var(--font-body);
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.65;
   color: var(--ink);
-  margin-bottom: 36px;
-  max-width: var(--max-line);
+  margin: 0;
+  max-width: 600px;
 }
 
 .hero-action-line {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
+  margin-top: 12px;
   flex-wrap: wrap;
 }
 
-.hero-cta {
-  padding: 14px 28px;
-  font-size: 14px;
+/* Field Instrument Card in Hero */
+.hero-visual-frame {
+  display: flex;
+  justify-content: center;
 }
 
-/* Responsive Overrides */
-@media (max-width: 800px) {
-  .hero-section {
-    padding: 60px 16px 60px 0;
+.field-instrument-card {
+  background-color: var(--paper-surface);
+  border: 1px solid var(--rule-color);
+  border-top: 3px solid var(--blueprint);
+  border-radius: var(--radius);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.instrument-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--rule-color);
+  padding-bottom: 8px;
+}
+
+.inst-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--flag-orange);
+  letter-spacing: 0.05em;
+}
+
+.inst-model {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--ink-faint);
+}
+
+.hero-field-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+}
+
+.instrument-card-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--rule-color);
+  padding-top: 8px;
+  gap: 12px;
+}
+
+.footer-spec {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.f-label {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  color: var(--ink-muted);
+}
+
+.f-val {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--blueprint);
+  font-weight: 500;
+}
+
+/* Trust Strip */
+.hero-trust-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  border: 1px solid var(--rule-color);
+  border-top: 2px solid var(--blueprint);
+  background-color: var(--paper-surface);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-top: 48px;
+  position: relative;
+  z-index: 3;
+}
+
+.trust-unit {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-right: 1px dashed var(--rule-color);
+  padding-right: 12px;
+}
+
+.trust-unit:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.trust-val {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--blueprint);
+  line-height: 1.2;
+}
+
+.trust-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--ink-muted);
+  line-height: 1.35;
+}
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
+  .hero-trust-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .trust-unit:nth-child(2) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 600px) {
   .hero-h1 {
     font-size: 32px;
   }
-  .hero-intro {
-    font-size: 16px;
-  }
-  .hero-benchmark-center {
-    margin-bottom: 32px;
-  }
-  .hero-action-line {
-    flex-direction: column;
-    align-items: flex-start;
+  .hero-trust-strip {
+    grid-template-columns: 1fr;
     gap: 14px;
+  }
+  .trust-unit {
+    border-right: none;
+    border-bottom: 1px dashed var(--rule-color);
+    padding-bottom: 10px;
+  }
+  .trust-unit:last-child {
+    border-bottom: none;
   }
 }
 
-/* Reduced Motion Override */
+/* Motion Preferences */
 @media (prefers-reduced-motion: reduce) {
   .contour-line {
-    animation: none !important;
+    animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
     stroke-dashoffset: 0 !important;
   }
 }

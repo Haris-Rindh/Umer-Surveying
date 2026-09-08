@@ -1,4 +1,4 @@
-/* Home Page Styles */
+/* Home Page Styles — Professional & Matte Geomatics */
 
 .home-page-flow {
   display: flex;
@@ -10,18 +10,70 @@
   border-bottom: none;
 }
 
-/* Services Legend Table */
-.services-legend-table {
+/* Categorized Services Sectors */
+.services-sectors-grid {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--rule-color);
+  gap: 36px;
   margin-top: 32px;
+}
+
+.service-sector-card {
+  background-color: var(--paper-surface);
+  border: 1px solid var(--rule-color);
+  border-top: 3px solid var(--blueprint);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sector-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-bottom: 1px solid var(--rule-color);
+  padding-bottom: 12px;
+}
+
+.sector-kicker {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--flag-orange);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.sector-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--blueprint);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.sector-desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--ink-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.sector-services-list {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Course Docket */
 .course-docket-box {
-  border: 1px solid var(--blueprint);
-  background-color: var(--paper);
+  border: 1px solid var(--rule-color);
+  border-top: 3px solid var(--blueprint);
+  background-color: var(--paper-surface);
+  border-radius: var(--radius);
   padding: 32px;
   display: flex;
   flex-direction: column;
@@ -125,7 +177,7 @@
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 400;
-  color: rgba(19, 30, 41, 0.75);
+  color: var(--ink-muted);
   letter-spacing: normal;
   text-transform: none;
   line-height: 1.35;
@@ -133,8 +185,10 @@
 
 /* About Diagram Frame */
 .plat-diagram-box {
-  border: 1px solid var(--blueprint);
-  background-color: var(--paper);
+  border: 1px solid var(--rule-color);
+  border-top: 3px solid var(--blueprint);
+  background-color: var(--paper-surface);
+  border-radius: var(--radius);
   padding: 12px;
 }
 
@@ -151,11 +205,13 @@
 .diagram-header {
   border-bottom: 1px solid var(--rule-color);
   margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .diagram-footer {
   border-top: 1px solid var(--rule-color);
   margin-top: 10px;
+  color: var(--ink-muted);
 }
 
 .about-technical-image {
@@ -163,6 +219,7 @@
   height: 280px;
   object-fit: cover;
   display: block;
+  border-radius: 2px;
 }
 
 /* Founders Grid */
@@ -175,7 +232,7 @@
 
 @media (max-width: 900px) {
   .page-section {
-    padding: 64px 20px 64px 0;
+    padding: 60px 20px 60px 0;
   }
   .about-content-grid {
     grid-template-columns: 1fr;

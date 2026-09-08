@@ -1,4 +1,4 @@
-/* Footer Styles — Technical Drafting Baseline */
+/* Footer Styles — Modern Precision Geospatial */
 
 .site-footer {
   background-color: var(--paper);
@@ -29,22 +29,23 @@
   font-family: var(--font-display);
   font-size: 22px;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--blueprint);
   letter-spacing: 0.04em;
 }
 
 .footer-brand-sub {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: var(--blueprint);
+  color: var(--flag-orange);
   letter-spacing: 0.06em;
+  font-weight: 600;
 }
 
 .footer-narrative {
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.6;
-  color: rgba(19, 30, 41, 0.85);
+  color: var(--ink-muted);
   margin: 0;
 }
 
@@ -53,9 +54,10 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  border: 1px solid var(--brass);
+  border: 1px solid var(--rule-color);
+  border-radius: var(--radius);
   padding: 10px 14px;
-  background-color: rgba(168, 130, 60, 0.04);
+  background-color: var(--paper-subtle);
   margin-top: 8px;
 }
 
@@ -79,15 +81,15 @@
 .bm-label {
   font-family: var(--font-mono);
   font-size: 9px;
-  font-weight: 600;
-  color: var(--brass);
+  font-weight: 700;
+  color: var(--blueprint);
   letter-spacing: 0.06em;
 }
 
 .bm-coords {
   font-family: var(--font-mono);
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--ink);
   letter-spacing: 0.04em;
 }
@@ -95,15 +97,15 @@
 .bm-datum {
   font-family: var(--font-mono);
   font-size: 9.5px;
-  color: rgba(19, 30, 41, 0.6);
+  color: var(--ink-muted);
 }
 
 /* Headings */
 .footer-col-heading {
   font-family: var(--font-display);
   font-size: 18px;
-  font-weight: 500;
-  color: var(--ink);
+  font-weight: 600;
+  color: var(--blueprint);
   border-bottom: 1px solid var(--rule-color);
   padding-bottom: 8px;
   margin: 0;
@@ -124,13 +126,13 @@
 .footer-links-list a {
   font-family: var(--font-mono);
   font-size: 12.5px;
-  color: var(--ink);
+  color: var(--ink-muted);
   text-decoration: none;
   transition: color 0.15s ease;
 }
 
 .footer-links-list a:hover {
-  color: var(--flag-orange);
+  color: var(--blueprint);
 }
 
 .footer-svc-item {
@@ -140,7 +142,7 @@
   text-decoration: none;
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--ink);
+  color: var(--ink-muted);
   transition: color 0.15s ease;
 }
 
@@ -149,7 +151,7 @@
 }
 
 .svc-bullet {
-  color: var(--blueprint);
+  color: var(--contour);
   font-size: 11px;
 }
 
@@ -200,14 +202,14 @@
 .copyright-text {
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--ink);
+  color: var(--ink-muted);
   letter-spacing: 0.03em;
 }
 
 .technical-specs-text {
   font-family: var(--font-mono);
   font-size: 10px;
-  color: rgba(19, 30, 41, 0.5);
+  color: var(--ink-muted);
   letter-spacing: 0.04em;
 }
 

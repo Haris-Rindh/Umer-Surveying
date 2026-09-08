@@ -1,0 +1,153 @@
+/* EquipmentSection Component Styles — Professional & Matte */
+
+.equipment-section {
+  padding: 80px 40px 80px 0;
+}
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 32px;
+}
+
+.equipment-card {
+  background-color: var(--paper-surface);
+  border: 1px solid var(--rule-color);
+  border-top: 3px solid var(--blueprint);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.15s ease;
+}
+
+.equipment-card:hover {
+  border-color: var(--blueprint);
+}
+
+.equipment-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid var(--rule-color);
+  padding-bottom: 16px;
+}
+
+.equipment-badge-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.equipment-category {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--flag-orange);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.equipment-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+}
+
+.equipment-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--blueprint);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.equipment-accuracy-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background-color: var(--paper-subtle);
+  padding: 6px 10px;
+  border-radius: 2px;
+  border-left: 2px solid var(--blueprint);
+}
+
+.acc-label {
+  font-weight: 600;
+  color: var(--ink-muted);
+  font-size: 10.5px;
+}
+
+.acc-value {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.equipment-desc {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0;
+}
+
+.equipment-app-box {
+  background-color: var(--paper-subtle);
+  border: 1px solid var(--rule-color);
+  border-radius: 2px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.app-box-title {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--blueprint);
+  letter-spacing: 0.05em;
+}
+
+.equipment-app-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.equipment-app-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.app-bullet {
+  color: var(--flag-orange);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.app-text {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .equipment-grid {
+    grid-template-columns: 1fr;
+  }
+}

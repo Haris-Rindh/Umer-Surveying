@@ -1,9 +1,11 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import EquipmentSection from '../components/EquipmentSection';
+import InteractiveEstimator from '../components/InteractiveEstimator';
 import LegendRow from '../components/LegendRow';
 import Seal from '../components/Seal';
 import ContactBlock from '../components/ContactBlock';
-import { servicesData } from '../data/services';
+import { servicesData, serviceCategories } from '../data/services';
 import { foundersData } from '../data/founders';
 import { useDocumentTitle } from '../utils/seo';
 import './Home.css';
@@ -13,26 +15,46 @@ export default function Home() {
 
   return (
     <div className="home-page-flow">
-      {/* 01. Hero Component */}
+      {/* 01. Hero Component with Split Instrument Showcase & Trust Strip */}
       <Hero />
 
-      {/* 02. Verified Services Section */}
+      {/* 02. Field Equipment & Technology Arsenal */}
+      <EquipmentSection />
+
+      {/* 03. Categorized Surveying Services Directory */}
       <section id="services" className="page-section services-section" aria-label="Surveying Services Directory">
         <div className="section-title-line">
           <h2 className="section-h2">Surveying Services &amp; Field Capabilities</h2>
           <p className="section-lead">
-            We map terrain, establish property lines, and quantify site earthwork using calibrated total stations, dual-frequency GNSS, and GIS workstations.
+            We map terrain, establish legal property lines, and quantify site earthwork using calibrated total stations, dual-frequency GNSS, and GIS workstations.
           </p>
         </div>
 
-        <div className="services-legend-table" role="table" aria-label="Surveying Services Register">
-          {servicesData.map((service) => (
-            <LegendRow key={service.id} service={service} />
-          ))}
+        <div className="services-sectors-grid">
+          {serviceCategories.map((cat) => {
+            const catServices = servicesData.filter((s) => s.category === cat.id);
+            return (
+              <div key={cat.id} className="service-sector-card">
+                <div className="sector-header">
+                  <span className="sector-kicker">ENGINEERING DISCIPLINE</span>
+                  <h3 className="sector-title">{cat.title}</h3>
+                  <p className="sector-desc">{cat.description}</p>
+                </div>
+                <div className="sector-services-list" role="region" aria-label={cat.title}>
+                  {catServices.map((service) => (
+                    <LegendRow key={service.id} service={service} />
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
-      {/* 03. Professional Training / Courses Section */}
+      {/* 04. Interactive Survey Scope & Requisition Builder */}
+      <InteractiveEstimator />
+
+      {/* 05. Professional Training / Courses Section */}
       <section id="courses" className="page-section courses-section" aria-label="Professional Surveyor Certification">
         <div className="section-title-line">
           <h2 className="section-h2">Surveying Certification Program</h2>
@@ -68,7 +90,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 04. About Section */}
+      {/* 06. About Section */}
       <section id="about" className="page-section about-section" aria-label="About Umer Surveying">
         <div className="section-title-line">
           <h2 className="section-h2">About Umer Surveying™</h2>
@@ -120,7 +142,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 05. Founders Section */}
+      {/* 07. Founders Section */}
       <section id="founders" className="page-section founders-section" aria-label="Founders and Leadership Seals">
         <div className="section-title-line">
           <h2 className="section-h2">Founders &amp; Chief Surveyors</h2>
@@ -136,7 +158,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 06. Contact Section: exactly one contact section at the bottom of Home */}
+      {/* 08. Contact Section: exactly one contact section at the bottom of Home */}
       <ContactBlock />
     </div>
   );

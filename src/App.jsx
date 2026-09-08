@@ -10,6 +10,9 @@ import Blog from './pages/Blog';
 export default function App() {
   return (
     <div className="app-container">
+      {/* Accessible skip link */}
+      <a href="#main-content" className="sr-only">Skip to primary content</a>
+
       {/* Global Scroll & Anchor Restoration */}
       <ScrollToAnchor />
 
@@ -25,10 +28,12 @@ export default function App() {
           {/* Fallback to Home */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-
-        {/* Shared Benchmark Footer */}
-        <Footer />
       </main>
+
+      {/* Shared Benchmark Footer — outside main, maintaining spine alignment */}
+      <div className="footer-layout">
+        <Footer />
+      </div>
     </div>
   );
 }

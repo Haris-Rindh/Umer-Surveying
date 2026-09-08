@@ -2,9 +2,9 @@ import React from 'react';
 import './Hero.css';
 
 export default function Hero() {
-  const scrollToContact = (e) => {
+  const scrollToSection = (e, id) => {
     e.preventDefault();
-    const el = document.getElementById('contact');
+    const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
@@ -12,7 +12,7 @@ export default function Hero() {
 
   return (
     <section className="hero-section" aria-label="Precision Land Surveying & GIS Analysis">
-      {/* Background Animated Contour Lines Illustration */}
+      {/* Background Animated Contour Lines Illustration (Matte Sage) */}
       <div className="hero-contour-canvas" aria-hidden="true">
         <svg 
           viewBox="0 0 1200 600" 
@@ -20,7 +20,6 @@ export default function Hero() {
           preserveAspectRatio="xMidYMid slice"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Contour Lines with Elevation Labels */}
           <path className="contour-line c1" d="M -50,150 Q 250,50 550,180 T 1150,120 T 1300,160" />
           <path className="contour-line c2" d="M -50,220 Q 280,110 600,240 T 1120,180 T 1300,230" />
           <path className="contour-line c3" d="M -50,290 Q 310,180 620,310 T 1150,250 T 1300,300" />
@@ -36,7 +35,7 @@ export default function Hero() {
         </svg>
       </div>
 
-      {/* Centered Coordinate Crosshair & Benchmark Mark (Earned Technical Detail) */}
+      {/* Centered Coordinate Crosshair & Benchmark Mark */}
       <div className="hero-benchmark-center">
         <div className="crosshair-reticle">
           <div className="crosshair-h"></div>
@@ -51,20 +50,76 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Left-Aligned Headline, Intro & Single CTA */}
-      <div className="hero-content">
-        <h1 className="hero-h1">
-          Precision Land Surveying &amp; GIS Analysis
-        </h1>
+      {/* Main Hero Split Grid */}
+      <div className="hero-grid">
+        <div className="hero-content">
+          <div className="hero-kicker">CADASTRAL RECONNAISSANCE &amp; SATELLITE GEOMATICS</div>
+          <h1 className="hero-h1">
+            Precision Land Surveying &amp; GIS Analysis
+          </h1>
 
-        <p className="hero-intro">
-          We map terrain with total stations and GPS, re-establish legal boundaries from revenue records, and generate verified spatial data you can act on.
-        </p>
+          <p className="hero-intro">
+            Operating electronic total stations, dual-frequency RTK GNSS receivers, and CAD/GIS workstations. We deliver certified boundary demarcation, topographic terrain models, and quantity takeoffs for public infrastructure, civil contractors, and private landowners across Pakistan.
+          </p>
 
-        <div className="hero-action-line">
-          <a href="#contact" className="btn-survey hero-cta" onClick={scrollToContact}>
-            Request a survey consultation
-          </a>
+          <div className="hero-action-line">
+            <a href="#contact" className="btn-survey hero-cta" onClick={(e) => scrollToSection(e, 'contact')}>
+              Request a survey consultation
+            </a>
+            <a href="#equipment" className="btn-survey btn-outline" onClick={(e) => scrollToSection(e, 'equipment')}>
+              Explore Equipment Arsenal
+            </a>
+          </div>
+        </div>
+
+        {/* Technical Field Imagery Frame */}
+        <div className="hero-visual-frame">
+          <div className="field-instrument-card">
+            <div className="instrument-card-top">
+              <span className="inst-badge">ACTIVE FIELDWORK DEPLOYMENT</span>
+              <span className="inst-model">ELECTRONIC TOTAL STATION // DTM GRID</span>
+            </div>
+            <img 
+              src="/images/topography-202278.webp" 
+              alt="Total Station instrument measuring spot elevation grid for Digital Terrain Model" 
+              className="hero-field-img" 
+              loading="eager"
+            />
+            <div className="instrument-card-footer">
+              <div className="footer-spec">
+                <span className="f-label">STATION DATUM:</span>
+                <span className="f-val">Survey of Pakistan (Multan Sector)</span>
+              </div>
+              <div className="footer-spec">
+                <span className="f-label">TOLERANCE:</span>
+                <span className="f-val">Sub-Centimeter Linear Closure</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Trust & Verification Strip */}
+      <div className="hero-trust-strip" role="region" aria-label="Field Credentials and Trust Markers">
+        <div className="trust-unit">
+          <span className="trust-val">35+ Years</span>
+          <span className="trust-label">Chief Field Experience (Nazar Muhammad)</span>
+        </div>
+        <div className="trust-unit">
+          <span className="trust-val">Sub-Centimeter</span>
+          <span className="trust-label">Electronic Total Station Precision</span>
+        </div>
+        <div className="trust-unit">
+          <span className="trust-val">Survey of Pakistan</span>
+          <span className="trust-label">Geodetic Control Benchmark Adherence</span>
+        </div>
+        <div className="trust-unit">
+          <span className="trust-val">JICA / Sekkei</span>
+          <span className="trust-label">International Expansion Track Record</span>
+        </div>
+        <div className="trust-unit">
+          <span className="trust-val">24/7 Dispatch</span>
+          <span className="trust-label">Emergency Boundary &amp; Site Mobilization</span>
         </div>
       </div>
     </section>

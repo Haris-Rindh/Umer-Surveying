@@ -1,4 +1,4 @@
-/* ContactBlock Styles */
+/* ContactBlock Styles — Modern Precision Geospatial */
 
 .contact-section {
   padding: 104px 40px 104px 0;
@@ -13,7 +13,7 @@
   font-family: var(--font-display);
   font-size: 32px;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--blueprint);
   margin-bottom: 12px;
 }
 
@@ -41,8 +41,10 @@
 }
 
 .plat-description-box {
-  background-color: var(--paper);
-  border: 1px solid var(--blueprint);
+  background-color: var(--paper-subtle);
+  border: 1px solid var(--rule-color);
+  border-top: 3px solid var(--blueprint);
+  border-radius: var(--radius);
   padding: 28px;
 }
 
@@ -73,10 +75,11 @@
   gap: 4px;
   font-size: 13px;
   font-family: var(--font-mono);
-  color: rgba(19, 30, 41, 0.85);
-  background-color: rgba(28, 63, 96, 0.04);
+  color: var(--ink-muted);
+  background-color: #FFFFFF;
   padding: 10px 14px;
-  border-left: 2px solid var(--blueprint);
+  border-left: 3px solid var(--blueprint);
+  border-radius: 2px;
 }
 
 /* Plain Links List */
@@ -122,8 +125,9 @@
 
 /* Map Embed */
 .map-embed-wrapper {
-  background-color: var(--paper);
+  background-color: var(--paper-subtle);
   border: 1px solid var(--rule-color);
+  border-radius: var(--radius);
   padding: 8px;
 }
 

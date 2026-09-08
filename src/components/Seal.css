@@ -1,15 +1,17 @@
-/* Founder Seal Component Styles */
+/* Founder Seal Component Styles — Modern Precision Geospatial */
 
 .founder-seal-card {
   border: 1px solid var(--rule-color);
-  background-color: var(--paper);
+  border-top: 3px solid var(--blueprint);
+  border-radius: var(--radius);
+  background-color: var(--paper-subtle);
   padding: 24px;
   position: relative;
-  transition: border-color 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .founder-seal-card:hover {
-  border-color: var(--brass);
+  border-color: var(--blueprint);
 }
 
 .seal-outer-frame {
@@ -36,6 +38,7 @@
   width: 120px;
   height: 120px;
   border: 2px solid var(--brass);
+  border-radius: 50% !important;
   padding: 4px;
   display: flex;
   align-items: center;
@@ -55,9 +58,9 @@
 .seal-portrait-image {
   width: 88px;
   height: 88px;
+  border-radius: 50% !important;
   object-fit: cover;
   display: block;
-  filter: grayscale(15%) contrast(1.05);
 }
 
 /* Content */
@@ -70,7 +73,7 @@
   font-family: var(--font-display);
   font-size: 22px;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--blueprint);
   line-height: 1.15;
   margin-bottom: 4px;
 }
@@ -82,8 +85,8 @@
 .seal-title {
   font-family: var(--font-mono);
   font-size: 12px;
-  font-weight: 500;
-  color: var(--blueprint);
+  font-weight: 600;
+  color: var(--flag-orange);
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -91,7 +94,7 @@
 .seal-credentials {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: var(--brass);
+  color: #755923; /* Darkened for WCAG AA 4.5:1 contrast against --paper */
   letter-spacing: 0.02em;
   margin-bottom: 12px;
   padding-bottom: 8px;

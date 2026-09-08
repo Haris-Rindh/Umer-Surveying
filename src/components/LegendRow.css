@@ -7,7 +7,7 @@
 }
 
 .legend-row:hover {
-  background-color: rgba(28, 63, 96, 0.03);
+  background-color: var(--paper-subtle);
 }
 
 .legend-main {
@@ -22,11 +22,12 @@
 .legend-symbol-box {
   width: 40px;
   height: 40px;
-  border: 1px solid var(--blueprint);
+  border: 1px solid var(--rule-color);
+  border-radius: var(--radius);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--paper);
+  background-color: var(--paper-subtle);
 }
 
 .legend-glyph {
@@ -46,7 +47,7 @@
   font-family: var(--font-display);
   font-size: 19px;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--blueprint);
   line-height: 1.2;
 }
 
@@ -78,13 +79,14 @@
   letter-spacing: 0.03em;
   padding: 8px 14px;
   border: 1px solid var(--blueprint);
+  border-radius: var(--radius);
   display: inline-block;
   transition: all 0.15s ease;
 }
 
 .legend-link:hover {
   background-color: var(--blueprint);
-  color: var(--paper);
+  color: #FFFFFF;
 }
 
 /* Responsive adjustments */

@@ -51,6 +51,13 @@ export default function Header() {
             Services
           </Link>
           <Link 
+            to="/#equipment" 
+            className="nav-link"
+            onClick={() => handleNavClick('equipment')}
+          >
+            Equipment
+          </Link>
+          <Link 
             to="/portfolio" 
             className={`nav-link ${location.pathname === '/portfolio' ? 'active' : ''}`}
             onClick={() => setMobileOpen(false)}
@@ -110,6 +117,13 @@ export default function Header() {
             onClick={() => handleNavClick('services')}
           >
             Services
+          </Link>
+          <Link 
+            to="/#equipment" 
+            className="mobile-nav-link"
+            onClick={() => handleNavClick('equipment')}
+          >
+            Equipment
           </Link>
           <Link 
             to="/portfolio" 
