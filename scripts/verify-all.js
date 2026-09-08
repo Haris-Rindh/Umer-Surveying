@@ -18,6 +18,8 @@ function check(desc, condition) {
 
 console.log('--- RUNNING DEEP SYSTEM VERIFICATION SUITE ---');
 
+const indexHtml = fs.readFileSync(path.join(rootDir, 'index.html'), 'utf-8');
+
 // 1. Check Active Images in public/images and images
 const activeImages = [
   'commercial-measurements.jpg',
@@ -64,8 +66,9 @@ for (const img of purgedAssets) {
 }
 
 // 3. Check Asset Optimization Sizes
-const faviconStats = fs.statSync(path.join(rootDir, 'custom_favicon.svg'));
-check(`custom_favicon.svg is under 5 KB (actual: ${faviconStats.size} bytes)`, faviconStats.size < 5120);
+const faviconExists = fs.existsSync(path.join(rootDir, 'custom_favicon.svg'));
+check(`custom_favicon.svg exists`, faviconExists);
+check(`index.html references umer-surveying.png as favicon`, indexHtml.includes('href="/images/umer-surveying.png"'));
 
 const farooqStats = fs.statSync(path.join(rootDir, 'images/farooq.png'));
 check(`images/farooq.png is under 60 KB (actual: ${farooqStats.size} bytes)`, farooqStats.size < 61440);
@@ -130,7 +133,6 @@ check('ContactForm.jsx catches network/API errors', contactFormJsx.includes('.ca
 check('ContactForm.jsx provides direct telephone/whatsapp fallback', contactFormJsx.includes('+92 300 6358728') || contactFormJsx.includes('tel:'));
 
 // 11. Check JSON-LD Address Typo Fixed in index.html
-const indexHtml = fs.readFileSync(path.join(rootDir, 'index.html'), 'utf-8');
 check('index.html contains LocalBusiness schema', indexHtml.includes('"@type": "LocalBusiness"'));
 check('index.html contains Model Town A, Block A, Commercial Sector', indexHtml.includes('Model Town A, Block A, Commercial Sector'));
 check('index.html contains geodetic coordinates 30.2447 / 71.4923', indexHtml.includes('30.2447') && indexHtml.includes('71.4923'));

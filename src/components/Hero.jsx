@@ -12,7 +12,7 @@ export default function Hero() {
 
   return (
     <section className="hero-section" aria-label="Precision Land Surveying & GIS Analysis">
-      {/* Background Animated Contour Lines Illustration (Matte Sage) */}
+      {/* Background Animated Contour Elevation Linework */}
       <div className="hero-contour-canvas" aria-hidden="true">
         <svg 
           viewBox="0 0 1200 600" 
@@ -26,40 +26,29 @@ export default function Hero() {
           <path className="contour-line c4" d="M -50,360 Q 340,250 650,380 T 1180,310 T 1300,380" />
           <path className="contour-line c5" d="M -50,430 Q 380,320 700,450 T 1200,390 T 1300,450" />
           <path className="contour-line c6" d="M -50,500 Q 420,400 750,520 T 1250,470 T 1300,530" />
-
-          {/* Elevation Index Ticks */}
-          <text x="210" y="105" className="contour-elevation-text">EL 122.0m</text>
-          <text x="590" y="235" className="contour-elevation-text">EL 124.0m</text>
-          <text x="890" y="275" className="contour-elevation-text">EL 126.0m</text>
-          <text x="350" y="375" className="contour-elevation-text">EL 128.0m</text>
         </svg>
-      </div>
-
-      {/* Centered Coordinate Crosshair & Benchmark Mark */}
-      <div className="hero-benchmark-center">
-        <div className="crosshair-reticle">
-          <div className="crosshair-h"></div>
-          <div className="crosshair-v"></div>
-          <div className="reticle-ring inner"></div>
-          <div className="reticle-ring outer"></div>
-        </div>
-        <div className="benchmark-coordinates" aria-label="Geodetic Coordinates">
-          <span className="coord-val">30.2447° N</span>
-          <span className="coord-sep">•</span>
-          <span className="coord-val">71.4923° E</span>
-        </div>
       </div>
 
       {/* Main Hero Split Grid */}
       <div className="hero-grid">
+        {/* Left Column: Technical Proposition */}
         <div className="hero-content">
-          <div className="hero-kicker">CADASTRAL RECONNAISSANCE &amp; SATELLITE GEOMATICS</div>
+          {/* Geodetic Benchmark Station Header */}
+          <div className="hero-station-badge" role="status" aria-label="Geodetic Station Coordinates">
+            <span className="station-dot" aria-hidden="true"></span>
+            <span className="station-name">GEODETIC STATION</span>
+            <span className="station-sep">•</span>
+            <span className="station-coords">30.2447° N, 71.4923° E</span>
+            <span className="station-sep">•</span>
+            <span className="station-datum">MULTAN, PK</span>
+          </div>
+
           <h1 className="hero-h1">
-            Precision Land Surveying &amp; GIS Analysis
+            Sub-Centimeter Land Surveying &amp; GIS Analysis
           </h1>
 
           <p className="hero-intro">
-            Operating electronic total stations, dual-frequency RTK GNSS receivers, and CAD/GIS workstations. We deliver certified boundary demarcation, topographic terrain models, and quantity takeoffs for public infrastructure, civil contractors, and private landowners across Pakistan.
+            We deploy calibrated electronic total stations, dual-frequency RTK GNSS receivers, and GIS workstations. Delivering certified boundary demarcation, topographic terrain models, and quantitative earthwork takeoffs across Pakistan.
           </p>
 
           <div className="hero-action-line">
@@ -72,26 +61,41 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Technical Field Imagery Frame */}
-        <div className="hero-visual-frame">
+        {/* Right Column: Instrument Telemetry & Field Showcase */}
+        <div className="hero-visual-col">
           <div className="field-instrument-card">
             <div className="instrument-card-top">
-              <span className="inst-badge">ACTIVE FIELDWORK DEPLOYMENT</span>
-              <span className="inst-model">ELECTRONIC TOTAL STATION // DTM GRID</span>
+              <div className="inst-status-group">
+                <span className="inst-live-indicator" aria-hidden="true"></span>
+                <span className="inst-badge">ACTIVE FIELD DEPLOYMENT</span>
+              </div>
+              <span className="inst-model">TOTAL STATION // DTM SURVEY</span>
             </div>
-            <img 
-              src="/images/topography-202278.webp" 
-              alt="Total Station instrument measuring spot elevation grid for Digital Terrain Model" 
-              className="hero-field-img" 
-              loading="eager"
-            />
+
+            <div className="hero-img-container">
+              <img 
+                src="/images/topography-202278.webp" 
+                alt="Total Station instrument measuring spot elevation grid for Digital Terrain Model" 
+                className="hero-field-img" 
+                loading="eager"
+              />
+              <div className="img-reticle-overlay" aria-hidden="true">
+                <div className="overlay-reticle"></div>
+                <span className="overlay-el-tag">BM EL 124.50m</span>
+              </div>
+            </div>
+
             <div className="instrument-card-footer">
               <div className="footer-spec">
                 <span className="f-label">STATION DATUM:</span>
-                <span className="f-val">Survey of Pakistan (Multan Sector)</span>
+                <span className="f-val">Survey of Pakistan (WGS 84)</span>
               </div>
               <div className="footer-spec">
-                <span className="f-label">TOLERANCE:</span>
+                <span className="f-label">ANGULAR TOLERANCE:</span>
+                <span className="f-val">0.5" Arc-Seconds Precision</span>
+              </div>
+              <div className="footer-spec">
+                <span className="f-label">TRAVERSE ACCURACY:</span>
                 <span className="f-val">Sub-Centimeter Linear Closure</span>
               </div>
             </div>
