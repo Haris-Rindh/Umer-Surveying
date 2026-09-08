@@ -23,11 +23,13 @@ export default function Header() {
       <div className="header-inner">
         {/* Title Block / Logo */}
         <Link to="/" className="title-block" onClick={() => handleNavClick(null)}>
-          <img 
-            src="/images/umer-surveying.png" 
-            alt="Umer Surveying™ Cadastral & Geodetic Insignia" 
-            className="header-logo" 
-          />
+          <div className="header-logo-badge">
+            <img 
+              src="/images/umer-surveying.png" 
+              alt="Umer Surveying™ Cadastral & Geodetic Insignia" 
+              className="header-logo" 
+            />
+          </div>
           <div className="title-text">
             <span className="brand-name">UMER SURVEYING<span className="brand-tm">™</span></span>
             <span className="brand-sub">LAND SURVEYING &amp; GIS CONSULTANCY • MULTAN, PK</span>

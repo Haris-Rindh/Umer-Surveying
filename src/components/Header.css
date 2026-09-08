@@ -28,12 +28,31 @@
   color: var(--ink);
 }
 
+.header-logo-badge {
+  width: 50px;
+  height: 50px;
+  background-color: #FFFFFF;
+  border: 1.5px solid var(--rule-color);
+  border-radius: 50% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(35, 49, 66, 0.08);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.title-block:hover .header-logo-badge {
+  border-color: var(--blueprint);
+  transform: scale(1.04);
+}
+
 .header-logo {
   height: 42px;
-  width: auto;
+  width: 42px;
   object-fit: contain;
   display: block;
-  filter: contrast(1.1);
 }
 
 .title-text {
