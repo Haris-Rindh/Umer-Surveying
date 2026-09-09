@@ -1,314 +1,149 @@
-/* Hero Component Styles — Professional & Matte Geomatics */
+/* Hero Component Styles — Executive Geodetic Engineering */
 
 .hero-section {
   position: relative;
-  padding: 104px 40px 80px 0;
-  overflow: hidden;
-  background-color: transparent;
-}
-
-/* Background Animated Contour Lines Canvas */
-.hero-contour-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.6;
-}
-
-.contour-svg {
-  width: 100%;
-  height: 100%;
-}
-
-.contour-line {
-  fill: none;
-  stroke: var(--contour);
-  stroke-width: 1.2;
-  stroke-opacity: 0.35;
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 2000;
-  animation: drawContour 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-}
-
-.contour-line.c1 { animation-delay: 0.0s; }
-.contour-line.c2 { animation-delay: 0.03s; stroke-opacity: 0.45; stroke-width: 1.35; }
-.contour-line.c3 { animation-delay: 0.06s; stroke-opacity: 0.55; stroke-width: 1.8; }
-.contour-line.c4 { animation-delay: 0.09s; stroke-opacity: 0.4; stroke-width: 1.2; }
-.contour-line.c5 { animation-delay: 0.12s; stroke-opacity: 0.3; }
-.contour-line.c6 { animation-delay: 0.15s; stroke-opacity: 0.25; }
-
-@keyframes drawContour {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-/* Split Hero Grid */
-.hero-grid {
-  position: relative;
-  z-index: 3;
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 48px;
-  align-items: center;
-}
-
-.hero-content {
+  /* Viewport-adaptive height: guarantees comfortable framing across screens */
+  min-height: clamp(520px, 78vh, 740px);
+  padding: 104px 0 96px 0;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  justify-content: center;
+  border-bottom: 1px solid var(--rule-color);
 }
 
-/* Geodetic Benchmark Station Badge */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Benchmark Header Line */
+.hero-benchmark-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-bottom: 1px solid var(--rule-color);
+  padding-bottom: 18px;
+}
+
 .hero-station-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   background-color: var(--paper-surface);
   border: 1px solid var(--rule-color);
-  border-left: 3px solid var(--blueprint);
   border-radius: var(--radius);
-  padding: 6px 12px;
+  padding: 8px 16px;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   color: var(--ink);
-  width: fit-content;
+  box-shadow: 0 1px 3px rgba(35, 49, 66, 0.04);
 }
 
 .station-dot {
-  width: 7px;
-  height: 7px;
-  background-color: #15803D;
+  width: 8px;
+  height: 8px;
+  background-color: #16A34A;
   border-radius: 50%;
   display: inline-block;
-  box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.2);
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
 }
 
 .station-name {
   font-weight: 700;
   color: var(--blueprint);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 
 .station-sep {
-  color: var(--flag-orange);
+  color: var(--rule-color);
 }
 
 .station-coords {
   font-weight: 600;
   color: var(--ink);
+  letter-spacing: 0.02em;
 }
 
 .station-datum {
-  font-size: 10.5px;
+  font-size: 11px;
   color: var(--ink-muted);
+}
+
+.hero-discipline-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--flag-orange);
+}
+
+/* Narrative Block */
+.hero-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 880px;
 }
 
 .hero-h1 {
   font-family: var(--font-display);
-  font-size: 46px;
-  font-weight: 600;
-  line-height: 1.15;
+  font-size: clamp(28px, 4vw, 54px);
+  font-weight: 700;
+  line-height: 1.12;
   color: var(--blueprint);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   margin: 0;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .hero-intro {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: clamp(16px, 1.2vw, 18px);
   line-height: 1.65;
   color: var(--ink);
   margin: 0;
-  max-width: 580px;
+  max-width: 780px;
 }
 
 .hero-action-line {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-top: 8px;
+  margin-top: 10px;
   flex-wrap: wrap;
 }
 
-/* Field Visual Showcase Column */
-.hero-visual-col {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.field-instrument-card {
-  background-color: var(--paper-surface);
-  border: 1px solid var(--rule-color);
-  border-top: 3px solid var(--blueprint);
-  border-radius: var(--radius);
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-  max-width: 520px;
-  box-shadow: 0 4px 12px rgba(35, 49, 66, 0.04);
-}
-
-.instrument-card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--rule-color);
-  padding-bottom: 10px;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.inst-status-group {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.inst-live-indicator {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--flag-orange);
-  display: inline-block;
-}
-
-.inst-badge {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 700;
-  color: var(--blueprint);
-  letter-spacing: 0.05em;
-}
-
-.inst-model {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--ink-faint);
-}
-
-.hero-img-container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 2px;
-}
-
-.hero-field-img {
-  width: 100%;
-  height: 270px;
-  object-fit: cover;
-  display: block;
-}
-
-.img-reticle-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.overlay-reticle {
-  width: 44px;
-  height: 44px;
-  border: 1.5px solid rgba(255, 255, 255, 0.75);
-  border-radius: 50%;
-  position: relative;
-}
-
-.overlay-reticle::before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  bottom: -8px;
-  left: 50%;
-  width: 1px;
-  background-color: rgba(255, 255, 255, 0.75);
-}
-
-.overlay-reticle::after {
-  content: '';
-  position: absolute;
-  left: -8px;
-  right: -8px;
-  top: 50%;
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.75);
-}
-
-.overlay-el-tag {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background-color: rgba(24, 27, 30, 0.85);
-  color: #FFFFFF;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  padding: 3px 8px;
-  border-radius: 2px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.hero-cta {
+  padding: 14px 28px;
+  font-size: 13.5px;
   letter-spacing: 0.04em;
+  box-shadow: 0 2px 8px rgba(158, 72, 43, 0.15);
 }
 
-.instrument-card-footer {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  border-top: 1px solid var(--rule-color);
-  padding-top: 10px;
-}
-
-.footer-spec {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.f-label {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  font-weight: 600;
-  color: var(--ink-muted);
-}
-
-.f-val {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--blueprint);
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-/* Trust Strip */
+/* Trust & Verification Strip */
 .hero-trust-strip {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 16px;
   border: 1px solid var(--rule-color);
-  border-top: 3px solid var(--blueprint);
   background-color: var(--paper-surface);
   border-radius: var(--radius);
   padding: 22px 28px;
-  margin-top: 48px;
-  position: relative;
-  z-index: 3;
+  margin-top: 12px;
+  box-shadow: 0 2px 8px rgba(35, 49, 66, 0.03);
 }
 
 .trust-unit {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  border-right: 1px dashed var(--rule-color);
+  border-right: 1px solid var(--rule-color);
   padding-right: 14px;
 }
 
@@ -319,8 +154,8 @@
 
 .trust-val {
   font-family: var(--font-display);
-  font-size: 19px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
   color: var(--blueprint);
   line-height: 1.2;
 }
@@ -332,49 +167,74 @@
   line-height: 1.35;
 }
 
+/* Responsive Adaptations */
 @media (max-width: 1024px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-  .hero-visual-col {
-    justify-content: flex-start;
+  .hero-section {
+    min-height: auto;
+    padding: 96px 0 72px 0;
   }
   .hero-trust-strip {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
-  .trust-unit:nth-child(2) {
+  .trust-unit:nth-child(3) {
     border-right: none;
   }
 }
 
-@media (max-width: 600px) {
-  .hero-h1 {
-    font-size: 32px;
+@media (max-width: 768px) {
+  .hero-benchmark-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding-bottom: 14px;
   }
-  .instrument-card-footer {
-    grid-template-columns: 1fr;
-    gap: 8px;
+  .hero-station-badge {
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+  .hero-discipline-tag {
+    font-size: 10px;
+  }
+  .hero-h1 {
+    font-size: 26px;
+    line-height: 1.18;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+  .hero-intro {
+    font-size: 15px;
+    line-height: 1.6;
   }
   .hero-trust-strip {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 16px;
+    padding: 20px;
   }
   .trust-unit {
     border-right: none;
-    border-bottom: 1px dashed var(--rule-color);
-    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule-color);
+    padding-bottom: 12px;
+    padding-right: 0;
   }
   .trust-unit:last-child {
     border-bottom: none;
+    padding-bottom: 0;
   }
 }
 
-/* Motion Preferences */
-@media (prefers-reduced-motion: reduce) {
-  .contour-line {
-    animation-duration: 0.01ms !important;
-    animation-delay: 0s !important;
-    stroke-dashoffset: 0 !important;
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 64px 0 56px 0;
+  }
+  .hero-action-line {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .hero-action-line .btn-survey {
+    width: 100%;
   }
 }

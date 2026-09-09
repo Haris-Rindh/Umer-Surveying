@@ -1,7 +1,7 @@
 /* ContactBlock Styles — Modern Precision Geospatial */
 
 .contact-section {
-  padding: 104px 40px 104px 0;
+  padding: 104px 0 104px 0;
   border-bottom: none;
 }
 
@@ -41,11 +41,11 @@
 }
 
 .plat-description-box {
-  background-color: var(--paper-subtle);
+  background-color: var(--paper-surface);
   border: 1px solid var(--rule-color);
-  border-top: 3px solid var(--blueprint);
   border-radius: var(--radius);
-  padding: 28px;
+  padding: 32px;
+  box-shadow: 0 1px 3px rgba(35, 49, 66, 0.03);
 }
 
 .legal-plat-text {

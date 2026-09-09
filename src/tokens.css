@@ -60,10 +60,6 @@ html {
 body {
   min-height: 100vh;
   background-color: var(--paper);
-  background-image: 
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 24px 24px;
   color: var(--ink);
   position: relative;
 }
@@ -74,15 +70,23 @@ body {
   min-height: 100vh;
   margin-left: var(--spine-offset);
   border-left: 1px solid var(--rule-color);
-  padding-left: 36px;
-  padding-right: 36px;
+  padding-left: 48px;
+  padding-right: 48px;
+  max-width: 1440px;
+}
+
+@media (max-width: 1024px) {
+  .drafting-layout {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 
 @media (max-width: 800px) {
   .drafting-layout {
     margin-left: var(--spine-offset-mobile);
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -91,15 +95,23 @@ body {
   position: relative;
   margin-left: var(--spine-offset);
   border-left: 1px solid var(--rule-color);
-  padding-left: 36px;
-  padding-right: 36px;
+  padding-left: 48px;
+  padding-right: 48px;
+  max-width: 1440px;
+}
+
+@media (max-width: 1024px) {
+  .footer-layout {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 
 @media (max-width: 800px) {
   .footer-layout {
     margin-left: var(--spine-offset-mobile);
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 

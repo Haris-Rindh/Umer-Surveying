@@ -1,19 +1,20 @@
 /* Interactive Estimator Styles — Professional & Matte */
 
 .estimator-section {
-  padding: 104px 40px 104px 0;
+  padding: 104px 0 104px 0;
+  border-bottom: 1px solid var(--rule-color);
 }
 
 .estimator-card {
   background-color: var(--paper-surface);
   border: 1px solid var(--rule-color);
-  border-top: 3px solid var(--blueprint);
   border-radius: var(--radius);
-  padding: 32px;
+  padding: 36px;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  margin-top: 32px;
+  margin-top: 36px;
+  box-shadow: 0 1px 3px rgba(35, 49, 66, 0.03);
 }
 
 .estimator-steps-grid {

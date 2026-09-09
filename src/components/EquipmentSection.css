@@ -1,38 +1,40 @@
 /* EquipmentSection Component Styles — Professional & Matte */
 
 .equipment-section {
-  padding: 104px 40px 104px 0;
+  padding: 104px 0 104px 0;
+  border-bottom: 1px solid var(--rule-color);
 }
 
 .equipment-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
-  margin-top: 32px;
+  margin-top: 36px;
 }
 
 .equipment-card {
   background-color: var(--paper-surface);
   border: 1px solid var(--rule-color);
-  border-top: 3px solid var(--blueprint);
   border-radius: var(--radius);
-  padding: 28px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  transition: border-color 0.15s ease;
+  gap: 18px;
+  box-shadow: 0 1px 3px rgba(35, 49, 66, 0.03);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .equipment-card:hover {
-  border-color: var(--blueprint);
+  border-color: rgba(35, 49, 66, 0.3);
+  box-shadow: 0 4px 14px rgba(35, 49, 66, 0.05);
 }
 
 .equipment-card-header {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   border-bottom: 1px solid var(--rule-color);
-  padding-bottom: 16px;
+  padding-bottom: 18px;
 }
 
 .equipment-badge-row {
