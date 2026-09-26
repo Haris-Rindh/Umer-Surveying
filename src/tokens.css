@@ -35,6 +35,12 @@
 
   /* Hairline drafting grid texture */
   --grid-line: rgba(35, 49, 66, 0.025);
+
+  /* 3D Perspective & Spatial Motion Tokens */
+  --perspective-default: 1200px;
+  --perspective-deep: 1600px;
+  --transform-3d: preserve-3d;
+  --ease-3d: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* CSS Reset & Base */

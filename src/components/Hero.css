@@ -1,14 +1,14 @@
-/* Hero Component Styles — Executive Geodetic Engineering */
+/* Hero Component Styles — Executive Geodetic Engineering with 3D Field Telemetry */
 
 .hero-section {
   position: relative;
-  /* Viewport-adaptive height: guarantees comfortable framing across screens */
-  min-height: clamp(520px, 78vh, 740px);
+  min-height: clamp(540px, 80vh, 760px);
   padding: 104px 0 96px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-bottom: 1px solid var(--rule-color);
+  perspective: 1200px;
 }
 
 .hero-container {
@@ -16,7 +16,7 @@
   flex-direction: column;
   gap: 36px;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
 }
 
 /* Benchmark Header Line */
@@ -51,6 +51,12 @@
   border-radius: 50%;
   display: inline-block;
   box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.25); opacity: 0.75; }
 }
 
 .station-name {
@@ -82,40 +88,47 @@
   color: var(--flag-orange);
 }
 
+/* 2-Column Split Grid */
+.hero-split-grid {
+  display: grid;
+  grid-template-columns: 1.12fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
 /* Narrative Block */
 .hero-main-content {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 880px;
 }
 
 .hero-h1 {
   font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 54px);
+  font-size: clamp(26px, 3.6vw, 48px);
   font-weight: 700;
   line-height: 1.12;
   color: var(--blueprint);
   letter-spacing: -0.02em;
   margin: 0;
-  word-break: normal;
   overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .hero-intro {
   font-family: var(--font-body);
-  font-size: clamp(16px, 1.2vw, 18px);
+  font-size: clamp(15.5px, 1.15vw, 17.5px);
   line-height: 1.65;
   color: var(--ink);
   margin: 0;
-  max-width: 780px;
+  max-width: 640px;
 }
 
 .hero-action-line {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-top: 10px;
+  margin-top: 8px;
   flex-wrap: wrap;
 }
 
@@ -124,6 +137,287 @@
   font-size: 13.5px;
   letter-spacing: 0.04em;
   box-shadow: 0 2px 8px rgba(158, 72, 43, 0.15);
+}
+
+/* 3D Geodetic Field Telemetry Slideshow Card */
+.hero-slideshow-card {
+  position: relative;
+  background-color: var(--paper-surface);
+  border: 1px solid var(--rule-color);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 30px rgba(35, 49, 66, 0.08);
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.25s ease;
+  transform-style: preserve-3d;
+  outline: none;
+}
+
+.hero-slideshow-card:focus-visible {
+  box-shadow: 0 0 0 2px var(--flag-orange), 0 8px 30px rgba(35, 49, 66, 0.12);
+}
+
+/* Header Strip */
+.slideshow-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background-color: var(--paper);
+  border-bottom: 1px solid var(--rule-color);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.slideshow-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--blueprint);
+  letter-spacing: 0.06em;
+}
+
+.status-indicator-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--flag-orange);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(158, 72, 43, 0.2);
+}
+
+.slideshow-counter {
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+/* Viewport & Image Sizing */
+.slideshow-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #12161A;
+}
+
+.slide-item {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 0.6s ease-in-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.slide-item.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 3D Telemetry Reticle Overlay */
+.telemetry-reticle-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.reticle-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: rgba(255, 255, 255, 0.7);
+  border-style: solid;
+}
+
+.reticle-corner.top-left { top: 12px; left: 12px; border-width: 2px 0 0 2px; }
+.reticle-corner.top-right { top: 12px; right: 12px; border-width: 2px 2px 0 0; }
+.reticle-corner.bottom-left { bottom: 12px; left: 12px; border-width: 0 0 2px 2px; }
+.reticle-corner.bottom-right { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+
+.reticle-center-crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%);
+  opacity: 0.45;
+}
+
+.reticle-center-crosshair::before,
+.reticle-center-crosshair::after {
+  content: '';
+  position: absolute;
+  background-color: #ffffff;
+}
+
+.reticle-center-crosshair::before {
+  top: 9px; left: 0; width: 20px; height: 1px;
+}
+
+.reticle-center-crosshair::after {
+  top: 0; left: 9px; width: 1px; height: 20px;
+}
+
+.reticle-tag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: rgba(24, 27, 30, 0.75);
+  backdrop-filter: blur(4px);
+  padding: 3px 8px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.05em;
+}
+
+/* Navigation Buttons */
+.slide-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(24, 27, 30, 0.65);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.slide-nav-btn:hover {
+  background-color: var(--flag-orange);
+  border-color: var(--flag-orange);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.prev-btn { left: 12px; }
+.next-btn { right: 12px; }
+
+/* Floating Caption */
+.slide-caption-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 16px 14px 10px 14px;
+  background: linear-gradient(to top, rgba(18, 22, 26, 0.88) 0%, rgba(18, 22, 26, 0.45) 70%, transparent 100%);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.slide-caption-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.slide-caption-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* Controls Bar */
+.slideshow-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background-color: var(--paper-surface);
+  border-top: 1px solid var(--rule-color);
+}
+
+.slide-indicators {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.indicator-pill {
+  width: 22px;
+  height: 4px;
+  background-color: var(--rule-color);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0;
+  transition: width 0.25s ease, background-color 0.25s ease;
+}
+
+.indicator-pill.active {
+  width: 36px;
+  background-color: var(--flag-orange);
+}
+
+.slideshow-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: var(--radius);
+  transition: color 0.2s ease;
+}
+
+.slideshow-toggle-btn:hover {
+  color: var(--blueprint);
+}
+
+/* Footer Specifications */
+.slideshow-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 16px;
+  background-color: var(--paper);
+  border-top: 1px solid var(--rule-color);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.footer-datum-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.f-label {
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+.f-val {
+  color: var(--ink);
+  font-weight: 600;
+  text-align: right;
 }
 
 /* Trust & Verification Strip */
@@ -135,7 +429,7 @@
   background-color: var(--paper-surface);
   border-radius: var(--radius);
   padding: 22px 28px;
-  margin-top: 12px;
+  margin-top: 8px;
   box-shadow: 0 2px 8px rgba(35, 49, 66, 0.03);
 }
 
@@ -173,6 +467,10 @@
     min-height: auto;
     padding: 96px 0 72px 0;
   }
+  .hero-split-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
   .hero-trust-strip {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -199,10 +497,11 @@
     font-size: 10px;
   }
   .hero-h1 {
-    font-size: 26px;
+    font-size: clamp(22px, 5.5vw, 25px);
     line-height: 1.18;
-    word-break: normal;
-    overflow-wrap: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
   }
   .hero-intro {
     font-size: 15px;
@@ -227,7 +526,7 @@
 
 @media (max-width: 480px) {
   .hero-section {
-    padding: 64px 0 56px 0;
+    padding: 96px 0 56px 0;
   }
   .hero-action-line {
     flex-direction: column;
@@ -236,5 +535,20 @@
   }
   .hero-action-line .btn-survey {
     width: 100%;
+  }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  .station-dot {
+    animation: none;
+  }
+  .slide-item {
+    transition: opacity 0.2s ease;
+    transform: none;
+  }
+  .hero-slideshow-card {
+    transition: none;
+    transform: none !important;
   }
 }

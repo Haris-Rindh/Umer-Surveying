@@ -1,5 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
+import ThreeDDomainExplorer from '../components/ThreeDDomainExplorer';
+import ThreeDScrollParallax from '../components/ThreeDScrollParallax';
 import EquipmentSection from '../components/EquipmentSection';
 import InteractiveEstimator from '../components/InteractiveEstimator';
 import LegendRow from '../components/LegendRow';
@@ -15,10 +17,16 @@ export default function Home() {
 
   return (
     <div className="home-page-flow">
+      {/* Ambient 3D Depth & Spatial Parallax Canvas */}
+      <ThreeDScrollParallax />
+
       {/* 01. Hero Component with Split Instrument Showcase & Trust Strip */}
       <Hero />
 
-      {/* 02. Field Equipment & Technology Arsenal */}
+      {/* 02. Interactive 3D Surveying Domain Explorer with Floating Elements */}
+      <ThreeDDomainExplorer />
+
+      {/* 03. Field Equipment & Technology Arsenal */}
       <EquipmentSection />
 
       {/* 03. Categorized Surveying Services Directory */}

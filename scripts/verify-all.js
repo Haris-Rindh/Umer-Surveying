@@ -33,7 +33,13 @@ const activeImages = [
   'umer-surveying.png',
   'umer-surveying-survey.jpg',
   'urban-planning-survey.jpg',
-  'yamashita.jpg'
+  'yamashita.jpg',
+  'herosection.jpg',
+  'topographic-surveying.webp',
+  'hero-slide-1.webp',
+  'hero-slide-2.webp',
+  'hero-slide-3.webp',
+  'hero-slide-4.webp'
 ];
 
 for (const img of activeImages) {
@@ -41,7 +47,7 @@ for (const img of activeImages) {
   check(`images/${img} exists`, fs.existsSync(path.join(rootDir, 'images', img)));
 }
 
-// 2. Check 13 Unrendered Images & Bloated SVGs Purged
+// 2. Check Unrendered Images & Bloated SVGs Purged
 const purgedAssets = [
   'agriculture-land-measurements.webp',
   'real-estate-consultancy.webp',
@@ -49,13 +55,11 @@ const purgedAssets = [
   'about2.png',
   'cost-estimation.webp',
   'residential-land-measurements.webp',
-  'topographic-surveying.webp',
   'land-dispute-resolution.webp',
   'quantity-estimation.webp',
   'contouring-1.webp',
   'property-valuation.webp',
   'kmlkmz-formatting.webp',
-  'herosection.jpg',
   'farooq.svg',
   'mr-nazar.svg'
 ];
