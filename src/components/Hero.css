@@ -570,8 +570,8 @@
   flex-direction: column;
   gap: 4px;
   padding: 10px 16px;
-  background-color: var(--paper);
-  border-top: 1px solid var(--rule-color);
+  background-color: var(--sobha-card, #282626);
+  border-top: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
   font-family: var(--font-mono);
   font-size: 11px;
 }
@@ -584,12 +584,12 @@
 }
 
 .f-label {
-  color: var(--ink-faint);
+  color: var(--sobha-muted, #9E9891);
   font-weight: 600;
 }
 
 .f-val {
-  color: var(--ink);
+  color: var(--sobha-cream, #F5F3EF);
   font-weight: 600;
   text-align: right;
 }
@@ -599,19 +599,19 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 16px;
-  border: 1px solid var(--rule-color);
-  background-color: var(--paper-surface);
-  border-radius: var(--radius);
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  background-color: var(--sobha-surface, #222020);
+  border-radius: var(--radius, 4px);
   padding: 22px 28px;
   margin-top: 8px;
-  box-shadow: 0 2px 8px rgba(35, 49, 66, 0.03);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 }
 
 .trust-unit {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  border-right: 1px solid var(--rule-color);
+  border-right: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
   padding-right: 14px;
 }
 
@@ -624,14 +624,14 @@
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 700;
-  color: var(--blueprint);
+  color: var(--sobha-gold, #C2A87E);
   line-height: 1.2;
 }
 
 .trust-label {
   font-family: var(--font-body);
   font-size: 12px;
-  color: var(--ink-muted);
+  color: var(--sobha-muted, #9E9891);
   line-height: 1.35;
 }
 
