@@ -1,17 +1,20 @@
-/* Founder Seal Component Styles — Modern Precision Geospatial */
+/* Founder Seal Component Styles — Sobha Privy Collection Luxury Dark Geomatics */
 
 .founder-seal-card {
-  border: 1px solid var(--rule-color);
-  border-top: 3px solid var(--blueprint);
-  border-radius: var(--radius);
-  background-color: var(--paper-subtle);
-  padding: 24px;
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  border-top: 3px solid var(--sobha-gold, #C2A87E);
+  border-radius: var(--radius, 4px);
+  background-color: var(--sobha-surface, #222020);
+  padding: 32px;
   position: relative;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .founder-seal-card:hover {
-  border-color: var(--blueprint);
+  border-color: var(--sobha-gold, #C2A87E);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(194, 168, 126, 0.12);
+  transform: translateY(-3px);
 }
 
 .seal-outer-frame {
@@ -35,15 +38,16 @@
 
 .seal-round-stamp {
   position: relative;
-  width: 120px;
-  height: 120px;
-  border: 2px solid var(--brass);
+  width: 124px;
+  height: 124px;
+  border: 2px solid var(--sobha-gold, #C2A87E);
   border-radius: 50% !important;
   padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--paper);
+  background-color: var(--sobha-card, #282626);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .seal-circular-text {
@@ -56,11 +60,12 @@
 }
 
 .seal-portrait-image {
-  width: 88px;
-  height: 88px;
+  width: 90px;
+  height: 90px;
   border-radius: 50% !important;
   object-fit: cover;
   display: block;
+  filter: contrast(1.05);
 }
 
 /* Content */
@@ -71,9 +76,10 @@
 
 .seal-name {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 23px;
   font-weight: 600;
-  color: var(--blueprint);
+  color: var(--sobha-cream, #F5F3EF);
+  letter-spacing: 0.04em;
   line-height: 1.15;
   margin-bottom: 4px;
 }
@@ -86,26 +92,26 @@
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 600;
-  color: var(--flag-orange);
-  letter-spacing: 0.04em;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .seal-credentials {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: #755923; /* Darkened for WCAG AA 4.5:1 contrast against --paper */
-  letter-spacing: 0.02em;
+  color: var(--sobha-gold-light, #DFC8A5);
+  letter-spacing: 0.04em;
   margin-bottom: 12px;
   padding-bottom: 8px;
-  border-bottom: 1px dashed var(--rule-color);
+  border-bottom: 1px dashed var(--sobha-hairline, rgba(255, 255, 255, 0.08));
 }
 
 .seal-bio {
   font-family: var(--font-body);
   font-size: 14.5px;
-  line-height: 1.55;
-  color: var(--ink);
+  line-height: 1.6;
+  color: var(--sobha-muted, #9E9891);
   margin: 0;
 }
 

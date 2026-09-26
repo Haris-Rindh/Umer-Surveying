@@ -43,10 +43,16 @@
   --ease-3d: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-luxury: cubic-bezier(0.25, 1, 0.5, 1);
 
-  /* Luxury Architectural Sheen Accents (Sobha / SWSH Inspired) */
-  --gold-sheen: linear-gradient(135deg, rgba(125, 104, 70, 0.22) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(125, 104, 70, 0.15) 100%);
-  --gold-border: linear-gradient(135deg, #7D6846 0%, #B89E72 50%, #4B3F2A 100%);
-  --hud-glass: rgba(20, 24, 29, 0.88);
+  /* Sobha Privy Collection Exact Luxury Foundation */
+  --sobha-dark: #1A1919;
+  --sobha-surface: #222020;
+  --sobha-card: #282626;
+  --sobha-gold: #C2A87E;
+  --sobha-gold-light: #E4CCA8;
+  --sobha-cream: #F5F3EF;
+  --sobha-muted: #9E9891;
+  --sobha-hairline: rgba(255, 255, 255, 0.08);
+  --sobha-gold-hairline: rgba(194, 168, 126, 0.28);
 }
 
 /* CSS Reset & Base */
@@ -60,8 +66,8 @@
 
 html {
   font-size: 16px;
-  background-color: var(--paper);
-  color: var(--ink);
+  background-color: var(--sobha-dark);
+  color: var(--sobha-cream);
   font-family: var(--font-body);
   line-height: 1.6;
   scroll-behavior: smooth;
@@ -71,8 +77,8 @@ html {
 
 body {
   min-height: 100vh;
-  background-color: var(--paper);
-  color: var(--ink);
+  background-color: var(--sobha-dark);
+  color: var(--sobha-cream);
   position: relative;
 }
 
@@ -81,7 +87,7 @@ body {
   position: relative;
   min-height: 100vh;
   margin-left: var(--spine-offset);
-  border-left: 1px solid var(--rule-color);
+  border-left: 1px solid var(--sobha-hairline);
   padding-left: 48px;
   padding-right: 48px;
   max-width: 1440px;
@@ -133,7 +139,7 @@ h1, .h1-display {
   font-size: 46px;
   font-weight: 600;
   line-height: 1.15;
-  color: var(--blueprint);
+  color: var(--sobha-cream);
   letter-spacing: -0.01em;
   text-align: left;
 }
@@ -144,12 +150,12 @@ h1, .h1-display {
   }
 }
 
-h2, .h2-title {
+h2, .h2-title, .section-h2 {
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 600;
   line-height: 1.25;
-  color: var(--blueprint);
+  color: var(--sobha-cream);
   letter-spacing: -0.005em;
   text-align: left;
 }
@@ -159,7 +165,7 @@ h3, .h3-subtitle {
   font-size: 20px;
   font-weight: 600;
   line-height: 1.35;
-  color: var(--blueprint);
+  color: var(--sobha-gold);
   text-align: left;
 }
 
@@ -168,9 +174,17 @@ p, .body-copy {
   font-size: 15.5px;
   font-weight: 400;
   line-height: 1.65;
-  color: var(--ink);
+  color: var(--sobha-cream);
   max-width: var(--max-line);
   text-align: left;
+}
+
+.section-lead {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--sobha-muted);
+  margin-top: 8px;
+  line-height: 1.6;
 }
 
 .data-mono, .plat-notation {
@@ -180,23 +194,24 @@ p, .body-copy {
   letter-spacing: 0.02em;
   line-height: 1.5;
   text-align: left;
+  color: var(--sobha-muted);
 }
 
 .plat-code {
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--blueprint);
+  color: var(--sobha-gold);
 }
 
 /* Interactive Elements & Focus States */
 a {
-  color: var(--blueprint);
+  color: var(--sobha-gold);
   text-decoration: none;
   transition: color 0.15s ease;
 }
 
 a:hover {
-  color: var(--flag-orange);
+  color: var(--sobha-gold-light);
 }
 
 a:focus-visible,
@@ -204,43 +219,46 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid var(--blueprint);
+  outline: 2px solid var(--sobha-gold);
   outline-offset: 2px;
 }
 
-/* Primary Action Buttons (Matte Terracotta) */
+/* Primary Action Buttons (Sobha Champagne Gold) */
 .btn-survey {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
+  padding: 13px 28px;
   font-family: var(--font-mono);
   font-size: 13.5px;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  background-color: var(--flag-orange);
-  color: #FFFFFF;
-  border: 1px solid var(--flag-orange);
+  background-color: var(--sobha-gold);
+  color: #1A1919;
+  border: 1px solid var(--sobha-gold);
   border-radius: var(--radius);
   cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition: all 0.25s ease;
 }
 
 .btn-survey:hover {
-  background-color: #883D23;
-  border-color: #883D23;
-  color: #FFFFFF;
+  background-color: var(--sobha-gold-light);
+  border-color: var(--sobha-gold-light);
+  color: #1A1919;
+  box-shadow: 0 4px 20px rgba(194, 168, 126, 0.35);
+  transform: translateY(-1px);
 }
 
 .btn-outline {
   background-color: transparent;
-  color: var(--blueprint);
-  border: 1px solid var(--blueprint);
+  color: var(--sobha-gold);
+  border: 1px solid rgba(194, 168, 126, 0.4);
 }
 
 .btn-outline:hover {
-  background-color: var(--blueprint);
+  background-color: rgba(194, 168, 126, 0.15);
+  border-color: var(--sobha-gold);
   color: #FFFFFF;
 }
 

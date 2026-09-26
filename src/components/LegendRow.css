@@ -1,13 +1,18 @@
-/* LegendRow Component Styles — Survey Services Directory */
+/* LegendRow Component Styles — Sobha Privy Collection Luxury Dark Geomatics */
 
 .legend-row {
   width: 100%;
   background-color: transparent;
-  transition: background-color 0.15s ease;
+  border-bottom: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  transition: background-color 0.2s ease;
+}
+
+.legend-row:last-child {
+  border-bottom: none;
 }
 
 .legend-row:hover {
-  background-color: var(--paper-subtle);
+  background-color: rgba(255, 255, 255, 0.03);
 }
 
 .legend-main {
@@ -22,18 +27,24 @@
 .legend-symbol-box {
   width: 40px;
   height: 40px;
-  border: 1px solid var(--rule-color);
-  border-radius: var(--radius);
+  border: 1px solid rgba(194, 168, 126, 0.3);
+  border-radius: var(--radius, 4px);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--paper-subtle);
+  background-color: var(--sobha-card, #282626);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.legend-row:hover .legend-symbol-box {
+  border-color: var(--sobha-gold, #C2A87E);
+  transform: scale(1.05);
 }
 
 .legend-glyph {
   font-family: var(--font-mono);
   font-size: 20px;
-  color: var(--blueprint);
+  color: var(--sobha-gold, #C2A87E);
   line-height: 1;
 }
 
@@ -47,7 +58,7 @@
   font-family: var(--font-display);
   font-size: 19px;
   font-weight: 600;
-  color: var(--blueprint);
+  color: var(--sobha-cream, #F5F3EF);
   line-height: 1.2;
 }
 
@@ -60,7 +71,7 @@
 .legend-desc {
   font-family: var(--font-body);
   font-size: 15px;
-  color: var(--ink);
+  color: var(--sobha-muted, #9E9891);
   line-height: 1.5;
   margin: 0;
 }
@@ -73,20 +84,23 @@
 
 .legend-link {
   font-family: var(--font-mono);
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--blueprint);
-  letter-spacing: 0.03em;
-  padding: 8px 14px;
-  border: 1px solid var(--blueprint);
-  border-radius: var(--radius);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.06em;
+  padding: 8px 16px;
+  border: 1px solid rgba(194, 168, 126, 0.4);
+  border-radius: var(--radius, 4px);
   display: inline-block;
-  transition: all 0.15s ease;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
 }
 
 .legend-link:hover {
-  background-color: var(--blueprint);
-  color: #FFFFFF;
+  background-color: var(--sobha-gold, #C2A87E);
+  color: #1A1919;
+  border-color: var(--sobha-gold, #C2A87E);
+  box-shadow: 0 4px 14px rgba(194, 168, 126, 0.3);
 }
 
 /* Responsive adjustments */

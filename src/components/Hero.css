@@ -26,7 +26,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 16px;
-  border-bottom: 1px solid var(--rule-color);
+  border-bottom: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
   padding-bottom: 18px;
 }
 
@@ -34,23 +34,23 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: var(--paper-surface);
-  border: 1px solid var(--rule-color);
-  border-radius: var(--radius);
+  background-color: var(--sobha-surface, #222020);
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius, 4px);
   padding: 8px 16px;
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--ink);
-  box-shadow: 0 1px 3px rgba(35, 49, 66, 0.04);
+  color: var(--sobha-cream, #F5F3EF);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .station-dot {
   width: 8px;
   height: 8px;
-  background-color: #16A34A;
+  background-color: var(--sobha-gold, #C2A87E);
   border-radius: 50%;
   display: inline-block;
-  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
+  box-shadow: 0 0 0 2px rgba(194, 168, 126, 0.25);
   animation: pulse-dot 2s infinite ease-in-out;
 }
 
@@ -61,31 +61,31 @@
 
 .station-name {
   font-weight: 700;
-  color: var(--blueprint);
+  color: var(--sobha-gold, #C2A87E);
   letter-spacing: 0.06em;
 }
 
 .station-sep {
-  color: var(--rule-color);
+  color: var(--sobha-hairline, rgba(255, 255, 255, 0.15));
 }
 
 .station-coords {
   font-weight: 600;
-  color: var(--ink);
+  color: var(--sobha-cream, #F5F3EF);
   letter-spacing: 0.02em;
 }
 
 .station-datum {
   font-size: 11px;
-  color: var(--ink-muted);
+  color: var(--sobha-muted, #9E9891);
 }
 
 .hero-discipline-tag {
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--flag-orange);
+  letter-spacing: 0.1em;
+  color: var(--sobha-gold, #C2A87E);
 }
 
 /* 2-Column Split Grid */
@@ -108,8 +108,8 @@
   font-size: clamp(26px, 3.6vw, 48px);
   font-weight: 700;
   line-height: 1.12;
-  color: var(--blueprint);
-  letter-spacing: -0.02em;
+  color: var(--sobha-cream, #F5F3EF);
+  letter-spacing: -0.01em;
   margin: 0;
   overflow-wrap: break-word;
   word-break: break-word;
@@ -119,7 +119,7 @@
   font-family: var(--font-body);
   font-size: clamp(15.5px, 1.15vw, 17.5px);
   line-height: 1.65;
-  color: var(--ink);
+  color: var(--sobha-muted, #9E9891);
   margin: 0;
   max-width: 640px;
 }
@@ -173,29 +173,29 @@
   align-items: center;
   gap: 10px;
   padding: 10px 18px;
-  background-color: var(--paper-surface);
-  border: 1px solid var(--rule-color);
+  background-color: var(--sobha-card, #282626);
+  border: 1px solid rgba(194, 168, 126, 0.4);
   border-radius: 24px;
   text-decoration: none;
-  color: var(--blueprint);
+  color: var(--sobha-cream, #F5F3EF);
   font-family: var(--font-mono);
   font-size: 11.5px;
   font-weight: 600;
   letter-spacing: 0.04em;
-  box-shadow: 0 2px 8px rgba(35, 49, 66, 0.04);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
   transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
 }
 
 .btn-3d-explorer-pill:hover {
-  border-color: var(--flag-orange);
+  border-color: var(--sobha-gold, #C2A87E);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(158, 72, 43, 0.12);
-  color: var(--flag-orange);
+  box-shadow: 0 6px 18px rgba(194, 168, 126, 0.2);
+  color: var(--sobha-gold, #C2A87E);
 }
 
 .pill-badge-3d {
-  background-color: var(--blueprint);
-  color: #FFFFFF;
+  background-color: var(--sobha-gold, #C2A87E);
+  color: #1A1919;
   font-size: 9.5px;
   font-weight: 700;
   padding: 2px 6px;
@@ -210,15 +210,16 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background-color: var(--paper);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--sobha-cream, #F5F3EF);
   font-size: 11px;
   transition: transform 0.25s ease;
 }
 
 .btn-3d-explorer-pill:hover .pill-arrow-circle {
   transform: translateX(4px);
-  background-color: var(--flag-orange);
-  color: #FFFFFF;
+  background-color: var(--sobha-gold, #C2A87E);
+  color: #1A1919;
 }
 
 /* Floating Geodetic Spatial Telemetry Widget (SWSH / Sobha Inspired) */
@@ -228,11 +229,11 @@
   gap: 16px;
   margin-top: 14px;
   padding: 12px 18px;
-  background-color: var(--paper-surface);
-  border: 1px solid var(--rule-color);
-  border-radius: var(--radius);
+  background-color: var(--sobha-surface, #222020);
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius, 4px);
   max-width: fit-content;
-  box-shadow: 0 4px 16px rgba(35, 49, 66, 0.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   animation: float-azimuth 6s ease-in-out infinite alternate;
 }
 
@@ -314,10 +315,10 @@
 /* 3D Geodetic Field Telemetry Slideshow Card */
 .hero-slideshow-card {
   position: relative;
-  background-color: var(--paper-surface);
-  border: 1px solid var(--rule-color);
-  border-radius: var(--radius);
-  box-shadow: 0 8px 30px rgba(35, 49, 66, 0.08);
+  background-color: var(--sobha-surface, #222020);
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius, 4px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   transition: transform 0.25s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.25s ease;
   transform-style: preserve-3d;
@@ -325,7 +326,7 @@
 }
 
 .hero-slideshow-card:focus-visible {
-  box-shadow: 0 0 0 2px var(--flag-orange), 0 8px 30px rgba(35, 49, 66, 0.12);
+  box-shadow: 0 0 0 2px var(--sobha-gold, #C2A87E), 0 8px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* Header Strip */
@@ -334,10 +335,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 16px;
-  background-color: var(--paper);
-  border-bottom: 1px solid var(--rule-color);
+  background-color: var(--sobha-card, #282626);
+  border-bottom: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
   font-family: var(--font-mono);
   font-size: 11px;
+  color: var(--sobha-cream, #F5F3EF);
 }
 
 .slideshow-status {
@@ -345,7 +347,7 @@
   align-items: center;
   gap: 8px;
   font-weight: 700;
-  color: var(--blueprint);
+  color: var(--sobha-gold, #C2A87E);
   letter-spacing: 0.06em;
 }
 

@@ -1,8 +1,9 @@
-/* ContactBlock Styles — Modern Precision Geospatial */
+/* ContactBlock Styles — Sobha Privy Collection Luxury Dark Architectural Style */
 
 .contact-section {
   padding: 104px 0 104px 0;
   border-bottom: none;
+  background-color: var(--sobha-dark, #1A1919);
 }
 
 .section-title-line {
@@ -13,7 +14,7 @@
   font-family: var(--font-display);
   font-size: 32px;
   font-weight: 600;
-  color: var(--blueprint);
+  color: var(--sobha-cream, #F5F3EF);
   margin-bottom: 12px;
 }
 
@@ -21,7 +22,7 @@
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
-  color: var(--ink);
+  color: var(--sobha-muted, #9E9891);
   max-width: var(--max-line);
 }
 
@@ -41,32 +42,34 @@
 }
 
 .plat-description-box {
-  background-color: var(--paper-surface);
-  border: 1px solid var(--rule-color);
-  border-radius: var(--radius);
+  background-color: var(--sobha-surface, #222020);
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius, 4px);
   padding: 32px;
-  box-shadow: 0 1px 3px rgba(35, 49, 66, 0.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .legal-plat-text {
   font-family: var(--font-body);
   font-size: 14px;
-  color: var(--ink);
+  color: var(--sobha-cream, #F5F3EF);
   line-height: 1.6;
-  border-bottom: 1px dashed var(--rule-color);
+  border-bottom: 1px dashed var(--sobha-hairline, rgba(255, 255, 255, 0.08));
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
 
 .plat-firm-line {
   font-weight: 600;
-  color: var(--blueprint);
+  color: var(--sobha-gold, #C2A87E);
   margin-bottom: 6px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .plat-address-line {
   margin-bottom: 12px;
-  color: var(--ink);
+  color: var(--sobha-muted, #9E9891);
 }
 
 .plat-coordinates-line {
@@ -75,10 +78,10 @@
   gap: 4px;
   font-size: 13px;
   font-family: var(--font-mono);
-  color: var(--ink-muted);
-  background-color: #FFFFFF;
-  padding: 10px 14px;
-  border-left: 3px solid var(--blueprint);
+  color: var(--sobha-gold, #C2A87E);
+  background-color: var(--sobha-card, #282626);
+  padding: 12px 16px;
+  border-left: 3px solid var(--sobha-gold, #C2A87E);
   border-radius: 2px;
 }
 
@@ -99,41 +102,44 @@
   font-family: var(--font-mono);
   font-size: 10.5px;
   font-weight: 600;
-  color: var(--blueprint);
+  color: var(--sobha-gold, #C2A87E);
   letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .plain-survey-link {
   font-family: var(--font-mono);
   font-size: 13.5px;
   font-weight: 500;
-  color: var(--blueprint);
+  color: var(--sobha-cream, #F5F3EF);
   text-decoration: underline;
   text-underline-offset: 3px;
+  transition: color 0.2s ease;
 }
 
 .plain-survey-link:hover {
-  color: var(--flag-orange);
+  color: var(--sobha-gold, #C2A87E);
 }
 
 .hours-val {
   font-family: var(--font-mono);
   font-size: 13px;
-  color: var(--ink);
+  color: var(--sobha-muted, #9E9891);
   font-weight: 500;
 }
 
 /* Map Embed */
 .map-embed-wrapper {
-  background-color: var(--paper-subtle);
-  border: 1px solid var(--rule-color);
-  border-radius: var(--radius);
+  background-color: var(--sobha-surface, #222020);
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius, 4px);
   padding: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 990px) {
   .contact-section {
-    padding: 64px 20px 64px 0;
+    padding: 96px 0 96px 0;
   }
   .contact-grid {
     grid-template-columns: 1fr;

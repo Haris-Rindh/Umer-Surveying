@@ -1,16 +1,334 @@
-/* Home Page Styles — Professional & Matte Geomatics */
+/* Home Page Styles — Sobha Privy Collection Luxury Dark Geomatics */
 
 .home-page-flow {
   display: flex;
   flex-direction: column;
+  background-color: var(--sobha-dark, #1A1919);
+  color: var(--sobha-cream, #F5F3EF);
 }
 
 .page-section {
   padding: 104px 0 104px 0;
-  border-bottom: 1px solid var(--rule-color);
+  border-bottom: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
 }
 
-/* Categorized Services Sectors */
+/* ==========================================================================
+   01. Sobha Signature 3-Image Showcase (Triptych Repertoire)
+   ========================================================================== */
+.sobha-triptych-section {
+  position: relative;
+  background: radial-gradient(circle at 50% 20%, rgba(34, 32, 32, 0.8) 0%, rgba(26, 25, 25, 1) 70%);
+}
+
+.sobha-center-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 56px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sobha-kicker {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.sobha-grand-title {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.18;
+  color: var(--sobha-cream, #F5F3EF);
+  margin: 0;
+  text-align: center;
+}
+
+.sobha-lead-center {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--sobha-muted, #9E9891);
+  margin-top: 14px;
+  text-align: center;
+  max-width: 680px;
+}
+
+.sobha-triptych-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr 1fr;
+  gap: 28px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.sobha-triptych-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--sobha-card, #282626);
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius, 4px);
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  transition: transform 0.4s var(--ease-luxury, cubic-bezier(0.25, 1, 0.5, 1)), border-color 0.3s ease, box-shadow 0.4s ease;
+}
+
+.sobha-triptych-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(194, 168, 126, 0.45);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6), 0 0 24px rgba(194, 168, 126, 0.15);
+}
+
+.sobha-card-left {
+  transform: translateY(16px);
+}
+
+.sobha-card-center {
+  transform: translateY(0);
+  border-color: rgba(194, 168, 126, 0.35);
+}
+
+.sobha-card-right {
+  transform: translateY(16px);
+}
+
+.sobha-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  background-color: #151414;
+}
+
+.sobha-wrap-hero {
+  height: 360px;
+}
+
+.sobha-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.05) brightness(0.92);
+  transition: transform 0.6s var(--ease-luxury, cubic-bezier(0.25, 1, 0.5, 1)), filter 0.4s ease;
+}
+
+.sobha-triptych-card:hover .sobha-img {
+  transform: scale(1.04);
+  filter: contrast(1.08) brightness(1);
+}
+
+.sobha-img-overlay {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+}
+
+.sobha-img-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  background-color: rgba(26, 25, 25, 0.85);
+  color: var(--sobha-cream, #F5F3EF);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+.sobha-img-tag.highlight {
+  background-color: rgba(194, 168, 126, 0.9);
+  color: #1A1919;
+  border-color: var(--sobha-gold, #C2A87E);
+  font-weight: 700;
+}
+
+.sobha-card-caption {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: var(--sobha-card, #282626);
+}
+
+.sobha-card-h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--sobha-cream, #F5F3EF);
+  letter-spacing: 0.02em;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.sobha-card-sub {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--sobha-muted, #9E9891);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Technical Metrics Ribbon */
+.sobha-metrics-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 28px 40px;
+  background-color: rgba(34, 32, 32, 0.7);
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius, 4px);
+  max-width: 960px;
+  margin: 0 auto;
+  backdrop-filter: blur(8px);
+}
+
+.sobha-metric-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.sobha-metric-val {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.sobha-metric-lbl {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--sobha-muted, #9E9891);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sobha-metric-sep {
+  width: 1px;
+  height: 36px;
+  background-color: var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+}
+
+/* ==========================================================================
+   02. Sobha Cinematic Full-Bleed Architectural Statement Banner
+   ========================================================================== */
+.sobha-statement-section {
+  position: relative;
+  background-color: #141313;
+  text-align: center;
+  overflow: hidden;
+  border-top: 1px solid rgba(194, 168, 126, 0.2);
+  border-bottom: 1px solid rgba(194, 168, 126, 0.2);
+}
+
+.sobha-statement-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(194, 168, 126, 0.08) 0%, rgba(20, 19, 19, 0) 70%);
+  pointer-events: none;
+}
+
+.sobha-statement-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sobha-statement-kicker {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.sobha-statement-heading {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.22;
+  color: var(--sobha-cream, #F5F3EF);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.sobha-statement-accent {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.03em;
+  margin-top: 6px;
+  text-transform: none;
+}
+
+.sobha-statement-body {
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: var(--sobha-muted, #9E9891);
+  max-width: 720px;
+  margin: 8px 0 0 0;
+}
+
+.sobha-statement-coords {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--sobha-gold, #C2A87E);
+  padding: 6px 16px;
+  border: 1px solid rgba(194, 168, 126, 0.35);
+  border-radius: 20px;
+  background-color: rgba(194, 168, 126, 0.06);
+  margin-top: 8px;
+}
+
+.coord-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--sobha-gold, #C2A87E);
+  box-shadow: 0 0 8px var(--sobha-gold, #C2A87E);
+}
+
+.sobha-statement-action {
+  margin-top: 16px;
+}
+
+/* ==========================================================================
+   03. Categorized Services Sectors
+   ========================================================================== */
 .services-sectors-grid {
   display: flex;
   flex-direction: column;
@@ -19,27 +337,27 @@
 }
 
 .service-sector-card {
-  background-color: var(--paper-surface);
-  border: 1px solid var(--rule-color);
-  border-radius: var(--radius);
+  background-color: var(--sobha-surface, #222020);
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius, 4px);
   padding: 32px;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  box-shadow: 0 1px 3px rgba(35, 49, 66, 0.03);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .service-sector-card:hover {
-  border-color: rgba(35, 49, 66, 0.3);
-  box-shadow: 0 4px 14px rgba(35, 49, 66, 0.05);
+  border-color: rgba(194, 168, 126, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .sector-header {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  border-bottom: 1px solid var(--rule-color);
+  border-bottom: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
   padding-bottom: 16px;
 }
 
@@ -47,16 +365,16 @@
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 700;
-  color: var(--flag-orange);
-  letter-spacing: 0.08em;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .sector-title {
   font-family: var(--font-display);
   font-size: 24px;
-  font-weight: 700;
-  color: var(--blueprint);
+  font-weight: 600;
+  color: var(--sobha-cream, #F5F3EF);
   line-height: 1.2;
   margin: 0;
 }
@@ -64,7 +382,7 @@
 .sector-desc {
   font-family: var(--font-body);
   font-size: 14.5px;
-  color: var(--ink-muted);
+  color: var(--sobha-muted, #9E9891);
   margin: 0;
   line-height: 1.55;
 }
@@ -74,24 +392,26 @@
   flex-direction: column;
 }
 
-/* Course Docket */
+/* ==========================================================================
+   04. Course Docket
+   ========================================================================== */
 .course-docket-box {
-  border: 1px solid var(--rule-color);
-  background-color: var(--paper-surface);
-  border-radius: var(--radius);
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  background-color: var(--sobha-surface, #222020);
+  border-radius: var(--radius, 4px);
   padding: 36px;
   display: flex;
   flex-direction: column;
   gap: 28px;
   margin-top: 36px;
-  box-shadow: 0 1px 3px rgba(35, 49, 66, 0.03);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 }
 
 .course-spec-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
-  border-bottom: 1px solid var(--rule-color);
+  border-bottom: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
   padding-bottom: 24px;
 }
 
@@ -105,14 +425,14 @@
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 600;
-  color: var(--blueprint);
-  letter-spacing: 0.05em;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.06em;
 }
 
 .spec-value {
   font-family: var(--font-mono);
   font-size: 13px;
-  color: var(--ink);
+  color: var(--sobha-cream, #F5F3EF);
   line-height: 1.4;
 }
 
@@ -127,13 +447,15 @@
 .course-summary-copy {
   font-family: var(--font-body);
   font-size: 15px;
-  color: var(--ink);
+  color: var(--sobha-muted, #9E9891);
   max-width: 700px;
   margin: 0;
   line-height: 1.6;
 }
 
-/* About Section */
+/* ==========================================================================
+   05. About Section
+   ========================================================================== */
 .about-content-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -152,7 +474,7 @@
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.7;
-  color: var(--ink);
+  color: var(--sobha-cream, #F5F3EF);
   margin: 0;
 }
 
@@ -160,7 +482,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  border-top: 1px solid var(--rule-color);
+  border-top: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
   padding-top: 24px;
   margin-top: 12px;
 }
@@ -175,7 +497,7 @@
   font-family: var(--font-display);
   font-size: 32px;
   font-weight: 600;
-  color: var(--blueprint);
+  color: var(--sobha-gold, #C2A87E);
   line-height: 1;
 }
 
@@ -183,7 +505,7 @@
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 400;
-  color: var(--ink-muted);
+  color: var(--sobha-muted, #9E9891);
   letter-spacing: normal;
   text-transform: none;
   line-height: 1.35;
@@ -191,33 +513,34 @@
 
 /* About Diagram Frame */
 .plat-diagram-box {
-  border: 1px solid var(--rule-color);
-  border-top: 3px solid var(--blueprint);
-  background-color: var(--paper-surface);
-  border-radius: var(--radius);
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  border-top: 3px solid var(--sobha-gold, #C2A87E);
+  background-color: var(--sobha-surface, #222020);
+  border-radius: var(--radius, 4px);
   padding: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .diagram-header,
 .diagram-footer {
-  font-family: var(--font-body);
-  font-size: 12px;
-  color: var(--blueprint);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--sobha-gold, #C2A87E);
   padding: 6px 8px;
   display: flex;
   justify-content: space-between;
 }
 
 .diagram-header {
-  border-bottom: 1px solid var(--rule-color);
+  border-bottom: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
   margin-bottom: 10px;
   font-weight: 500;
 }
 
 .diagram-footer {
-  border-top: 1px solid var(--rule-color);
+  border-top: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
   margin-top: 10px;
-  color: var(--ink-muted);
+  color: var(--sobha-muted, #9E9891);
 }
 
 .about-technical-image {
@@ -226,9 +549,12 @@
   object-fit: cover;
   display: block;
   border-radius: 2px;
+  filter: contrast(1.05) brightness(0.95);
 }
 
-/* Founders Grid */
+/* ==========================================================================
+   06. Founders Grid
+   ========================================================================== */
 .founders-seal-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -236,9 +562,26 @@
   margin-top: 32px;
 }
 
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .sobha-triptych-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .sobha-card-left,
+  .sobha-card-right {
+    transform: translateY(0);
+  }
+  .sobha-wrap-hero {
+    height: 300px;
+  }
+}
+
 @media (max-width: 900px) {
   .page-section {
-    padding: 60px 20px 60px 0;
+    padding: 96px 0 96px 0;
   }
   .about-content-grid {
     grid-template-columns: 1fr;
@@ -249,5 +592,23 @@
   }
   .founders-seal-grid {
     grid-template-columns: 1fr;
+  }
+  .sobha-grand-title {
+    font-size: 28px;
+  }
+  .sobha-statement-heading {
+    font-size: 28px;
+  }
+  .sobha-statement-accent {
+    font-size: 22px;
+  }
+  .sobha-metrics-ribbon {
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+  }
+  .sobha-metric-sep {
+    width: 60px;
+    height: 1px;
   }
 }

@@ -1,8 +1,9 @@
-/* EquipmentSection Component Styles — Professional & Matte */
+/* EquipmentSection Component Styles — Sobha Privy Collection Luxury Dark Geomatics */
 
 .equipment-section {
   padding: 104px 0 104px 0;
-  border-bottom: 1px solid var(--rule-color);
+  border-bottom: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  background-color: var(--sobha-dark, #1A1919);
 }
 
 .equipment-grid {
@@ -13,27 +14,28 @@
 }
 
 .equipment-card {
-  background-color: var(--paper-surface);
-  border: 1px solid var(--rule-color);
-  border-radius: var(--radius);
+  background-color: var(--sobha-surface, #222020);
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius, 4px);
   padding: 32px;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  box-shadow: 0 1px 3px rgba(35, 49, 66, 0.03);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .equipment-card:hover {
-  border-color: rgba(35, 49, 66, 0.3);
-  box-shadow: 0 4px 14px rgba(35, 49, 66, 0.05);
+  border-color: rgba(194, 168, 126, 0.45);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.5), 0 0 20px rgba(194, 168, 126, 0.12);
+  transform: translateY(-4px);
 }
 
 .equipment-card-header {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border-bottom: 1px solid var(--rule-color);
+  border-bottom: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
   padding-bottom: 18px;
 }
 
@@ -49,23 +51,23 @@
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 600;
-  color: var(--flag-orange);
-  letter-spacing: 0.05em;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .equipment-tag {
   font-family: var(--font-mono);
   font-size: 10px;
-  color: var(--ink-faint);
-  letter-spacing: 0.04em;
+  color: var(--sobha-muted, #9E9891);
+  letter-spacing: 0.05em;
 }
 
 .equipment-title {
   font-family: var(--font-display);
   font-size: 22px;
   font-weight: 600;
-  color: var(--blueprint);
+  color: var(--sobha-cream, #F5F3EF);
   line-height: 1.2;
   margin: 0;
 }
@@ -76,34 +78,35 @@
   gap: 8px;
   font-family: var(--font-mono);
   font-size: 12px;
-  background-color: var(--paper-subtle);
-  padding: 6px 10px;
+  background-color: var(--sobha-card, #282626);
+  padding: 8px 12px;
   border-radius: 2px;
-  border-left: 2px solid var(--blueprint);
+  border-left: 2px solid var(--sobha-gold, #C2A87E);
 }
 
 .acc-label {
   font-weight: 600;
-  color: var(--ink-muted);
+  color: var(--sobha-gold, #C2A87E);
   font-size: 10.5px;
+  letter-spacing: 0.05em;
 }
 
 .acc-value {
   font-weight: 500;
-  color: var(--ink);
+  color: var(--sobha-cream, #F5F3EF);
 }
 
 .equipment-desc {
   font-family: var(--font-body);
   font-size: 14.5px;
   line-height: 1.6;
-  color: var(--ink);
+  color: var(--sobha-muted, #9E9891);
   margin: 0;
 }
 
 .equipment-app-box {
-  background-color: var(--paper-subtle);
-  border: 1px solid var(--rule-color);
+  background-color: var(--sobha-card, #282626);
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
   border-radius: 2px;
   padding: 16px;
   display: flex;
@@ -116,8 +119,9 @@
   font-family: var(--font-mono);
   font-size: 10.5px;
   font-weight: 600;
-  color: var(--blueprint);
-  letter-spacing: 0.05em;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .equipment-app-list {
@@ -136,7 +140,7 @@
 }
 
 .app-bullet {
-  color: var(--flag-orange);
+  color: var(--sobha-gold, #C2A87E);
   font-family: var(--font-mono);
   font-size: 11px;
 }
@@ -145,7 +149,7 @@
   font-family: var(--font-body);
   font-size: 13.5px;
   line-height: 1.45;
-  color: var(--ink);
+  color: var(--sobha-cream, #F5F3EF);
 }
 
 @media (max-width: 900px) {

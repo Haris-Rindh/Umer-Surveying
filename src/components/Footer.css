@@ -1,16 +1,17 @@
-/* Footer Styles — Modern Precision Geospatial */
+/* Footer Styles — Sobha Privy Collection Luxury Dark Geomatics */
 
 .site-footer {
-  background-color: var(--paper);
+  background-color: var(--sobha-dark, #1A1919);
   padding: 0;
   position: relative;
+  border-top: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
 }
 
 .footer-main-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1.2fr 1.3fr;
   gap: 36px;
-  padding: 50px 0 40px 0;
+  padding: 60px 0 40px 0;
   align-items: flex-start;
   max-width: 1440px;
 }
@@ -30,23 +31,24 @@
   font-family: var(--font-display);
   font-size: 22px;
   font-weight: 600;
-  color: var(--blueprint);
-  letter-spacing: 0.04em;
+  color: var(--sobha-cream, #F5F3EF);
+  letter-spacing: 0.06em;
 }
 
 .footer-brand-sub {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: var(--flag-orange);
-  letter-spacing: 0.06em;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.08em;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 .footer-narrative {
   font-family: var(--font-body);
   font-size: 14px;
   line-height: 1.6;
-  color: var(--ink-muted);
+  color: var(--sobha-muted, #9E9891);
   margin: 0;
 }
 
@@ -55,10 +57,10 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  border: 1px solid var(--rule-color);
-  border-radius: var(--radius);
-  padding: 10px 14px;
-  background-color: var(--paper-subtle);
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius, 4px);
+  padding: 12px 16px;
+  background-color: var(--sobha-surface, #222020);
   margin-top: 8px;
 }
 
@@ -83,22 +85,23 @@
   font-family: var(--font-mono);
   font-size: 9px;
   font-weight: 700;
-  color: var(--blueprint);
-  letter-spacing: 0.06em;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .bm-coords {
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 600;
-  color: var(--ink);
+  color: var(--sobha-cream, #F5F3EF);
   letter-spacing: 0.04em;
 }
 
 .bm-datum {
   font-family: var(--font-mono);
   font-size: 9.5px;
-  color: var(--ink-muted);
+  color: var(--sobha-muted, #9E9891);
 }
 
 /* Headings */
@@ -106,11 +109,11 @@
   font-family: var(--font-display);
   font-size: 18px;
   font-weight: 600;
-  color: var(--blueprint);
-  border-bottom: 1px solid var(--rule-color);
+  color: var(--sobha-gold, #C2A87E);
+  border-bottom: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
   padding-bottom: 8px;
   margin: 0;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
 }
 
 /* Links List */
@@ -127,13 +130,13 @@
 .footer-links-list a {
   font-family: var(--font-mono);
   font-size: 12.5px;
-  color: var(--ink-muted);
+  color: var(--sobha-muted, #9E9891);
   text-decoration: none;
   transition: color 0.15s ease;
 }
 
 .footer-links-list a:hover {
-  color: var(--blueprint);
+  color: var(--sobha-gold, #C2A87E);
 }
 
 .footer-svc-item {
@@ -143,16 +146,16 @@
   text-decoration: none;
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--ink-muted);
+  color: var(--sobha-muted, #9E9891);
   transition: color 0.15s ease;
 }
 
 .footer-svc-item:hover {
-  color: var(--blueprint);
+  color: var(--sobha-cream, #F5F3EF);
 }
 
 .svc-bullet {
-  color: var(--contour);
+  color: var(--sobha-gold, #C2A87E);
   font-size: 11px;
 }
 
@@ -167,29 +170,31 @@
   font-family: var(--font-mono);
   font-size: 12px;
   line-height: 1.5;
-  color: var(--ink);
+  color: var(--sobha-cream, #F5F3EF);
   margin: 0;
 }
 
 .docket-line strong {
-  color: var(--blueprint);
+  color: var(--sobha-gold, #C2A87E);
   font-size: 10.5px;
   display: block;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .docket-line a {
-  color: var(--blueprint);
+  color: var(--sobha-gold, #C2A87E);
   text-decoration: underline;
 }
 
 .docket-line a:hover {
-  color: var(--flag-orange);
+  color: var(--sobha-gold-light, #DFC8A5);
 }
 
 /* Bottom Bar */
 .footer-bottom-bar {
-  border-top: 1px solid var(--rule-color);
-  padding: 16px 0 24px 0;
+  border-top: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  padding: 20px 0 28px 0;
 }
 
 .bottom-inner {
@@ -203,14 +208,14 @@
 .copyright-text {
   font-family: var(--font-mono);
   font-size: 12px;
-  color: var(--ink-muted);
+  color: var(--sobha-muted, #9E9891);
   letter-spacing: 0.03em;
 }
 
 .technical-specs-text {
   font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--ink-muted);
+  font-size: 10.5px;
+  color: rgba(245, 243, 239, 0.4);
   letter-spacing: 0.04em;
 }
 

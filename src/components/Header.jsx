@@ -80,6 +80,17 @@ export default function Header() {
           >
             Field Notes
           </Link>
+          <a 
+            href="#threed-explorer" 
+            className="nav-link sobha-header-3d-link"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('threed-explorer');
+            }}
+          >
+            <span className="sobha-3d-text">3D Domains</span>
+            <span className="sobha-underline"></span>
+          </a>
           <Link 
             to="/#contact" 
             className="nav-link nav-link-cta"

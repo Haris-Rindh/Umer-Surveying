@@ -1,12 +1,14 @@
-/* Header Styling — Technical Drafting Title Block */
+/* Header Styling — Sobha Privy Collection Luxury Dark Architectural Header */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(246, 246, 244, 0.96);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--rule-color);
+  background-color: rgba(26, 25, 25, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .header-inner {
@@ -16,7 +18,7 @@
   padding: 16px 48px 16px var(--spine-offset);
   width: 100%;
   max-width: 1440px;
-  margin: 0;
+  margin: 0 auto;
 }
 
 .title-block {
@@ -24,32 +26,33 @@
   align-items: center;
   gap: 14px;
   text-decoration: none;
-  color: var(--ink);
+  color: var(--sobha-cream, #F5F3EF);
 }
 
 .header-logo-badge {
-  width: 50px;
-  height: 50px;
-  background-color: #FFFFFF;
-  border: 1.5px solid var(--rule-color);
+  width: 48px;
+  height: 48px;
+  background-color: #222020;
+  border: 1.5px solid rgba(194, 168, 126, 0.4);
   border-radius: 50% !important;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4px;
   flex-shrink: 0;
-  box-shadow: 0 2px 6px rgba(35, 49, 66, 0.08);
-  transition: transform 0.15s ease, border-color 0.15s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .title-block:hover .header-logo-badge {
-  border-color: var(--blueprint);
-  transform: scale(1.04);
+  border-color: var(--sobha-gold, #C2A87E);
+  transform: scale(1.05);
+  box-shadow: 0 0 16px rgba(194, 168, 126, 0.25);
 }
 
 .header-logo {
-  height: 42px;
-  width: 42px;
+  height: 40px;
+  width: 40px;
   object-fit: contain;
   display: block;
 }
@@ -61,26 +64,30 @@
 
 .brand-name {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--ink);
+  letter-spacing: 0.08em;
+  color: var(--sobha-cream, #F5F3EF);
   line-height: 1.1;
+  text-transform: uppercase;
 }
 
 .brand-tm {
-  font-size: 11px;
+  font-size: 10px;
   vertical-align: super;
   font-family: var(--font-mono);
+  color: var(--sobha-gold, #C2A87E);
+  margin-left: 2px;
 }
 
 .brand-sub {
   font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--blueprint);
-  letter-spacing: 0.05em;
+  font-size: 10.5px;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin-top: 3px;
+  margin-top: 4px;
+  opacity: 0.9;
 }
 
 /* Desktop Navigation */
@@ -92,37 +99,62 @@
 
 .nav-link {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 500;
-  letter-spacing: 0.03em;
-  color: var(--ink);
+  letter-spacing: 0.08em;
+  color: rgba(245, 243, 239, 0.78);
   padding: 6px 10px;
   border-bottom: 2px solid transparent;
-  transition: all 0.15s ease;
+  transition: color 0.2s ease, border-color 0.2s ease;
   text-transform: uppercase;
+  position: relative;
 }
 
 .nav-link:hover {
-  color: var(--flag-orange);
-  border-bottom-color: var(--flag-orange);
+  color: var(--sobha-gold, #C2A87E);
+  border-bottom-color: var(--sobha-gold, #C2A87E);
 }
 
 .nav-link.active {
-  color: var(--blueprint);
-  border-bottom-color: var(--blueprint);
+  color: var(--sobha-gold, #C2A87E);
+  border-bottom-color: var(--sobha-gold, #C2A87E);
+}
+
+/* Sobha 3D Link Pill */
+.sobha-header-3d-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(194, 168, 126, 0.45);
+  border-radius: 20px;
+  padding: 5px 12px;
+  color: var(--sobha-gold, #C2A87E);
+  background: rgba(194, 168, 126, 0.06);
+  transition: all 0.2s ease;
+}
+
+.sobha-header-3d-link:hover {
+  border-color: var(--sobha-gold, #C2A87E);
+  background: rgba(194, 168, 126, 0.15);
+  box-shadow: 0 0 12px rgba(194, 168, 126, 0.2);
+  color: #FFFFFF;
 }
 
 .nav-link-cta {
   background-color: transparent;
-  border: 1px solid var(--blueprint);
-  color: var(--blueprint);
-  padding: 6px 14px;
+  border: 1px solid var(--sobha-gold, #C2A87E);
+  color: var(--sobha-gold, #C2A87E);
+  padding: 7px 18px;
+  border-radius: 2px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 
 .nav-link-cta:hover {
-  background-color: var(--blueprint);
-  color: var(--paper);
-  border-color: var(--blueprint);
+  background-color: var(--sobha-gold, #C2A87E);
+  color: #1A1919;
+  border-color: var(--sobha-gold, #C2A87E);
+  box-shadow: 0 4px 14px rgba(194, 168, 126, 0.3);
 }
 
 /* Mobile Toggle */
@@ -133,46 +165,53 @@
   width: 32px;
   height: 28px;
   background: transparent;
-  border: 1px solid var(--ink);
-  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 5px;
   cursor: pointer;
+  border-radius: 2px;
 }
 
 .toggle-bar {
   width: 100%;
   height: 2px;
-  background-color: var(--ink);
+  background-color: var(--sobha-cream, #F5F3EF);
   display: block;
+  transition: background-color 0.2s ease;
 }
 
 /* Mobile Nav Drawer */
 .mobile-nav {
   display: flex;
   flex-direction: column;
-  background-color: var(--paper);
-  border-top: 1px solid var(--rule-color);
-  padding: 16px 24px;
+  background-color: #1A1919;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px 24px;
   gap: 12px;
 }
 
 .mobile-nav-link {
   font-family: var(--font-mono);
-  font-size: 14px;
-  color: var(--ink);
-  padding: 8px 0;
-  border-bottom: 1px dashed var(--rule-color);
+  font-size: 13px;
+  color: var(--sobha-cream, #F5F3EF);
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
   text-transform: uppercase;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.06em;
+  transition: color 0.15s ease;
+}
+
+.mobile-nav-link:hover {
+  color: var(--sobha-gold, #C2A87E);
 }
 
 .mobile-nav-link.cta {
-  color: var(--flag-orange);
+  color: var(--sobha-gold, #C2A87E);
   font-weight: 600;
 }
 
 @media (max-width: 800px) {
   .header-inner {
-    padding: 12px 16px;
+    padding: 14px 20px;
     width: 100%;
   }
   .desktop-nav {

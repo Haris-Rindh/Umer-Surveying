@@ -1,20 +1,21 @@
-/* ContactForm Styles — Modern Precision Geospatial */
+/* ContactForm Styles — Sobha Privy Collection Luxury Dark Geomatics */
 
 .contact-form-wrapper {
-  background-color: var(--paper-subtle);
-  border: 1px solid var(--rule-color);
-  border-top: 3px solid var(--blueprint);
-  border-radius: var(--radius);
-  padding: 24px;
+  background-color: var(--sobha-surface, #222020);
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  border-top: 3px solid var(--sobha-gold, #C2A87E);
+  border-radius: var(--radius, 4px);
+  padding: 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .form-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--rule-color);
-  padding-bottom: 12px;
-  margin-bottom: 24px;
+  border-bottom: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  padding-bottom: 16px;
+  margin-bottom: 28px;
   flex-wrap: wrap;
   gap: 8px;
 }
@@ -23,14 +24,15 @@
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 600;
-  color: var(--blueprint);
-  letter-spacing: 0.05em;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .form-legend-note {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: var(--ink-muted);
+  color: var(--sobha-muted, #9E9891);
   letter-spacing: 0.03em;
 }
 
@@ -38,7 +40,7 @@
 .cadastral-form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
 }
 
 .form-field-row {
@@ -52,14 +54,14 @@
   font-family: var(--font-mono);
   font-size: 13px;
   font-weight: 500;
-  color: var(--ink);
-  letter-spacing: 0.02em;
+  color: var(--sobha-cream, #F5F3EF);
+  letter-spacing: 0.04em;
   padding-top: 10px;
   text-align: left;
 }
 
 .req-mark {
-  color: var(--flag-orange);
+  color: var(--sobha-gold, #C2A87E);
 }
 
 .field-input-box {
@@ -70,23 +72,24 @@
   width: 100%;
   font-family: var(--font-mono);
   font-size: 14px;
-  color: var(--ink);
-  background-color: #FFFFFF;
-  border: 1px solid #CBD5E1;
-  border-radius: var(--radius);
-  padding: 10px 14px;
+  color: var(--sobha-cream, #F5F3EF);
+  background-color: #171616;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius, 4px);
+  padding: 12px 16px;
   line-height: 1.5;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .technical-input:focus {
-  border-color: var(--blueprint);
-  outline: 2px solid var(--blueprint);
+  border-color: var(--sobha-gold, #C2A87E);
+  outline: 2px solid var(--sobha-gold, #C2A87E);
   outline-offset: 1px;
+  background-color: #1A1919;
 }
 
 .technical-input::placeholder {
-  color: #94A3B8;
+  color: #7A756F;
   font-size: 13px;
 }
 
@@ -94,9 +97,14 @@
   cursor: pointer;
 }
 
+.technical-select option {
+  background-color: #222020;
+  color: #F5F3EF;
+}
+
 .technical-textarea {
   resize: vertical;
-  min-height: 90px;
+  min-height: 96px;
 }
 
 /* Submit Row */
@@ -106,8 +114,8 @@
   gap: 20px;
   align-items: center;
   margin-top: 12px;
-  padding-top: 16px;
-  border-top: 1px solid var(--rule-color);
+  padding-top: 20px;
+  border-top: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
 }
 
 .submit-action-box {
@@ -120,16 +128,16 @@
 .submit-confidential-note {
   font-family: var(--font-mono);
   font-size: 11px;
-  color: var(--ink-muted);
+  color: var(--sobha-muted, #9E9891);
   letter-spacing: 0.04em;
 }
 
 /* Error Banner */
 .form-error-banner {
-  background-color: #FEF2F2;
-  border: 1px solid #F87171;
-  border-radius: var(--radius);
-  padding: 16px;
+  background-color: rgba(69, 26, 26, 0.5);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: var(--radius, 4px);
+  padding: 18px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -140,14 +148,15 @@
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 700;
-  color: #DC2626;
-  letter-spacing: 0.05em;
+  color: #F87171;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .error-message-text {
   font-family: var(--font-body);
   font-size: 14px;
-  color: #991B1B;
+  color: #FCA5A5;
   line-height: 1.5;
 }
 
@@ -162,24 +171,25 @@
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 600;
-  color: var(--blueprint);
+  color: var(--sobha-gold, #C2A87E);
   text-decoration: underline;
 }
 
 /* Success Banner */
 .form-success-banner {
-  background-color: #F0FDF4;
-  border: 1px solid #86EFAC;
-  border-radius: var(--radius);
-  padding: 24px;
+  background-color: rgba(22, 45, 30, 0.6);
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  border-radius: var(--radius, 4px);
+  padding: 28px;
 }
 
 .success-badge {
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 600;
-  color: #16A34A;
-  letter-spacing: 0.06em;
+  color: #4ADE80;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   margin-bottom: 8px;
 }
 
@@ -187,22 +197,22 @@
   font-family: var(--font-display);
   font-size: 24px;
   font-weight: 600;
-  color: #166534;
+  color: #86EFAC;
   margin-bottom: 8px;
 }
 
 .success-lead {
   font-family: var(--font-body);
   font-size: 15px;
-  color: #14532D;
+  color: #D1FAE5;
   margin-bottom: 20px;
   line-height: 1.5;
 }
 
 .submitted-summary {
-  background-color: #FFFFFF;
-  border: 1px solid #DCFCE7;
-  border-radius: var(--radius);
+  background-color: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius, 4px);
   padding: 16px;
   margin-bottom: 20px;
   display: flex;
@@ -214,7 +224,7 @@
   display: flex;
   justify-content: space-between;
   font-size: 13px;
-  border-bottom: 1px dashed #E2E8F0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
   padding-bottom: 4px;
 }
 
@@ -225,13 +235,13 @@
 
 .s-label {
   font-family: var(--font-mono);
-  color: #475569;
+  color: var(--sobha-gold, #C2A87E);
   font-weight: 500;
 }
 
 .s-val {
   font-family: var(--font-mono);
-  color: #0F172A;
+  color: var(--sobha-cream, #F5F3EF);
 }
 
 .success-actions {
