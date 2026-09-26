@@ -139,6 +139,178 @@
   box-shadow: 0 2px 8px rgba(158, 72, 43, 0.15);
 }
 
+/* Kinetic FlipLink Hover Effect (SWSH Inspired) */
+.btn-fliplink {
+  overflow: hidden;
+  position: relative;
+}
+
+.fliplink-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  height: 1.3em;
+  overflow: hidden;
+}
+
+.fliplink-top,
+.fliplink-bottom {
+  display: block;
+  line-height: 1.3em;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-fliplink:hover .fliplink-top {
+  transform: translateY(-100%);
+}
+
+.btn-fliplink:hover .fliplink-bottom {
+  transform: translateY(-100%);
+}
+
+/* 3D Explorer Trigger Pill (Sobha / SWSH Inspired) */
+.btn-3d-explorer-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background-color: var(--paper-surface);
+  border: 1px solid var(--rule-color);
+  border-radius: 24px;
+  text-decoration: none;
+  color: var(--blueprint);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 8px rgba(35, 49, 66, 0.04);
+  transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.btn-3d-explorer-pill:hover {
+  border-color: var(--flag-orange);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(158, 72, 43, 0.12);
+  color: var(--flag-orange);
+}
+
+.pill-badge-3d {
+  background-color: var(--blueprint);
+  color: #FFFFFF;
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  letter-spacing: 0.06em;
+}
+
+.pill-arrow-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--paper);
+  font-size: 11px;
+  transition: transform 0.25s ease;
+}
+
+.btn-3d-explorer-pill:hover .pill-arrow-circle {
+  transform: translateX(4px);
+  background-color: var(--flag-orange);
+  color: #FFFFFF;
+}
+
+/* Floating Geodetic Spatial Telemetry Widget (SWSH / Sobha Inspired) */
+.hero-floating-spatial-widget {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 14px;
+  padding: 12px 18px;
+  background-color: var(--paper-surface);
+  border: 1px solid var(--rule-color);
+  border-radius: var(--radius);
+  max-width: fit-content;
+  box-shadow: 0 4px 16px rgba(35, 49, 66, 0.04);
+  animation: float-azimuth 6s ease-in-out infinite alternate;
+}
+
+@keyframes float-azimuth {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-5px); }
+}
+
+.azimuth-compass-circle {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compass-dial-svg {
+  width: 100%;
+  height: 100%;
+  animation: compass-slow-drift 24s linear infinite;
+}
+
+@keyframes compass-slow-drift {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.compass-core-crosshair {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--flag-orange);
+  box-shadow: 0 0 6px var(--flag-orange);
+}
+
+.widget-telemetry-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--font-mono);
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #16A34A;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
+}
+
+.meta-status {
+  font-size: 11px;
+  font-weight: 700;
+  color: #16A34A;
+  letter-spacing: 0.04em;
+}
+
+.meta-coord {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+
+.meta-datum {
+  font-size: 9.5px;
+  color: var(--ink-faint);
+}
+
 /* 3D Geodetic Field Telemetry Slideshow Card */
 .hero-slideshow-card {
   position: relative;

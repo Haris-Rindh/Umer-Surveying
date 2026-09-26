@@ -250,6 +250,22 @@
   background-size: 24px 24px;
   transform: translateZ(0px);
   transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.drafting-grid-plane::after {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: conic-gradient(from 0deg at 50% 50%, rgba(22, 163, 74, 0.16) 0deg, transparent 55deg, transparent 360deg);
+  border-radius: 50%;
+  animation: radar-sweep 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes radar-sweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .grid-axis-x {

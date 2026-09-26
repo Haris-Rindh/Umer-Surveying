@@ -41,6 +41,12 @@
   --perspective-deep: 1600px;
   --transform-3d: preserve-3d;
   --ease-3d: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-luxury: cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* Luxury Architectural Sheen Accents (Sobha / SWSH Inspired) */
+  --gold-sheen: linear-gradient(135deg, rgba(125, 104, 70, 0.22) 0%, rgba(255, 255, 255, 0.08) 50%, rgba(125, 104, 70, 0.15) 100%);
+  --gold-border: linear-gradient(135deg, #7D6846 0%, #B89E72 50%, #4B3F2A 100%);
+  --hud-glass: rgba(20, 24, 29, 0.88);
 }
 
 /* CSS Reset & Base */

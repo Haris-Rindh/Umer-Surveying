@@ -199,6 +199,7 @@ export default function ThreeDDomainExplorer() {
 
   return (
     <section 
+      id="threed-explorer"
       ref={containerRef}
       className="page-section threed-explorer-section" 
       aria-label="3D Geodetic Domain Explorer"

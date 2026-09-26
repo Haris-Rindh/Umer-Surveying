@@ -176,12 +176,47 @@ export default function Hero() {
             </p>
 
             <div className="hero-action-line">
-              <a href="#contact" className="btn-survey hero-cta" onClick={(e) => scrollToSection(e, 'contact')}>
-                Request a survey consultation
+              <a href="#contact" className="btn-survey hero-cta btn-fliplink" onClick={(e) => scrollToSection(e, 'contact')}>
+                <span className="fliplink-wrap">
+                  <span className="fliplink-top">Request a survey consultation</span>
+                  <span className="fliplink-bottom" aria-hidden="true">Request a survey consultation</span>
+                </span>
+              </a>
+              <a href="#threed-explorer" className="btn-3d-explorer-pill" onClick={(e) => scrollToSection(e, 'threed-explorer')}>
+                <span className="pill-badge-3d">3D</span>
+                <span className="pill-label">Inspect Domains in 3D</span>
+                <span className="pill-arrow-circle" aria-hidden="true">→</span>
               </a>
               <a href="#equipment" className="btn-survey btn-outline" onClick={(e) => scrollToSection(e, 'equipment')}>
                 Explore Equipment Arsenal
               </a>
+            </div>
+
+            {/* Floating Geodetic Spatial Telemetry Widget (Sobha / SWSH Inspired) */}
+            <div className="hero-floating-spatial-widget" aria-hidden="true">
+              <div className="azimuth-compass-circle">
+                <svg className="compass-dial-svg" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="46" fill="none" stroke="rgba(125, 104, 70, 0.35)" strokeWidth="1" strokeDasharray="3 3" />
+                  <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(35, 49, 66, 0.2)" strokeWidth="1.5" />
+                  <line x1="50" y1="4" x2="50" y2="16" stroke="var(--flag-orange)" strokeWidth="2" />
+                  <line x1="50" y1="84" x2="50" y2="96" stroke="rgba(35, 49, 66, 0.35)" strokeWidth="1.5" />
+                  <line x1="4" y1="50" x2="16" y2="50" stroke="rgba(35, 49, 66, 0.35)" strokeWidth="1.5" />
+                  <line x1="84" y1="50" x2="96" y2="50" stroke="rgba(35, 49, 66, 0.35)" strokeWidth="1.5" />
+                  <text x="50" y="27" textAnchor="middle" fontSize="9" fontWeight="700" fill="var(--flag-orange)" fontFamily="var(--font-mono)">N</text>
+                  <text x="80" y="53" textAnchor="middle" fontSize="8" fontWeight="600" fill="var(--ink-muted)" fontFamily="var(--font-mono)">E</text>
+                  <text x="50" y="80" textAnchor="middle" fontSize="8" fontWeight="600" fill="var(--ink-muted)" fontFamily="var(--font-mono)">S</text>
+                  <text x="20" y="53" textAnchor="middle" fontSize="8" fontWeight="600" fill="var(--ink-muted)" fontFamily="var(--font-mono)">W</text>
+                </svg>
+                <div className="compass-core-crosshair"></div>
+              </div>
+              <div className="widget-telemetry-meta">
+                <div className="meta-row">
+                  <span className="meta-dot"></span>
+                  <span className="meta-status">RTK FIX (8mm)</span>
+                </div>
+                <div className="meta-coord">AZIMUTH: N 14.8° E</div>
+                <div className="meta-datum">GEODETIC DATUM: WGS 84</div>
+              </div>
             </div>
           </div>
 
