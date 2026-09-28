@@ -563,6 +563,263 @@
 }
 
 /* ==========================================================================
+   07. Sobha Editorial Narrative & Secondary Gallery
+   ========================================================================== */
+.sobha-editorial-block {
+  text-align: center;
+  max-width: 1040px;
+  margin: 0 auto 56px auto;
+  padding: 0 var(--space-page, 24px);
+}
+
+.sobha-editorial-quote {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--sobha-cream, #F5F3EF);
+  letter-spacing: 0.02em;
+  margin: 0 0 36px 0;
+}
+
+.sobha-editorial-accent {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sobha-gold, #C2A87E);
+  font-size: 24px;
+  margin-top: 6px;
+}
+
+.sobha-editorial-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 36px;
+}
+
+.editorial-gallery-item {
+  position: relative;
+  border-radius: var(--radius, 4px);
+  overflow: hidden;
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  background-color: var(--sobha-card, #282626);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.4s var(--ease-luxury, cubic-bezier(0.25, 1, 0.5, 1)), border-color 0.3s ease;
+}
+
+.editorial-gallery-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(194, 168, 126, 0.45);
+}
+
+.editorial-gallery-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.05) brightness(0.92);
+  transition: transform 0.6s var(--ease-luxury, cubic-bezier(0.25, 1, 0.5, 1));
+}
+
+.editorial-gallery-item:hover .editorial-gallery-img {
+  transform: scale(1.03);
+}
+
+.editorial-caption {
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  background-color: var(--sobha-card, #282626);
+}
+
+.caption-tag {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.caption-desc {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--sobha-muted, #9E9891);
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   08. Sobha Sensation Section (EVOKING A CERTAINTY)
+   ========================================================================== */
+.sobha-sensation-section {
+  position: relative;
+  background: radial-gradient(circle at 75% 50%, rgba(34, 32, 32, 0.6) 0%, rgba(20, 19, 19, 1) 75%);
+  border-top: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+}
+
+.sobha-sensation-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-page, 24px);
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.sobha-sensation-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sobha-sensation-kicker {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.sobha-sensation-title {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.22;
+  color: var(--sobha-cream, #F5F3EF);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.sobha-sensation-p {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--sobha-muted, #9E9891);
+  margin: 0;
+}
+
+.sobha-sensation-meta {
+  display: flex;
+  gap: 40px;
+  border-top: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  padding-top: 24px;
+  margin-top: 8px;
+}
+
+.sensation-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sensation-num {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--sobha-gold, #C2A87E);
+  line-height: 1.1;
+}
+
+.sensation-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--sobha-muted, #9E9891);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sobha-sensation-image-col {
+  position: relative;
+}
+
+.sobha-sensation-card {
+  position: relative;
+  border-radius: var(--radius, 4px);
+  overflow: hidden;
+  border: 1px solid var(--sobha-hairline, rgba(255, 255, 255, 0.08));
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  background-color: #151414;
+}
+
+.sobha-sensation-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.06) brightness(0.92);
+}
+
+.sobha-sensation-overlay {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 2;
+}
+
+.sensation-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  padding: 6px 12px;
+  background-color: rgba(26, 25, 25, 0.88);
+  color: var(--sobha-gold, #C2A87E);
+  border: 1px solid rgba(194, 168, 126, 0.35);
+  backdrop-filter: blur(8px);
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   09. Sobha Sublime Section (THE SUBLIME)
+   ========================================================================== */
+.sobha-sublime-section {
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, rgba(38, 35, 33, 0.85) 0%, rgba(20, 19, 19, 1) 75%);
+  text-align: center;
+  border-top: 1px solid rgba(194, 168, 126, 0.15);
+  border-bottom: 1px solid rgba(194, 168, 126, 0.15);
+}
+
+.sobha-sublime-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--space-page, 24px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.sobha-sublime-lead {
+  font-family: var(--font-body);
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--sobha-muted, #9E9891);
+  margin: 0;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+.sobha-sublime-word {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: var(--sobha-gold, #C2A87E);
+  text-shadow: 0 0 45px rgba(194, 168, 126, 0.28);
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
 @media (max-width: 1024px) {
@@ -610,5 +867,24 @@
   .sobha-metric-sep {
     width: 60px;
     height: 1px;
+  }
+  .sobha-editorial-gallery {
+    grid-template-columns: 1fr;
+  }
+  .sobha-editorial-quote {
+    font-size: 22px;
+  }
+  .sobha-editorial-accent {
+    font-size: 19px;
+  }
+  .sobha-sensation-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .sobha-sensation-title {
+    font-size: 26px;
+  }
+  .sobha-sublime-word {
+    font-size: 40px;
   }
 }

@@ -1,6 +1,6 @@
-/* Header Styling — Sobha Privy Collection Luxury Dark Architectural Header */
+/* Header Styling — Exact Sobha Privy Collection Luxury Dark Architectural Header */
 
-.site-header {
+.site-header.sobha-header {
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -15,13 +15,66 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 48px 16px var(--spine-offset);
+  padding: 16px 48px;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
-.title-block {
+/* Left: Menu Trigger */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.sobha-menu-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px 0;
+  color: var(--sobha-cream, #F5F3EF);
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+}
+
+.sobha-menu-trigger:hover {
+  color: var(--sobha-gold, #C2A87E);
+}
+
+.sobha-hamburger-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 22px;
+  height: 14px;
+}
+
+.sobha-bar {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background-color: currentColor;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.sobha-menu-trigger.is-active .bar-1 {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.sobha-menu-trigger.is-active .bar-2 {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+/* Center Brand */
+.sobha-brand-center {
   display: flex;
   align-items: center;
   gap: 14px;
@@ -30,8 +83,8 @@
 }
 
 .header-logo-badge {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   background-color: #222020;
   border: 1.5px solid rgba(194, 168, 126, 0.4);
   border-radius: 50% !important;
@@ -44,15 +97,15 @@
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.title-block:hover .header-logo-badge {
+.sobha-brand-center:hover .header-logo-badge {
   border-color: var(--sobha-gold, #C2A87E);
   transform: scale(1.05);
-  box-shadow: 0 0 16px rgba(194, 168, 126, 0.25);
+  box-shadow: 0 0 16px rgba(194, 168, 126, 0.3);
 }
 
 .header-logo {
-  height: 40px;
-  width: 40px;
+  height: 36px;
+  width: 36px;
   object-fit: contain;
   display: block;
 }
@@ -60,13 +113,14 @@
 .title-text {
   display: flex;
   flex-direction: column;
+  text-align: left;
 }
 
 .brand-name {
-  font-family: var(--font-display);
+  font-family: var(--font-display, sans-serif);
   font-size: 19px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: var(--sobha-cream, #F5F3EF);
   line-height: 1.1;
   text-transform: uppercase;
@@ -75,152 +129,264 @@
 .brand-tm {
   font-size: 10px;
   vertical-align: super;
-  font-family: var(--font-mono);
+  font-family: var(--font-mono, monospace);
   color: var(--sobha-gold, #C2A87E);
   margin-left: 2px;
 }
 
 .brand-sub {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
   color: var(--sobha-gold, #C2A87E);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-top: 4px;
+  margin-top: 3px;
   opacity: 0.9;
 }
 
-/* Desktop Navigation */
-.desktop-nav {
+/* Right Navigation & Enquire Button */
+.header-right {
   display: flex;
   align-items: center;
   gap: 24px;
 }
 
-.nav-link {
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  color: rgba(245, 243, 239, 0.78);
-  padding: 6px 10px;
-  border-bottom: 2px solid transparent;
-  transition: color 0.2s ease, border-color 0.2s ease;
-  text-transform: uppercase;
-  position: relative;
-}
-
-.nav-link:hover {
-  color: var(--sobha-gold, #C2A87E);
-  border-bottom-color: var(--sobha-gold, #C2A87E);
-}
-
-.nav-link.active {
-  color: var(--sobha-gold, #C2A87E);
-  border-bottom-color: var(--sobha-gold, #C2A87E);
-}
-
-/* Sobha 3D Link Pill */
 .sobha-header-3d-link {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  border: 1px solid rgba(194, 168, 126, 0.45);
-  border-radius: 20px;
-  padding: 5px 12px;
-  color: var(--sobha-gold, #C2A87E);
-  background: rgba(194, 168, 126, 0.06);
-  transition: all 0.2s ease;
+  font-family: var(--font-mono, monospace);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--sobha-cream, #F5F3EF);
+  text-transform: uppercase;
+  padding: 6px 0;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .sobha-header-3d-link:hover {
-  border-color: var(--sobha-gold, #C2A87E);
-  background: rgba(194, 168, 126, 0.15);
-  box-shadow: 0 0 12px rgba(194, 168, 126, 0.2);
-  color: #FFFFFF;
-}
-
-.nav-link-cta {
-  background-color: transparent;
-  border: 1px solid var(--sobha-gold, #C2A87E);
   color: var(--sobha-gold, #C2A87E);
-  padding: 7px 18px;
-  border-radius: 2px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
 }
 
-.nav-link-cta:hover {
+.sobha-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--sobha-gold, #C2A87E);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sobha-header-3d-link:hover .sobha-underline {
+  width: 100%;
+}
+
+.sobha-header-contact-btn {
+  font-family: var(--font-mono, monospace);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sobha-gold, #C2A87E);
+  border: 1px solid rgba(194, 168, 126, 0.45);
+  padding: 8px 20px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.sobha-header-contact-btn:hover {
   background-color: var(--sobha-gold, #C2A87E);
   color: #1A1919;
   border-color: var(--sobha-gold, #C2A87E);
-  box-shadow: 0 4px 14px rgba(194, 168, 126, 0.3);
+  box-shadow: 0 4px 16px rgba(194, 168, 126, 0.3);
 }
 
-/* Mobile Toggle */
-.mobile-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 32px;
-  height: 28px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 5px;
-  cursor: pointer;
-  border-radius: 2px;
+/* ==========================================================================
+   Full-Screen Sobha Luxury Menu Overlay
+   ========================================================================== */
+.sobha-full-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.4s ease, opacity 0.4s ease;
 }
 
-.toggle-bar {
+.sobha-full-menu.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sobha-menu-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.sobha-menu-panel {
+  position: relative;
   width: 100%;
-  height: 2px;
-  background-color: var(--sobha-cream, #F5F3EF);
-  display: block;
-  transition: background-color 0.2s ease;
+  height: 100%;
+  overflow-y: auto;
+  padding: 120px 48px 60px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Mobile Nav Drawer */
-.mobile-nav {
+.sobha-menu-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.menu-kicker {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  color: var(--sobha-gold, #C2A87E);
+  margin-bottom: 24px;
+  display: block;
+}
+
+.sobha-menu-links {
   display: flex;
   flex-direction: column;
-  background-color: #1A1919;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 18px 24px;
-  gap: 12px;
+  gap: 14px;
 }
 
-.mobile-nav-link {
-  font-family: var(--font-mono);
+.sobha-menu-item {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  text-decoration: none;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.sobha-menu-item:hover {
+  transform: translateX(12px);
+  border-bottom-color: var(--sobha-gold, #C2A87E);
+}
+
+.item-index {
+  font-family: var(--font-mono, monospace);
   font-size: 13px;
-  color: var(--sobha-cream, #F5F3EF);
-  padding: 10px 0;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  transition: color 0.15s ease;
-}
-
-.mobile-nav-link:hover {
-  color: var(--sobha-gold, #C2A87E);
-}
-
-.mobile-nav-link.cta {
   color: var(--sobha-gold, #C2A87E);
   font-weight: 600;
 }
 
+.item-title {
+  font-family: var(--font-display, sans-serif);
+  font-size: clamp(20px, 2.5vw, 32px);
+  font-weight: 600;
+  color: var(--sobha-cream, #F5F3EF);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.sobha-menu-item:hover .item-title {
+  color: var(--sobha-gold, #C2A87E);
+}
+
+.sobha-menu-item.highlight .item-title {
+  color: var(--sobha-gold, #C2A87E);
+}
+
+.sobha-menu-meta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  padding-left: 48px;
+  justify-content: center;
+}
+
+.meta-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.meta-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  color: var(--sobha-gold, #C2A87E);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.meta-value {
+  font-family: var(--font-mono, monospace);
+  font-size: 14px;
+  color: var(--sobha-cream, #F5F3EF);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.meta-value.link {
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.meta-sublink {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  color: #16A34A;
+  text-decoration: underline;
+}
+
+.meta-coords {
+  font-family: var(--font-mono, monospace);
+  font-size: 12px;
+  color: var(--sobha-gold, #C2A87E);
+}
+
+/* Synchronized Breakpoint for Verify-All Test (Must be max-width: 800px) */
 @media (max-width: 800px) {
   .header-inner {
-    padding: 14px 20px;
+    padding: 12px 20px;
     width: 100%;
-  }
-  .desktop-nav {
-    display: none;
-  }
-  .mobile-toggle {
-    display: flex;
   }
   .brand-sub {
     display: none;
+  }
+  .brand-name {
+    font-size: 16px;
+  }
+  .header-logo-badge {
+    width: 38px;
+    height: 38px;
+  }
+  .header-logo {
+    width: 30px;
+    height: 30px;
+  }
+  .sobha-menu-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .sobha-menu-meta-col {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 24px;
+  }
+  .sobha-menu-panel {
+    padding: 90px 20px 40px 20px;
+    align-items: flex-start;
   }
 }

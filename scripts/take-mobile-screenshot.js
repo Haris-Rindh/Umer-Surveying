@@ -7,7 +7,7 @@ setTimeout(() => {
   try {
     const edgePath = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
     const screenshotPath = path.resolve('screenshot-mobile.png');
-    const cmd = `"${edgePath}" --headless --disable-gpu --screenshot="${screenshotPath}" --window-size=400,2400 http://localhost:4173/`;
+    const cmd = `"${edgePath}" --headless --disable-gpu --screenshot="${screenshotPath}" --window-size=400,2400 http://localhost:4173/?no-preloader`;
     execSync(cmd, { stdio: 'inherit' });
     console.log('MOBILE_SCREENSHOT_SUCCESS');
   } catch (err) {

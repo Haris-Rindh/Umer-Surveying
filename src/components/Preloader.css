@@ -1,0 +1,97 @@
+/* Sobha Privy Collection Luxury Preloader */
+
+.sobha-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: #1A1919;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s ease;
+  pointer-events: all;
+}
+
+.sobha-preloader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.sobha-preloader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.preloader-monogram {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.preloader-spin {
+  transform-origin: center;
+  animation: preloader-rotate 10s linear infinite;
+}
+
+@keyframes preloader-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.preloader-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.preloader-brand-title {
+  font-family: var(--font-display, 'IBM Plex Sans Condensed', sans-serif);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #F5F3EF;
+  text-transform: uppercase;
+}
+
+.preloader-brand-sub {
+  font-family: var(--font-mono, monospace);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  color: #C2A87E;
+  text-transform: uppercase;
+}
+
+.preloader-progress-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 180px;
+}
+
+.preloader-progress-track {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.preloader-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #C2A87E, #F5F3EF);
+  transition: width 0.08s ease;
+}
+
+.preloader-progress-text {
+  font-family: var(--font-mono, monospace);
+  font-size: 11px;
+  color: #9E9891;
+  letter-spacing: 0.1em;
+}

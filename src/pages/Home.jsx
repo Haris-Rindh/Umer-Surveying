@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Hero from '../components/Hero';
 import ThreeDDomainExplorer from '../components/ThreeDDomainExplorer';
 import ThreeDScrollParallax from '../components/ThreeDScrollParallax';
@@ -15,19 +15,26 @@ import './Home.css';
 export default function Home() {
   useDocumentTitle('home');
 
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'auto' }), 50);
+      }
+    }
+  }, []);
+
   return (
-    <div className="home-page-flow">
+    <div className="home-page-flow sobha-page-flow">
       {/* Ambient 3D Depth & Spatial Parallax Canvas */}
       <ThreeDScrollParallax />
 
-      {/* 01. Hero Component with Split Instrument Showcase & Trust Strip */}
+      {/* 01. Exact Sobha Hero: The Art of Precision */}
       <Hero />
 
-      {/* 02. Interactive 3D Surveying Domain Explorer with Floating Elements */}
-      <ThreeDDomainExplorer />
-
-      {/* 03. Sobha Signature 3-Image Showcase: A Handpicked Repertoire of Rarest Precision Feats */}
-      <section className="page-section sobha-triptych-section" aria-label="Signature Repertoire of Surveying Feats">
+      {/* 02. Sobha Signature 3-Image Showcase: A Handpicked Repertoire of Rarest Precision Feats */}
+      <section id="about" className="page-section sobha-triptych-section" aria-label="Signature Repertoire of Surveying Feats">
         <div className="section-title-line sobha-center-header">
           <span className="sobha-kicker">RECORDED IN BENCHMARKS &amp; PARCELS</span>
           <h2 className="section-h2 sobha-grand-title">A Handpicked Repertoire of Rarest Precision Feats</h2>
@@ -36,6 +43,7 @@ export default function Home() {
           </p>
         </div>
 
+        {/* Triptych 3-Image Layout */}
         <div className="sobha-triptych-grid">
           {/* Card 1: Staggered Left */}
           <div className="sobha-triptych-card sobha-card-left">
@@ -44,7 +52,7 @@ export default function Home() {
                 src="/images/commercial-measurements.jpg" 
                 alt="Commercial high-density cadastral measurement" 
                 className="sobha-img" 
-                loading="lazy"
+                loading="eager"
               />
               <div className="sobha-img-overlay">
                 <span className="sobha-img-tag">CADASTRE 01</span>
@@ -63,7 +71,7 @@ export default function Home() {
                 src="/images/topographic-map-of-jica.jpg" 
                 alt="JICA Topographic Base Mapping and Geodetic Benchmarks" 
                 className="sobha-img" 
-                loading="lazy"
+                loading="eager"
               />
               <div className="sobha-img-overlay">
                 <span className="sobha-img-tag highlight">BENCHMARK 02 • CORE DATUM</span>
@@ -82,7 +90,7 @@ export default function Home() {
                 src="/images/urban-planning-survey.jpg" 
                 alt="Metropolitan urban infrastructure and GIS survey" 
                 className="sobha-img" 
-                loading="lazy"
+                loading="eager"
               />
               <div className="sobha-img-overlay">
                 <span className="sobha-img-tag">INFRASTRUCTURE 03</span>
@@ -91,6 +99,42 @@ export default function Home() {
             <div className="sobha-card-caption">
               <h3 className="sobha-card-h3">Metropolitan Master Layouts</h3>
               <p className="sobha-card-sub">GIS Right-of-Way Basemaps &amp; Civil Highway Alignment</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Editorial Narrative & Secondary Images (Exact Sobha Section 2 Structure) */}
+        <div className="sobha-editorial-block">
+          <p className="sobha-editorial-quote">
+            Exclusive surveys across Pakistan's most iconic infrastructure.
+            <span className="sobha-editorial-accent"> For the true connoisseurs of fine engineering.</span>
+          </p>
+
+          <div className="sobha-editorial-gallery">
+            <div className="editorial-gallery-item">
+              <img 
+                src="/images/survey.jpg" 
+                alt="Precision optical total station deployed on geodetic baseline" 
+                className="editorial-gallery-img"
+                loading="eager"
+              />
+              <div className="editorial-caption">
+                <span className="caption-tag">CALIBRATED FIELDWORK</span>
+                <span className="caption-desc">Sub-second angular reading with electronic traverse closure</span>
+              </div>
+            </div>
+
+            <div className="editorial-gallery-item">
+              <img 
+                src="/images/topographic-surveying.webp" 
+                alt="Topographic contour surveying and digital elevation basemap" 
+                className="editorial-gallery-img"
+                loading="eager"
+              />
+              <div className="editorial-caption">
+                <span className="caption-tag">SPATIAL BASEMAPS</span>
+                <span className="caption-desc">High-density digital elevation models and civil earthwork verification</span>
+              </div>
             </div>
           </div>
         </div>
@@ -114,10 +158,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 04. Field Equipment & Technology Arsenal */}
-      <EquipmentSection />
-
-      {/* 05. Sobha Cinematic Full-Bleed Architectural Statement Banner */}
+      {/* 03. Sobha Cinematic Full-Bleed Architectural Statement Banner (SOME CREATIONS MERIT A PLACE) */}
       <section className="page-section sobha-statement-section" aria-label="Statement of Surveying Excellence">
         <div className="sobha-statement-glow"></div>
         <div className="sobha-statement-content">
@@ -141,9 +182,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 06. Categorized Surveying Services Directory */}
+      {/* 04. Sobha Section 4: EVOKING A CERTAINTY */}
+      <section className="page-section sobha-sensation-section" aria-label="Evoking Geodetic Certainty">
+        <div className="sobha-sensation-grid">
+          <div className="sobha-sensation-text-col">
+            <span className="sobha-sensation-kicker">RIGOR IN THE FIELD</span>
+            <h2 className="sobha-sensation-title">
+              EVOKING A CERTAINTY CHASED BY SO MANY, ATTAINED BY SO FEW
+            </h2>
+            <p className="sobha-sensation-p">
+              Umer Surveying captures this certainty, using millimeter tolerance as the benchmark to measure every boundary that bears our title block. In doing so, we have crafted this technical rigor into an art form. We call it: The Art of Precision.
+            </p>
+            <div className="sobha-sensation-meta">
+              <div className="sensation-stat">
+                <span className="sensation-num">1:50,000</span>
+                <span className="sensation-label">Linear Traverse Ratio</span>
+              </div>
+              <div className="sensation-stat">
+                <span className="sensation-num">0.5"</span>
+                <span className="sensation-label">Angular Instrument Accuracy</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="sobha-sensation-image-col">
+            <div className="sobha-sensation-card">
+              <img 
+                src="/images/herosection.jpg" 
+                alt="Survey of Pakistan geodetic benchmark instrument observation" 
+                className="sobha-sensation-img"
+                loading="eager"
+              />
+              <div className="sobha-sensation-overlay">
+                <span className="sensation-tag">BENCHMARK BENCHMARK MULTAN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 05. Sobha Section 5: THE SUBLIME */}
+      <section id="sublime" className="page-section sobha-sublime-section" aria-label="Sublime Precision">
+        <div className="sobha-sublime-content text-center">
+          <p className="sobha-sublime-lead">
+            The feeling of absolute legal certainty,<br />
+            the standard that can only be captured by calling it
+          </p>
+          <h2 className="sobha-sublime-word">Sublime Precision</h2>
+        </div>
+      </section>
+
+      {/* 06. Interactive 3D Surveying Domain Explorer with Floating Elements */}
+      <ThreeDDomainExplorer />
+
+      {/* 07. Field Equipment & Technology Arsenal */}
+      <EquipmentSection />
+
+      {/* 08. Categorized Surveying Services Directory ("The Collection") */}
       <section id="services" className="page-section services-section" aria-label="Surveying Services Directory">
         <div className="section-title-line">
+          <span className="sector-kicker">THE COLLECTION // DISCIPLINES</span>
           <h2 className="section-h2">Surveying Services &amp; Field Capabilities</h2>
           <p className="section-lead">
             We map terrain, establish legal property lines, and quantify site earthwork using calibrated total stations, dual-frequency GNSS, and GIS workstations.
@@ -171,12 +269,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 04. Interactive Survey Scope & Requisition Builder */}
+      {/* 09. Interactive Survey Scope & Requisition Builder */}
       <InteractiveEstimator />
 
-      {/* 05. Professional Training / Courses Section */}
+      {/* 10. Professional Training / Courses Section */}
       <section id="courses" className="page-section courses-section" aria-label="Professional Surveyor Certification">
         <div className="section-title-line">
+          <span className="sector-kicker">TENETS OF KNOWLEDGE // FIELD ACADEMY</span>
           <h2 className="section-h2">Surveying Certification Program</h2>
           <p className="section-lead">
             Practical field training covering total station operation, optical leveling, CAD drafting, and GIS data pipelines.
@@ -210,61 +309,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 06. About Section */}
-      <section id="about" className="page-section about-section" aria-label="About Umer Surveying">
-        <div className="section-title-line">
-          <h2 className="section-h2">About Umer Surveying™</h2>
-          <p className="section-lead">
-            Established in 2022 in Multan, Umer Surveying provides land surveying, GIS mapping, and civil drafting across Southern Punjab.
-          </p>
-        </div>
-
-        <div className="about-content-grid">
-          <div className="about-narrative-block">
-            <p className="about-p">
-              We work for public agencies, engineering firms, agricultural landowners, and private developers. Our field crews deploy total stations, GPS receivers, and CAD/GIS workstations to produce legal plats, quantity takeoffs, and topographic basemaps that meet strict regulatory and engineering specifications.
-            </p>
-            <p className="about-p">
-              We do not estimate boundaries by eye or rely on uncalibrated consumer GPS. Every survey point is measured against established Survey of Pakistan control benchmarks or tied to geodetic reference networks with verified angular and linear closure.
-            </p>
-
-            <div className="about-specs-row">
-              <div className="spec-badge">
-                <span className="spec-num">2022</span>
-                <span className="spec-label">Established in Multan</span>
-              </div>
-              <div className="spec-badge">
-                <span className="spec-num">35+</span>
-                <span className="spec-label">Years chief field experience</span>
-              </div>
-              <div className="spec-badge">
-                <span className="spec-num">24/7</span>
-                <span className="spec-label">Active survey availability</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="about-diagram-frame">
-            <div className="plat-diagram-box">
-              <div className="diagram-header">
-                <span className="diagram-title">Topographic Elevation Specification</span>
-              </div>
-              <img 
-                src="/images/topography-202278.webp" 
-                alt="Topographic contour surveying and digital elevation model produced by Umer Surveying" 
-                className="about-technical-image" 
-              />
-              <div className="diagram-footer">
-                <span>Digital Terrain Model (0.5m contour interval)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 07. Founders Section */}
+      {/* 11. Founders Section */}
       <section id="founders" className="page-section founders-section" aria-label="Founders and Leadership Seals">
         <div className="section-title-line">
+          <span className="sector-kicker">LEADERSHIP // CHIEF SURVEYORS</span>
           <h2 className="section-h2">Founders &amp; Chief Surveyors</h2>
           <p className="section-lead">
             Field leadership combining three decades of classical cadastral survey experience with modern GIS and BIM integration.
@@ -278,7 +326,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 08. Contact Section: exactly one contact section at the bottom of Home */}
+      {/* 12. Contact Section: exactly one contact section at the bottom of Home */}
       <ContactBlock />
     </div>
   );

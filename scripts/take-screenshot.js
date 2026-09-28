@@ -7,7 +7,7 @@ setTimeout(() => {
   try {
     const edgePath = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe';
     const screenshotPath = path.resolve('screenshot-matte.png');
-    const cmd = `"${edgePath}" --headless --disable-gpu --screenshot="${screenshotPath}" --window-size=1440,5600 http://localhost:4173/`;
+    const cmd = `"${edgePath}" --headless --disable-gpu --screenshot="${screenshotPath}" --window-size=1440,5600 http://localhost:4173/?no-preloader`;
     execSync(cmd, { stdio: 'inherit' });
     console.log('MATTE_SCREENSHOT_SUCCESS');
   } catch (err) {
@@ -19,4 +19,4 @@ setTimeout(() => {
     server.kill();
     process.exit(0);
   }
-}, 3000);
+}, 3500);

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import Preloader from './components/Preloader';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ScrollToAnchor from './components/ScrollToAnchor';
@@ -10,6 +11,9 @@ import Blog from './pages/Blog';
 export default function App() {
   return (
     <div className="app-container">
+      {/* Luxury Intro Preloader (Sobha Privy Collection Style) */}
+      <Preloader />
+
       {/* Accessible skip link */}
       <a href="#main-content" className="sr-only">Skip to primary content</a>
 
